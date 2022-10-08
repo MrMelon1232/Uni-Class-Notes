@@ -1,0 +1,39 @@
+Software architecture and design
+
+    Software is inherently complex
+        - Essential complexity: normal problems/problems we aim to solve (always present)
+        - Accidental (or incidental) complexity: issues that arise from developing (memory/speed issues)
+    - most systems built:
+        - do not meet reqs
+        - not reliable
+        - not delivered in time
+        - over budget
+    Main problems:
+        - cost analysis (prod, fixing errors, detection errors)
+        - meeting deadlines
+        - maintenance
+            1. remedial: time spent fixing bugs
+            2. adaptive: alterating the software for reqs or constraints
+    
+    - Important features
+        1. reqs analysis: quantifiable, relevant detailed
+        2. design features:
+            - correctness (correct implementation)
+            - understandability
+            - efficiency
+            - maintainability
+        3. code: simple, design, efficient, clarity
+        4. Testing: automated, planned
+        5. continuous improvements
+   
+    - Design vs requirements
+        building the right system vs building the system right
+
+    What is Design:
+        - developing blueprint/plan 
+        - taking into account all constraints
+        - making trade-offs when there are conflicts
+    
+        Analysis vs Design
+            - emphasis on finding/decribing objects, concepts
+            - emphasis on defining software objects, how they collaborate to fufill reqs

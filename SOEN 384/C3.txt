@@ -1,0 +1,101 @@
+Estimation Technique
+    - constraints/parameters:
+        1. product features
+        2. quality attributes
+        3. budget
+        4. Technology
+        5. basis of estimation
+    - past vs future comparison
+    - assumption realized and constraints satisfied
+    - projects are re-estimated periodically as understanding grows and aperiodically as parameters change (unanticipated changes)
+        (monthly basis for project of less than 12 months | quarterly otherwise)
+    Types:
+        Experience-based:
+            - Estimation by analogy:
+                - compare to previous past projects
+                Example: Size
+                    1. Get detailed size of similar previous project
+                    2. Compare to new size (multiplication factor = # new elements / # old elements)
+                    3. Build estimate for size 
+                        Size(new subsystem) = Size (old subsystem) * multiplication factor)
+                        Size (new project) = sum of sizes of subsystem
+                    4. New effort estimate
+                        Size ratio =  Size(new project) / Size(old project)
+                        Estimate Effort(new project) = Effort(old project) * Size ratio (if uncertain, produce range)
+
+        Estimation by expert judgment
+            - asking estimate from someone knowledgeable
+            Delphi Technique:
+                - more than 1 expert combined
+                - Range at the beginning = [min, max]: min = [E * 75%, E * 125%] | after [E * 85%, E * 115%]
+                - Task-level estimates: ExpectedCase = [BestCase + (4 * MostLikelyCase) + WorstCase] / 6
+                    Note: single estimage is usually close to Best
+
+
+        Parametric Models:
+            - math formula takes into account various factors (physical, technical, etc.)
+            - better than experience based (depending on quality of data)
+
+            Regression-Based:
+                Effort = a * Size + c
+                    Size = estimated product size
+                    Effort in staff-months
+                    Small teams of 2-3 people or moderate size
+                example: CoCoMo model (procedure cost estimate model to predict parameters using # of lines of code)
+
+                Basic Model:
+                    Effort = c * (Size)^k 
+                        Effort in p-m
+                        Size in kdsi
+                        Constants c and k depends on Boehm's term as:
+                            1. organic (c = 2.4 | k = 1.05)
+                                - team size small
+                                - problem understood
+                                - teamate nominal/small experience
+                            2. semi-detached (c = 3.0 | k = 1.12)
+                                - between embedded and organic (team size, experience)
+                            3. embedded (c = 3.6 | k = 1.20)
+                                - high level of complexity
+                                - large team size
+                                - teamates sufficiently experienced
+                        - larger projects less productive than smaller ones
+
+                    
+                    CoCoMo IIL:
+                        Dev stages:
+                            1. Application Composition (external features designed)
+                            2. Early design (fundamental structure designed)
+                                ex: p-m =  A * (Size)^(sf) * em1 * em2 ...
+                                    sf = B + 0.01 x ∑(exponent driver ratings)
+                                        where B = 0.91
+                            3. Post Architecture (final construction, modification)
+
+                        Scale factor values (high to low):
+                            1. Development flexibility (FLEX)
+                                - # of possibilities to meet reqs
+                            2. Architecture/risk resolution (RESL)
+                                - degree of uncertainty
+                            3. Team cohesion (TEAM)
+                                - degree to which there is a large dispersed team
+                            4. Process Maturity (PMAT)
+                                - lower uncertainty and rating if structure 
+                            5. Precedentedness (PREC)  
+                                - degree to which there are similar cases
+
+                        
+                        Example:
+                        driver  |   rating  |   value
+                        PREC        nominal     3.72
+                        FLEX        high        2.03
+                        RESL        very low    7.07
+                        TEAM        very high   1.10
+                        PMAT        low         6.24
+
+                        sf = 0.91 + 0.01 * (3.72 + 2.03 + 7.07 + 1.10 + 6.24)
+                        sf = 1.112
+                        Effort = 2.94 * 2^1.112
+                        Effort = 6.35 p-m
+
+                        Effort multipliers (em)
+                            - > 1 --> increases dev effort vice versa
+                            - nominal rating = multiplier no effect

@@ -1,0 +1,170 @@
+Requirements Engineering
+    - set of activities producing requirements
+        (elicitation, evaluation, specification, analysis)
+    - requirements quality assurance (qa) is a key concern
+
+    - identify and analyze problems for existing systems (system-as-is)
+    - identify and evaluate objectives, opportunities for new systems | define functionalities (system-to-be)
+    System = software + environment
+
+    Cycle:
+        RE --> software design --> software implementation --> software evolution
+
+    - RE is critical --> major cause of software failure,
+                         severe consquences (cost, delivery),
+                         certification issues and legal, social, economical, etc
+    - RE hard:
+        - broad scope
+        - multiple concerns
+        - multiple abstraction layers
+        - multiple stakeholders
+        - multiple interwined tasks
+
+    Models:
+        - provides structure and focus key aspects
+        - facilitates analysis
+        - support for understanding + stakeholders
+        - basis for RE doc 
+
+    Objectives:
+        1. sound and precise understanding
+        2. master techniques
+        3. construct, analyze models in a systematic way
+        4. practical experience
+
+Fundamentals of RE
+    - to create a solution, we need to define context and problem
+    we care about:
+        - desired machine's effect on the real world
+        - assumptions and relevant properties
+
+    RE is only concerned with world phenomena including shared ones
+        example for a car:
+            world: {motorRaising, DriverWantstoStart, HandbrakeReleased, etc.}
+            shared: {motor.Regime = "up" , handBrakeCtrl = "off", etc.}
+            machine: {stateDatabase update, errorCode}
+        TLDR: all events/data manipulation done that is relevant to real world
+    
+    System-as-is:
+        - system existing before the machine is built into it
+        - here we find: 
+            - the problem
+            - opportunities
+            - system knowledge
+
+    System-to-be:
+        - system as it should be when machine will operate into it
+        - here we find: 
+            - objectives (why)
+            - requirements, constraints, assumptions (what)
+            - assignment (who)
+
+    Why:
+        - identify, analyze and refine system to be objectives
+        - difficulties:
+            - acquire domain knowledge
+            - evaluate alternative options
+            - match problem-opportunities
+        ex: serve more passengers, reduce time for booking
+
+    What:
+        - identify, define system-to-be functional services (respond to why)
+        - difficulties:
+            - identify right set of features
+            - specification
+            - traceability to "why"
+        ex: computation of safe train accelerations
+
+    Who:
+        - assign responsabilitise for objectives services, constraints
+        - difficulties:
+            - evaluate alternative options to device on right degree
+        ex: "safe train acceleration" under software-to-be or driver ?
+
+    TLDR: 
+     - coordinated set of activities
+        - for work on a software system based on a problem from a system-as-is 
+     - answers why, what, how
+     - concerned with real world goals, functions, constraints (link to precise specifications)
+     - evolution over time
+
+    Software reqs vs System reqs
+        - phenomena shared and environment vs environment only
+        ex for software: output variable shall have value off when input x occurs
+        ex for system: handbrake shall be release when driver wants to start
+
+    Statements:
+        Descriptive:
+            - system properties holding regardless of behavior (indicative mood)
+            - ex: natural law, physical constraints
+                  if train doors are closed, then they are not open
+
+        Prescriptive
+            -  desirable properties holding or not depending on system behavior (optative mood)
+            ex: doors shall remain closed when the train is moving (could be opposite)
+
+        Software and System requirements:
+            - prescriptive
+            - system --> environment phenomena 
+                ex: TrainMoving -> DoorsClosed
+            - software --> shared phenomena
+                ex: measuredSpeed != 0 --> doorsState = 'closed'
+
+        
+        Domain property:
+            - descriptive
+            - about problem world phenomena (holds regardless of any software-to-be)
+            ex: trainAcceleration > 0 --> TrainSpeed != 0
+
+        Assumption:
+            - to be satisfied by the environment of the sofware-to-be
+            - generally prescriptive and formulated in terms of environment phenomena
+            ex: measuredSpeed != 0 if trainSpeed != 0
+
+        Definition:
+            - precise meaning to system concepts
+
+
+        Software reqs vs system reqs (look at C2_reqs for more info):
+           environment --> Input Devices --> Software-to-be --> Output Devices --> environment
+            M: monitored variables (ex: trainspeed) | environment
+            I: input data
+            O: output data
+            C: controlled variable (ex: DoorsClosed) 
+                SysReq ⊆ M x C
+                SoftReq ⊆ I x O
+                SoftReq = Map (SysReq, Dom, Asm)
+
+
+        SOFREQ, ASM, DOM |= SysReq
+            If SOFREQ, ASM, DOM are all satisfied and consistent then SysReq are satisfied
+
+            example:
+                SoftReq: measuredSpeed != 0 --> doorsState
+                ASM: measuredSpeed != 0 if trainSpeed != 0
+                     doorsState = 'closed if DoorsClosed
+                DOM: TrainMoving if trainSpeed != 0
+                ---------------------------------------
+                SysReq: TrainMoving --> DoorsClosed
+
+
+        Functional requirements
+            - prescribe what services the software-to-be should have
+            - captures intended software effects on environment
+            ex: software shall control acceleration of all trains
+
+        Non-functional requirements
+            - constrains how services should be provided
+            - quality requirements: safety, security, accuracy, performance
+            ex: acceleration commands shall be issued every 3 seconds to every train
+
+        Taxonomy (not important):
+            - helps with definition of requirements
+            - semantic characterization of reqs
+                - prescribing desired behaviors
+                - ruling out inadmissible behaviors
+                - indicating preferred behaviors
+            - elicitation and analysis can be guided by taxonomy browsing
+
+
+

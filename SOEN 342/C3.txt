@@ -1,0 +1,91 @@
+Fundamentals of Requirement Engineering II
+
+    RE Process (can intertwine, overlap, backtrap, iterative):
+        1. domain understanding:
+            - studying system-as-is (business organization, applicaiton domain)
+            - identifying system stakeholders
+            - product (initial section of draft proposal, glossary of items)
+
+        2. elicitation:
+            - exploring problem world
+            - analysis of technology opportunities
+            - identification of objectives, constraints, reqs, alternate options
+            - product (additional sections for draft proposal)
+
+        3. Evaluation & agreement
+            - negotitation based decisions (conflicts, risks, alternate options, prio)
+            - product (final sections of draft)
+
+        4. Specification & documentation
+            - precise definition of all features of the agreed system 
+                (objectives, concepts, domain properties, assumptions, estimated costs etc.)
+            - organization in coherent structure
+            - documentation understandable by all parties
+            - final product: Requirement Document (RD)
+
+        5. Consolidated requirements (validation & verification)
+            - Quality Assurance (QA) on RD
+                - validation (adequacy of RD items)
+                - verification (omissions, inconsistencies)
+                - check for other target qualities
+                - fixing error and flaws
+            - products: Consolidated RD, acceptance test data / prototype, dev plan, project contract
+
+    
+    Target Qualities for RE process
+        - Completeness (objectives, reqs, assumptions)
+        - Consistency (RD items)
+        - Adequacy (reqs, assumptions, domain props)
+        - Unambiguity (RD items | single interpretation)
+        - Measurability (reqs, assumptions)
+        - Feasibility (reqs | ease of being done)
+        - Comprehensability (RD items)
+        - Good structuring (RD items)
+        - Modifiability (RD items)
+        - Traceability (RD items)
+
+    Errors and flaws (look at C3_errors for example)
+        - Omission: problem world feature not stated by any RD item
+        - Contradiction: RD items stating a problem world feature in an incompatible way
+        - Inadequacy
+        - Ambiguity: RD item allowing a feature to be interpreted in a different way
+        - Unmeasurability: RD item w/out comparison or solution testing
+
+        Flaws (look at C3_flaws for example)
+            - Noise (RD item yielding no info on problem)
+            - Overspecification (RD item stating a feature not in the problem world but in machine)
+            - Unfeasibility (RD item not implementable within budget/schedule)
+            - Unintelligibility (RD item incomprehensible)
+            - Poor structuring (RD item not organized to a structure)
+            - Forward reference (RD item making use of problem world features not defined yet)
+            - Remorse (RD item stating a problem world feature lately or incedentally)
+            - Poor Modifiability (RD item changes affect others or changes over time)
+            - Opacity (RD item rationale, authoring, dependencies are invisible)
+
+    Project Types
+        - Greenfield(build anew) vs brownfield (expanded, extension, rework)
+        - Customer-driven vs market-driven
+        - In-house vs outsourced
+        - Single-product vs product-line
+
+    Why we engineer requirements:
+        - poor requirements are ubiquitous
+        - prohibitive cost of late correction
+        - RE is hard & critical
+    
+    Role and Stakes
+        - Technical impact
+        - Managerial impact
+        - Legal impact
+        - Impact on certification
+        - Economy
+        - Social
+
+        Stakes
+            - no guarantee for contract concluded
+            - pressure for tight schedule, cost
+            - little work on RE economics
+            - big and far from executable project
+            = agile dev can help with these obstacles
+            = short RE cycles and short implementation in spiral can help
+            = more/less agility is achievable by less/more wieght in elicitation, evaluation, documentation, consolidation phases of RE cycles

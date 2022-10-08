@@ -1,0 +1,53 @@
+Estimation Techniques part 2
+- Problem with LOC: have to wait for system implementation
+    Function points:
+        - functionality offered by system
+        - collection of exec. statements
+        - function points can be calculated before system is developed
+
+    5 components
+        1. External inputs
+        2. External outputs (data output)
+        3. Logical internal files (datastore)
+        4. External interfaces files (files accessed by system but not maintained)
+        5. External inquiries (query)
+
+    Simplest way to calculate:
+        (# of external inputs x 4) +
+        (# of external outputs x 5) + 
+        (# of logical internal files x 10) + 
+        (# of external interface files x 7) + 
+        (# of external inquiries x 4)
+
+    Example: look at C4_fp file
+        from the file, we found:
+            external inputs: 1
+            external outputs: 2
+            logical internal files: 1
+            external interface files: 0
+            external inquiries: 1
+        Total functionality: (1x4) + (2x5) + (1x10) + (0x7) + (1x4) = 28
+
+Cosmic Functional points
+    - functional size measurement method
+    - subprocess can be either datamovement or data manipulation
+    - functional processes and data movements
+        - processe are:
+            - independant
+            - triggered by an event
+        - Data movements (single data group): E(entry), X(exit), R(read), W(write)
+        - Triggering events are entry type
+        - Clock and timing events are triggering 
+    
+    Steps:
+        1. identify functional users
+        2. identify triggering events
+        3. identify functional processes
+        4. identify data groups
+        5. identify data movements
+        6. Obtain total # of Cosmic FP (every data movement = 1)
+        example: if customer wants to login
+                 verify customer: 
+                        1. entry by pressing ok (entry)
+                        2. system receives data (read)
+                        3. confirmation message (exit)

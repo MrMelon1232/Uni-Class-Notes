@@ -1,0 +1,83 @@
+Software Process (resume)
+    - structured set of activities required (specification, design, etc.)
+    - Characteristics:
+        1. Understandability
+        2. Visibility
+        3. Supportability
+        4. Acceptability
+        5. Reliability
+        6. Maintainability
+        7. Rapidity
+    - Generic vs software
+      - specification is incomplete in software
+      - blurred distinction between specification, design, manufacture
+      - no physical realisation of system
+      - no wear
+    - benefits:
+        1. consistency and structure 
+        2. allows modification/revision
+        3. capture experience
+
+    First Model:
+        1. Code-and-fix
+            - bad after too many iterations
+            - input --> what --> how --> maintenance/evo --> output
+        2. Waterfall model
+            phases:
+                1. requirements (def of prob)
+                2. analysis
+                3. system design
+                4. program design
+                5. coding and unit test
+                6. integration test (system tests)
+                7. installation, delivery, acceptance testing
+                8. maintenance
+            advantages: 
+                1. high level view
+                2. simple and sequential
+                3. provides deliverables
+                4. other models use it
+            problems:
+                1. linear, rigid
+                2. works for understood problems
+                3. activities are not totally independant
+
+        3. V model
+            - variation of waterfall
+            - makes link with first and last phases
+            - prepare tests during first steps
+            - verification and correction of previous steps during test phases
+        
+        4. Prototyping
+            - evolutionary:
+                - work with customers to evolve a final system | start with well-understood reqs
+                - may be inefficient / not robust / less functionality
+                - useful when reqs change / not sure reqs
+            - throw-away:
+                - understand system reqs | start withj poor understanding of reqs
+                - use high level languages
+            - choice depends on nature of app, budget, schedule, experience
+            - advantages:
+                1. faster than waterfall
+                2. user involvment from start
+                3. problems discovered early
+            - problems: 
+                1. documentation may be neglected
+                2. effort might be wasted
+                3. difficult to plan and manage
+
+        5. Increment model
+            - requirements fully known from start
+        
+        6. Spiral Model
+            - minimize + control risk
+            - same as iterative but evaluate more
+        
+        Some risks:
+            - personnel shortfalls
+            - unrealistic schedule/budget
+            - developing wrong things
+        
+        XP (xtreme programming)
+            - review and test at all times
+            - short and small changes (low rish and light)

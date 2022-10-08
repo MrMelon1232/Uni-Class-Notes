@@ -1,0 +1,145 @@
+Block Ciphers
+    - Most used crypto tool
+    - Used for:
+        1. data confidentiality
+        2. MACs
+        3. PRNGs
+        4. authentication
+    - Efficient software/hardware implementations
+
+    Definition:
+        - function that maps n-bit plaintext block to n-bit ciphertext blocks
+            n is called the blocklength (DES: 64 bits, AES: 128 bits)
+        - Parameterized by k-bit key K (chosen randomly)
+        Encryption: C = E(M, K)
+        Decryption: M = D(C, K)
+        - If K is k bits long --> # of keys is 2^k
+
+        1. Encryption func. must be one-to-one
+        2. Encryption func. is bijection
+        3. Each key defines a different bijection
+        4. If each k-bit key is equi-probable (each defines a diff. bijection, entropy of key space is k)
+            
+        Bijection:
+            - one-to-one and onto
+                (each element in X (plaintext) maps to at most 1 element in Y (ciphertext))
+                (Each element in Y maps to at least one element in X (no one left out))
+                TLDR: max mapping from X --> Y == 1
+                      All elements in Y are mapped
+        
+    Practical security
+    - Block cipher is:
+        1. totally broken if key is recoverable
+        2. partially broken if (some) plaintext is recoverable
+    - Standard assumption:
+        - Attacker has access to all transmitted ciphertext
+
+    Attack analysis
+        1. Completixity of attack
+            - Data completixity: expected # of required input inputs (ciphertext blocks)
+            - Storage completixity: expected # of required storage units
+            - Processing completixity
+        2. Possible parallelization (comparison)
+        3. Computationally secure if:
+            a) Data complexity is 2^n: depends on block size
+            b) Processing complexity is 2^k: depending on key size
+    
+    Modes of operation
+
+        1. How to employ block ciphers for large messages
+            a) Dividing messages
+            b) Padding (adding data to beginning, middle or end) the last block
+        2. Basic modes: ECB, CBC, OFB. CFB
+            a) Stardardized for DES operations
+            b) More modes defined for AES
+            c) Can be used with public key encyption
+        3. Initialization Vector
+            - block of data used in addition to input message
+            - randomize encryption process
+        
+        Electronic Code Book (ECB) (see C4_ECB)
+            Encryption E(X) --> C
+            Descryption E^-1 (c) --> x
+
+            - identical plaintext (w/ same key) result in identical ciphertext
+            - blocks are enciphered independently of other blocks
+            - bit errors in a single ciphertext affect decipherment of that block only
+
+            Weakness:
+                - Does not hide data patterns
+                - Malicious substition oc ciphertext is possible
+                - Do not use for:
+                    - Multi-block messages (requires ind. blocks for ciphering)
+                    - keys are reused for more than a single block
+        
+        Counter mode (CTR) (see C4_CTR)
+            - CTR different for each block
+            - IV/nonce value used w/ counter for uniqueness
+            - Software and hardware efficiency: different blocks can be encrypted in parallel
+            - Preprocessing: encryption part can be done offline, when msg known we do XOR
+            - Random access: decryption of a block can be done in random order, useful for hard-disk encryption
+
+
+    Design Components:
+
+        Avalanche effect
+            - slight change in input causes significant changes to output
+            - strongly desired properties of:
+                - block ciphers
+                - cryptographic hash functions
+
+
+        Revision:
+            Substitution cipher:
+                - plaintext is replaced by other characters
+                - key = mapping between plaintext and ciphertext
+                - adds confusion (makes relationship between key and ciphertext as complex as possible)
+            
+            Transpotiion cipher
+                - with fixed period t, groups plaintext into block of t chars.
+                - applyed to each block a single permutation e on the numbers 1 to t
+                - add diffusion (spreading out bits so redundancy in plaintext is spread over ciphertext)
+
+        
+        Product cipher
+            - execution of 2/+ simple ciphers in sequence such that final product is Cryptographically stronger
+            ex: alternating substition and transposition
+
+        Design Approaches
+            1. round function is used
+                - strong avalanche effect 
+                - bijective
+            2. Repeated multiple times (n rounds)
+                - Round 1 input: plaintext block
+                - Round n output: ciphertext block
+                - Round key: derived from the key K, for each round
+            3. Examples:
+                - SP networks (used in AES, CAST-128)
+                - Feistel structures (used in DES, RC5, Blowfish)
+
+            Feistel structure parameters
+                - block size & key size (large = greater security but slower encryption/Descryption speed)
+                - number of rounds (more = greater strength (around 16 rounds))
+                - Subkey generation algorithm & round function
+                    - greater completixity = greater cryptanalysis resistance
+
+            Data Encryption Standard (DES) (see C4_DES and C4_DES_Overview)
+                - most widely used symmetric cipher
+                - uses Feistel structure (block length  n = 64 | key size k = 56 | rounds = 16)
+                - key size 56 is short now but test of time withstood (no trapdoor found)
+                - Alternatives:
+                    - Double-DES (no security. adv)
+                    - Triple-DES (secure, but slow)
+                    - Advanced encryption standard (AES)
+
+            See C4_Multi_Encryption for information and view on multi-encryption
+                - encrypts the already encrypted data
+            
+            AES
+                - input block 128 bits in length:
+                    16x8 matrix
+                - uses round keys that are the result of a key expension (each round is 128 bits)
+                - no practical attacks to date / attacks on full AES versions
+
+        
+                

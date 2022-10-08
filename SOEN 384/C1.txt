@@ -1,0 +1,68 @@
+What is a project ?
+ - Defined objectives, schedule, budget allocated
+ - roles indentified and responsabilities/authority assgined
+
+ software project management
+    - set of activities, processes and constraints
+    - planning, coordinating, develop, modify, maintain
+    Characteristics:
+        - Invisibility (helps remove invis (progress tracking))
+        - Complexity (more complex / $)
+        - Conformity (conform to req of humans (no physical material = no laws))
+    - minimize planned vs actual cost diff
+    - common problems:
+        1. acceptance of impossible constraints
+        2. budget overrun, delays
+        3. customer req change = loss of control
+    - 4 main activities:
+        1. Planning and Estimating
+        2. Measuring and Controlling
+        3. Leading (communicating, morale, coordinating) and Communicating
+        4. Managing(planning, estimating) Risk
+    - Challenges:
+        1. Scope (what to be done)
+        2. budget
+        3. Resources
+        4. Technology
+        5. Delivery Date
+
+
+Measurement:
+    - important to be able to track progress and identify anomalies
+    - feedback --> linked to metrics, measures to track 
+    ex: McCabe Cyclomatic Complexity: produces untested test conditions to increase effectiveness
+    Conceptual level: establish measurement goals alligned with business needs
+    Operational level: Generate set of questions to help determine achievement goals
+    Quantative level: establish set of data to answer each question in quantative way
+
+    - reason for measurements:
+        1. target
+        2. planning
+        3. attention/focus
+        4. performance
+        5. imporovement tracking
+        6. decision
+
+Quality control
+    - conformity to requirements, standards
+    1. Design: requirements, specifications, design
+    2. Conformance: how well implementation follows design and result
+    - software: inspections, reviews, tests | in order to meet goal and improve ability to deliver
+    REASONS: 
+        - meet requirements
+        - feedback loops
+        - meansurements and feedback combined
+        - specifications
+
+    QC vs QA (assurance):
+        - set of activities designed to evaluate process
+    
+    Techniques:
+        Review: examined for comment or approval
+        Inspection: formal peer review with defined process to find defects
+
+Organizational Structures
+    - Process-Structured org (functional) | grouped by functions
+    - Product-Structured (functional)
+    - Project-Strucuted
+    - Matrix-Structured (both functional and project based structures)

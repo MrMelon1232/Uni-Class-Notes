@@ -1,0 +1,179 @@
+Requirement elicitation techniques
+
+    - definition:
+        Elicitation techniques is the root level of gathering information 
+        from the user in software engineering (SE)
+
+    - elicitation is a difficult task:
+        - unawareness of overall technical info and lack of computing knowledge
+        1. problem of understanding
+        2. problem of scope
+        3. problem of volatility
+         
+    Identifying stakeholders
+        - elicitation = cooperative learning
+        - proper selection of stakeholder based on:
+            - relevant position in org.
+            - role in making decisions
+            - type of knowledge / expertise
+            - personal interests, conflicts
+        - issues with getting info:
+            - distributed sources, conflicting viewpoints
+            - difficult access to key people & data
+            - different background
+            - internal politics, irrelevant details
+            (need good communication, trust, knowledge reformulation)
+    
+    Techniques
+        - Artifact driven elicitation: follows documentation to understand the system as is
+        - stakeholder-driven elicitation
+
+    Background study vs Data collection
+        - collect, read, synthesize documents about org, domain, system
+            vs
+        - gather undocumented facts and figures and complements background study
+        - useful for eliciting non-functional reqs
+
+    Questionnaires
+        - effective for quick acquiring sujective info and cheaply
+        - types:
+            - open-ended (good qualitative)
+            - close-endeds
+        - should be carefully prepared (multiple biases or unreliable info)
+            - select representative
+            - motivation for response
+            - unbias questions and unambiguous
+            - checked by 3rd party
+
+
+    Card sorts and repertory grids
+        - goal = acquire further info about concepts already elicited
+
+        Card sort: ask staekholders to partition a set of cards (each captures a concept)
+                    - group into subsets: (ask for shared property)
+        Repertory grid: ask stakeholders to characterize target concept w/ attributes/values ranges
+                    - concept-attribute grid
+        Conceptual laddering: stakeholders classify target concepts w/ class-subclass links
+
+        - These help find missing info of elicitation
+        - results may be surjective, irrelevant, inaccurate
+
+    Scenarios & storyboards:
+        goal: acquire or validate info from examples
+        
+        Storyboard: tell a story by a snapshots(sketch, sentence)
+                    - who, what, why
+                    - active (joint exploration) stakeholders contribute
+                    - passive (validation) stakeholders are told story
+                    provides:
+                        - early review of user interface
+                        - inexpensive
+                        - user friendly, informal
+                        - easy to create/modify
+
+                        - but can become obsolete quick (a lot of changes = a lot of maintenance)
+    
+        Scenarios: illustrate interaction among system components
+                    - explanation of system-as-is
+                    - exploration of system-to-be
+                    - text or diagram
+                    types:
+                        1. Positive (behavior system should cover)
+                        2. Negative (behavior system should exclude)
+                        3. Normal: as expected
+                        4. Abnormal: desired interaction sequence in exception
+                    Pros & cons:
+                        - concrete/counter examples
+                        - narrative style (stakeholders like this)
+                                    vs
+                        - partial
+                        - overspecification possible
+                        - irrelevant details possible
+                        - reqs implicit
+
+    Prototype & Mock-ups:  
+        goal: check req adequacy from user feedback
+
+        Prototype: quick implementation of some aspects
+            - Functional (func reqs), user interface(usability)
+        Mock-up: proto is thrown away
+
+        Pros & cons:
+            - proto of what final product will look like
+            - clarify reqs, elicit hidden ones, improve adequacy
+            - other uses: training, etc.
+                vs
+            - does not cover all aspects
+            - misleading, missing func, expectations too high
+            - inconsistencies w/ documentation and code
+    
+    Knowledge reuse
+        - goal: speed up elicitation 
+        Process:
+            1. Retrieve
+            2. Transpose
+            3. Validate, adapt, integrate
+        ex: instantiation, specialization, reformulation
+
+        - taxonomy trees (find req instance of class)
+        - RD meta-model(concepts and relationships of items)
+            - elicitation through traversal
+            - items acquired as instantiations
+            -  abstract domain(concepts, tasks, objectives, actors, reqs) --> multiple specializations
+            - specialization inheritance (limited loans --> used for other systems)
+
+            Pros & cons:
+                - reuse eases guidance and recudes elicitation effort
+                - inheritance, effective
+                    vs
+                - works if domain is close enough
+                - validation and integration efforts
+                - abstract domains hard to reuse
+
+    
+    Interviews
+        - primary technique for knowledge elicitation
+        - saves time
+        - weaker contact = individual less involved, speak less freely
+        Effectiveness: (utility x coverage of acquired info) / acquisition time
+        Types:
+            Structured: predetermined questions (more focussed)
+            Unstructured: free discussion (exploration)
+            ideal --> structured to Unstructured
+        
+            Pros & cons:
+                - may reveal info not from other techniques
+                - info on the fly (questions from another questions)
+                - inconsistencies between interviewers
+                - effectiveness relies on interviewer
+
+    Observations & ethnographic studies
+        - focus on task elicitation in system-as-is
+        - Passive observation: no interference with task performers
+        - active obeservation: opposite
+        - protocol analysis: task performers concurrently explain it
+        - ethnographic studies: attempt to discover emergent properties over a long period of time
+                                (about task performance, attitudes, reactions, gestures)
+        
+        Pros & cons:
+            - reveal tacit knowledge that would not emerge
+            - context of acquired info
+                vs
+            - slow & expensive
+            - potentially inaccurates
+            - interpretation problem
+            - focus on system-as-is
+
+    Group sessions:
+        - group workshops
+        - 2 types:
+            structured: defined roles, focussed
+            unstructured: brainstorming, no focus, idea presentation --> evaluation
+        
+        Pros & cons:
+            - less formal interactions than Interviews
+            - potentially wider exploration
+                vs
+            - group comp. critical
+            - risk of rambling, waste of time
+            - missing focus/structure 

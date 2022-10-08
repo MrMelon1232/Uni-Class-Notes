@@ -1,0 +1,192 @@
+Requirements Evaluation
+
+    Negotiation-based decision making:
+        1. identification & resolution of inconsistencies
+        2. identificaiton, assessment & resolution of system risks
+        3. Comparison of alternative options w/ selection
+        4. Requirements prioritization
+
+    Inconsistency Management
+        - frequent in RE
+        - inter-viewpoints: each stakeholders own focus/concerns
+        - intra-viewpoints: conflicting quality reqs
+        - must be detected and resolved:
+            - not too soon to allow further elicitation
+            - not too late to allow software dev
+        types:
+            - terminology clash: same concept w/ diff names
+            - designation clash: same name for diff concepts in diff statements (ex: user)
+            - structure clash: same concept structured diff in diff statements 
+                                ex: latest return date as time point (Fri. 5pm)
+                                                       or time interval (Friday) 
+
+            - Strong conflict: statements not satisfiable together
+            - Weak conflict: statments not satisfiable together under conditions (more frequent)
+        
+    Handling:
+        - handling clashes through glossary of terms
+        - weak/strong conflicts: more difficult, deeper causes 
+            - stakeholders personal objectives handled at root level + propagated to reqs level
+            - non-func concerns: exploration of tradeoffs
+
+    Managing conflicts
+        - overlap: reference to common terms/phenomena (ex: gathering constraints)
+        - Conflict detection
+            - informally
+            - using heuristics(sufficient for immediate, shor-term goal (not optimal/perfect)) on conflicting req categories  
+            - using conflict patterns: lightweight detection
+            - formally (theorem proving techniques)
+        - document conflicts
+            - for later resolution/analysis
+        - optimal resolution:
+            1. explore multiple candidate resolutions
+            2. compare, select/agree
+
+                generating candidate resolutions:
+                    - elicitation techniques (interviews, group sessions)
+                    - resolution tactics
+
+        
+        Conflict resolution tactics (transform statements or add new reqs):
+            1. avoid boundary condition (ex: keep copies of highly needed books unborrowable)
+            2. restore conflict statements 
+            3. weaken conflicting statements
+            4. drop lower-priority statements
+            5. specialize conflict source or target
+
+            Evaluation criteria for preferred resolution:
+                - contribution to critical non-func reqs
+                - contribution to resolution of other conflicts/risks
+
+
+    Risk analysis
+        - risk = uncertain factor -> loss of satisfac. of objective
+
+        Types:
+            1. Product related
+                - neg impact on func/non-func objectives of system
+                ex: failure deliver services or quality of service (safety, functionality)
+            2. Process related
+                - neg impact on dev. objectives
+                ex: delayed delivery, costs overrun
+
+        
+        Risk Management
+            - iterative as countermeasures can lead to new risks
+            - check specific risks, likelihood, countermeasures
+            - major cause of software failure if poor management
+
+            Identification:
+                - risk categories associated to reqs categories
+                - product related: reqs unsatisfaction in func/quality req categories
+                        ex: info inaccuracy, unavailability, unusability
+                - process related: req volatility, personnel shortfalls, dependencies on external sources
+
+                product-related risks:
+                    - review each component of system (how, why, consequences)
+                
+                Risk trees (look at C5_Tree):
+                    - failure node: independent failure event/condition
+                        ex keywords: no, more, less, before, after
+                    - AND/OR links: casual links through logical nodes
+                             child needs to occur for parent node to occur / only 1 child node needs to occur
+
+                Cut set of risk tree (look at C5_Tree_cut):
+                    - set of minimal AND combinations of RT leaf nodes
+                    - if node is OR-node --> combine with single node
+                                 AND-node --> becomes its own node
+                
+                Using elicitation techniques:
+                    1. Scenarios
+                    2. knowledge reuse
+                    3. group sessions
+
+
+            Risk assessment
+                - assess likelihood, severity, likelihood consequences
+                - qualatative assessment (comparison for each) | levels
+                    ex: can use a table (ease of use but limited conclusions)
+                - quantative assessment (numerical) | (finer grained but subjective)
+                - Risk exposure
+                    Exposure(r) = Σ Likelihood(c) x Severity(c)
+
+
+            Risk control
+                - reduce high-exposure risks through countermeasures
+
+                Exploring countermeasures:
+                    1. using elicitation techniques
+                    2. reuse known countermeasures
+                        ex: simulation --> poor performance
+                            prototyping, task analysis --> poor usability
+                            cost models --> unrealistic budgets/schedules
+                    3. risk reduction tactics (add new reqs)
+                        --> reduce risk likelihood 
+                        --> avoid risk
+                        --> reduce consequence likelihood
+                        --> avoid risk consequence
+                        --> mitigate risk consequence
+
+                selection:
+                    - contribution to critical non-func reqs
+                    - contribution to resolution of other risks
+                    - cost-effectiveness (risk reduction leverage) 
+                        RRL(r, cm) = (Exp(r) - Exp(r|cm)) / Cost (cm)
+                        where Exp(r): exposure of risk r
+                              Exp(r|cm): new exposure of r if countermeasures cm is selected
+                        We want HIGH RRL
+
+                Document risks:
+                    - conditions/events for occurence
+                    - estimated likelihood/severity (and of consequences)
+                    - causes/consequences
+                    - selected countermeasures
+            
+            DDP: quantitative risk management for RE
+                DDP = defect detection prevention
+                
+                Step 1: Elaborate impact matrix (look C5_impact)
+                    - risk-consequence table (prioritize risks by impact on objectives)
+                    Impact(r, obj) = estimated loss of satisfaction of obj by r
+                    Last line for each risk r:
+                        Criticality(r) = Likelihood(r) x Σ(Impact(r, obj) x Weight (obj))
+                    Last column for each obj:
+                        Loss(obj) Weight(obj) x Σ(Impact(r, obj) x likelihood(r)) 
+
+                Step 2: Elaborate effectiveness matrix (look C5_effectiv)
+                    - risk-countermeasure table (risk reduction by countermeasures)
+                    Reduction(cm, r) = estimated reduction of r if cm applied
+                    Last line for each r:
+                        combinedReduction(r) = 1 - pi (1 - Reduction(cm,r))
+                    Last column for each cm:
+                        overallEffect = Σ (Reduction(cm, r) x Criticality(r))
+
+                Step 3: Determine optimal balance
+                    risk reduction vs countermeasure cost
+
+            Evaluating alternative options 
+                - RE process raises alternatives (satisfy system obj, assignments/responsabilitiess, resolutions, etc.)
+                - must be negotiated/selected
+                - use qualitative or quantitative techniques
+                - weighted matrix:
+                    Score(opt, crit) = estimated score percetange of option on criterion (0 --> 1)
+                    Last line for reach opt:
+                    totalScore(opt) = Σ (Score(opt, crit) x Weight(crit))
+
+
+    Requirements prioritization
+        - depending on:
+            1. conflict resolution 
+            2. ressource limitations
+            3. incremental development
+            4. replanning
+        - for effectiveness:
+            1. by ordered level of prio
+            2. qualitative/relative levels
+            3. comparable reqs
+            4. reqs not mutually dependent 
+            5. agreed by key people
+        - Value-cost prio
+            1. estimate contribution of req to value
+            2. estimtate contribution of req to cost
+            3. value-cost diagram (shows which req fits which prio)

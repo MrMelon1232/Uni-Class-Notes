@@ -1,0 +1,42 @@
+Intro to security
+    - Security does not imply privacy 
+    - 100% security can't be achieved
+    - Systems are designed for functionality and not security
+        Therefore security is hard:
+            - wrong assumptions about adversary
+            - human dependancy
+            - human vs machine adversary
+    
+    Items involved:
+        1. software
+        2. hardware
+        3. networks
+    
+    Security vs Correctness
+        - correctness satisfies system specification   
+            reasonable input --> reasonable output
+        - security preserves system properties during an attack
+            unreasonable input --> not disastrous output ish
+        - Main diff: active interference from adversary
+
+    Solution developement is hard:
+        - proper threat model design
+        - capturing attack capabilities
+        - evaluation of security:
+            1. dev is bias
+            2. No single methodology (since multiple sections of system)
+            3. Identifying
+    
+    Privacy:
+        - Security features used for privacy violations
+        - Data --> money --> business
+        - Conflicts of interest: govt vs private
+        - No privacy consideration during system design
+
+    Threat model:
+        - look for in-scope and out-scope threats
+        - adversarial goals
+        - solution goals
+        - assumptions about adversary
+        - assumptions about environment/user
+        - assumptions vs limitations

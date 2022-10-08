@@ -1,0 +1,58 @@
+Stream Ciphers
+    Vernan Cipher (look at C3_vernan for full logic)
+        - define on alphabet A = {0,1}
+        - binary msg --> operated on by binary key string of same length --> producing ciphertext
+        - c = m XOR k, 1 <= i <= t
+        - can use any bit source as keystream (ex: music, picture, video file)
+        - for real security --> random & never repeated (on-time pad)
+
+    - One-time pad is unconditionally secure against a ciphertext-only attack
+        -> No matter how much time passes, chances of breaking cipher does not change
+        -> observing ciphertext provides no info
+        -> also provably secure (can be proven)
+    
+    Generating keystreams
+        - most stream ciphers substitute a keyed keystream for a random keystream
+        - use function that takes a key (seed) and produces unbounded bit stream
+            ex: hash(hash(hash(seed))) | keep hashing resulting hash seed
+        - if function is pseudo-random number generator --> passes standard tests for randomnes
+
+    Crytographically Secure
+        - computationally infeasible to predict next bit given a complete history of past bits(next-bit test)
+        - # of 1's and 0's should be equal (balanced)
+
+    Types of security
+        1. Unconditional security
+            - observing ciphertext provides no info
+        2. Computational security
+            - level of computation required to defeat > computational ressources of adversary
+
+    Pseudo-Random number generator
+        - deterministic function that takes a fixed-length key (seed) and produces unbounded bit stream
+            (same seed, same sequence)
+        - Cryptographically secure if:
+            1. Unpredictable (next-bit test)
+            2. balanced
+    RC4
+        - simple, byte-oriented and fast in s/w
+        - was trade secret, posted on internet
+        - variable-length key: 40-2048 bits
+    
+    ChaCha20 cipher --> not broken yet
+        - variant of Salsa20 to improve diffusion
+        - 256-bit key
+        - 96-bit nonce (random value used once sufficiently long)
+        - 32-bit block counter
+        
+        Encryption:
+            cipher_text = plain_text XOR chacha_stream(key, nonce, counter)
+
+        Decryption:
+            plain_text = cipher_text XOR chacha_stream(key, none, counter)
+
+    Entropy sources:
+        A physical source of information whose output either appears to be random in itself or by applying some filtering/distillation process
+        Ouput is used as input for RNG / PRNG
+        ex: hardware/software sources
+            sound/video input, disk drives
+            Linux (mouse, keyboard activities, Disk I/O, Interrupts)

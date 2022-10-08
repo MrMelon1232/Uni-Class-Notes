@@ -1,0 +1,129 @@
+Into to cryptography
+    - cryptography != security
+    - think about 3 perspectives:
+        1. defender pov
+        2. attacker pov
+        3. cost (attack/defend)
+    - What is threat model(assumption about system and environment)
+        ex: telephone banking PIN vs login password
+    - Security is arms race
+
+    Definition:
+        - study of math techniques related to aspects of info security
+          such as confidentiality, data integrity, entity authentication, data origin authentication
+        - One set of techniques for info security
+    
+    Goals:
+        1. Confidentiality 
+        2. integrity
+        3. Data origin authentication
+        4. Entity authentication
+        5. Non-repudiation (prevention of denying past actions/commitments)
+
+    
+    Crytology:
+        - cryptography + cryptanalysis = cryptology
+        - cryptanalysis = study of code breaking (breaking of crypto system)
+        - Good cryptographers know cryptanalysis (must know how systems are broken to create a secure one)
+
+    Models
+        1. Communication model
+        2. Attacker model
+            - passive vs active
+            - what ressources does attacker have
+            - what does attacker know about system
+            - what are assumptions
+
+    Encryptions
+        goals:
+            1. data confidentiality
+            2. protect a large amount of data with short secrets 
+            3. Make it difficult for those w/out secret key
+
+        Simple model:
+                           c    adversary
+            encyption ------ (unsecured channel) -----> decryption
+              E(m) = c                                      D(c) = m
+                | (m)                                         |
+            plaintext source                            destination
+        
+            - we want to hide key + plaintext
+            - d is easily derived from e but not vice versa
+            Public key encryption: deriving d from e is infeasible
+            Cipher = E & D
+
+    Terminologies:
+        plaintext: og msg
+        ciphertext: encoded msg
+        cipher: algorithm transforming plaintext to ciphertext
+        key: info used in cipher (known to sender/receiver)
+        encipher (encrypt): plaintext --> ciphertext
+        decipher (decrypt): ciphertext --> plaintext
+        substitution: each element is mapped into another
+        transposition: rearrangement of elements
+
+    kerckhoff's Principle
+        1. Security should depend only on the key
+            - don't assume that enemy won't know algorithm
+            - can capture machines, disassemble programs
+            - 2 expensive to invent new algo if its compromised
+        2. Security by obscurity doesn't work
+
+    
+    How to attack:
+        1. Cryptanalysis (search for weakness in algo)
+        2. Brute force (try all possible keys (N) avg N/2 trials)
+        3. Many others (malware, key/screenlogger, physical)
+
+        Attacks on encryption schemes
+            1. Ciphertext-only-attack - deduce the decryption key or plaintext
+            2. Known-plaintext attack - using quantity of plaintext and corresponding ciphertext
+            3. Chosen-plaintext attack - choose plaintext and is given ciphertext
+            4. Adaptive chosen-plaintext attack - chosen-plaintext attack depending on ciphertext received from previous requests
+            5. Chosen-ciphertext attack - select the ciphertext and is given plaintext
+            6. Adaptive chosen-ciphertext attack - chosen-ciphertext depending on plaintext received
+
+    Substitution ciphers
+        1. simple substitution
+            each symbol in plaintext is replaced by another symbol according to some fixed permutation
+            Let A be set of english characters
+            Key k(e=d) in K maps plaintext to ciphertext using characters in A
+            Key space is all possible mappings, |K| = 26! = 4*10^26
+
+    Brute force key search
+        Given ciphertext c, and the cipher used
+        For each key k in K
+            calculate m' = D(c)
+            Does m' look like a real message
+                Yes -> done!
+                No -> continue
+        Expect to try |K|/2 keys before correct match
+
+    Note: E is the most frequency letter and Z the least
+          guesses can be made based on relative letter frequencies
+
+    Shift/Caesar cipher
+        - Simple substitution cipher
+        - Each letter is replaced by another
+        For alphabet A, |A| = s
+            - e(m) = C = (m + k) mod s, 0 <= i <= s-1
+            - d(c) = (c - k) mod s
+            - Caesar cipher: k = 3 (shift by 3)
+
+        Congruence relation
+            - mod expresses same remainder for 2 argumemts
+            a =_ (triple =) b (mod n)
+            implies a mod n = b mod n
+            (n divides (a-b))
+    
+    Transposition cipher
+        - w/ fixed period t
+        - grouping of plaintext in blocks of t characters
+        - apply to each block a single permutation e on the numbers 1 to t
+        example:
+            t = 6, e = (6 4 1 3 5 2)
+            m = CAESAR
+            c = RSCEAA
+            d = (3 6 4 2 5 1)
+
+        - same letter frequencies (essentially rearrangement or order)

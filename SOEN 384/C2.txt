@@ -1,0 +1,62 @@
+Project Foundations
+
+Product (operational and system reqs) and Process (contractual agreements, development model) foundations 
+
+Requirement Engineering (RE)
+    - why, what, who
+    {SOFREQ, ASM, DOM} | = SysReq
+        SOFREQ = sofware req set
+        ASM = assumption
+        DOM = domain properties
+        SysReq is satisfied if all items are satisfied and consistent with each other
+
+    - developement:
+        1. Elicitation (understanding)
+        2. Analysis (user needs/expectations --> technical reqs)
+        3. Allocations
+        4. Specification (documentation of reqs)
+        5. Verification 
+        6. Negotiation
+        7. acceptance
+    - CCB = change control board (decideds for inclusion of new changes)
+
+Development process models
+    1. Code-and-fix problems (bad)
+        - code then fix
+    2. Waterfall
+        - rigid and formal ; good for embedded and safety-critical systems
+        - cons: activities isolated = late changes --> lot of rework
+    3. Prototype
+    4. Spiral Model
+    5. Incremental dev
+    6. Test-Driven dev
+    7. Agile
+
+Project Scope
+    Product foundations (operational and system reqs, design constraints) determine scope 
+    Let:
+        R = ressources available
+        T = dev time (hours)
+        Effort(t) = effort (person-hours) to realize features (f ∈ features )
+        ∑effort(f) / (R x T) | ∑effort(f) < (R x T)
+        Project Scope < 100% is acceptable
+        Overscoping:
+            ∑effort(f) > (R x T)
+
+        Baseline:
+            ∑effort(f) > (R x T) where f ∈ B
+            Requirements baseline = itemized set of features intended to be delivered for specific version
+            Defining one:
+                assign priority (business value, effort, risk)
+
+    budget:
+        Cost =  ∑effort(f) x salary(+overhead)
+
+    Determining effort:
+        - Find duration of activity then determine work effort with # of people
+        example 1: a person working full time (8 hours) in a small program for 1 day
+            Duration of activity = 1 workday
+            Work effort = 8 person-hours
+        example 2: 5 persons working full time for 6 weeks, 35 hours of work per week
+            Duration of the activity = 6 weeks
+            Work effort = (5 persons * 6 weeks *  35 hours/week) = 1050 person-hours
