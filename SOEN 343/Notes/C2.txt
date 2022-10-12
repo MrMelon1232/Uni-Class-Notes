@@ -1,0 +1,20 @@
+Unified Process (UP)
+
+    - goal: enable production of high quality software that meet needs within time/budget
+    - iterative development
+        - short fixed-length mini-projects (move tasks next iteration if deadline 2 hard)
+        - each iteration outcome --> tested, integrated, exec system
+        - each cycle ==> reqs, analysis, design, implementation and testing
+    
+    - embraces changes (change of reqs, rapid feedback, modify/adapt)
+    - UP recommends 2-6 weeks duration per iteration
+
+    Phases:
+        1. Inception (define scope)
+        2. Elaboration (plan, specify features, baselines architecture)
+        3. Construction (build product)
+        4. Transition (product --> end user community)
+
+        - Each phase has risk mitigation and milestone
+        - milestone review helps ensure we are on right track
+        - iteration walk through all disciplines

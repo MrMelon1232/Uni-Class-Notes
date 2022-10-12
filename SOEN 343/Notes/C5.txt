@@ -1,0 +1,31 @@
+OOP concepts
+
+    1. Encapsulation
+        - hide privated details from outside world (data, func, etc)
+        - we just have the interface
+
+    2. Abstraction
+        - seperate interface from implementation
+        - only view easy interface for user
+        - black-box system (no inside view)
+
+    3. inheritance
+        - hierarchies (reuse of code)
+
+    4. Polymorphism
+        - objects within same hierarchy are handled same way
+        - same method performs different functions based on role/class
+
+    Implementations
+        1. Eager init: instance object created in class declaration itself
+            - simple to implement
+            - resource wastage as object always created
+            - no exception handling
+        2. Lazy init: private instance only accessible by get method
+            - creation of object only when instance called
+            - possible exception handling
+            - we check null condition everytime... (if null then init)
+        3. Thread safe init: similar to lazy
+            - lazy init possible
+            - thread safe
+            - getInstance is synchronized = slow down performance (only 1 thread accessed at a time)

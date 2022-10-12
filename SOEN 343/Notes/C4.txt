@@ -1,0 +1,39 @@
+System architecture
+
+    - logical (LA): define packages w/ defined software classes inside
+        layers: grouping of classes, packages, subsystems w/ cohesive part of major aspect of system
+            addresses a few issues:
+                - reusability
+                - source code changes hard w/ coupled components
+                - recurrent problem to many system
+                - hard to divide work
+            common layers: (important to maintain separation)
+                - UI
+                - application (workflow, process)
+                - domain (business, model)
+                - business infrastructure
+                - technical services (security, frameworks)
+                - foundation (core/base services)
+            positive:
+                - separation of concerns
+                - helps dev
+                - reusability
+                - complexity encapsulated and decomposable (ease of understanding)
+            negative:
+                - scalability hard
+                - maintainability hard
+                - interdependance between some layers
+                - no parallel processing possible
+
+            So => use for small apps, quick to build apps, for research
+            Model View Separation:
+                - support cohesive model
+                - separate dev of model and user inteface layers
+                - allows easy views' changes
+                - minimizes impact of reqs changes
+                - easy porting
+        ex: C4_layered_archi, C4_layersxOP
+    
+    Software architecture: large scale organization, motivations, constraints, patterns, connections
+
+    

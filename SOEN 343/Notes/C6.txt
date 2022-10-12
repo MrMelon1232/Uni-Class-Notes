@@ -1,0 +1,24 @@
+Design concepts and principles
+
+    principles:
+        - no tunnel vision
+        - no reinvention
+        - uniformity and integration
+        - structured for changes
+        - assessed for quality during changes
+        - reviewed to minimize conceptual errors
+    
+    Concepts:   
+        - Abstraction
+        - Refinement 
+        - Modularity (compartmentalization of data/func)
+        - Procedure (algo)
+        - Hiding (controlled interaces)
+    
+    Independence:
+        - cohesion: degree to which module performs only one function
+        - coupling: degree to which module is connected to other modules
+     
+    We wamt to hide information:
+        - Encapsulation = high quality design
+        - limit global impact and side effects

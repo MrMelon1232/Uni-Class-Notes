@@ -1,0 +1,121 @@
+UML Diagrams 
+    - unified modeling language 
+    - standard object management (OO design)
+
+    Categories:
+        1. Structural (class, component, deployment, object, etc)
+        2. Behavioral (activity, state machine, use case)
+        3. Interaction (communication, sequence, interaction overview)
+
+    Use case diagrams:
+        - during reqs elicitation
+        - actors: role, type of user of system
+        - use cases: sequence of interactions
+        - set of all use cases
+
+        - useful for:
+            1. determining reqs
+            2. communicating w/ clients
+            3. generating test cases
+
+    Class diagrams: (look at C3_class) | (look at class_diagram_notation slide for more info)
+        - overview of classs and its relationships
+        - good overall architecture description
+        - shows what interacts but not how
+        - attributes and operations/methods
+        - instances:
+            ex: tarif:TariffSchedule
+                where tarif is the class of the instance TariffSchedule
+
+        Notation:
+            class: name, attributes, methods
+            Private: -
+            Public: +
+            Protected: #
+            Package: ~
+            Static: underlined
+            Abstract: italics
+                ex:
+                    + number : int {readOnly}
+                    value : Bool = true
+                    collection: Burger [*]
+                    methodWithParam(parm1: String, parm2: Float) : returnValue {exception "name"}
+
+
+            Links: (see C3_class_ex)
+                - Association:
+                    - straight line(binary) or arrow (a --> b | a knows about b but not vice versa)
+                - aggregation: 0
+                    - one class belongs to a collection
+                    - empty diamond on side of collection
+                - composition:
+                    - strong form of aggregation
+                    - components cannot exist w/o aggregate
+                    - solid diamond on side of collection
+                - inheritance:
+                    - indicate 1 class/superclass relationships
+                    - triangle pointing to superclass
+                - dependency:
+                    - dotted line arrow
+
+            Multiplicity:
+                0..1 | 0..* | 1 | 1..*
+                always read class then multiplicity (towards end of arrow/other class)
+
+        Qualifiers
+            - can specify which subitem of the main item has the relationships (add name next to it)
+
+
+    Object diagrams (look at C3_object)
+        - instances of class diagrams
+        - interactions(sequence diagram), message passing(collaborative diagram), operations(deployment diagram)
+        Format:
+            1. instance name: Class name
+            2. Attributes and values
+            ex:
+                m1: menu window
+                ---------------
+                visible=true
+                position=(10,23)
+                size=160
+            can add msg type and association type
+
+    Component diagram (look at C3_component)
+        - relationships of components of system
+        - components communicate using interfaces
+
+    Package diagrams (look at C3_package)
+        - collection of related UML elements
+        Note:
+            - rectangles w/ small tabs at top
+            - dotted arrow = dependencies
+
+    Deployment diagram (look at C3_deployment)
+        - runtime config of hardware nodes and its software components
+
+    Interaction diagram
+        - for interactions between objects
+
+    Sequence diagrams: (look at C3_sequence)
+        - interaction diagram that models scenario
+        - specifies msg passing between objects
+        - for uses cases (may write pseudocode)
+        - look for participants/message(method call)
+        creation: arrow w/ new written above
+        deletion: X at bottom object lifeline (vertical line)
+
+        Selection and loops:
+            boxed around sequence for loop/ alt
+            - look at (C3_loops) for info and visual
+            - could code but:
+                - easier for non-coders
+                - easier as a team
+                - visual and above level of code
+
+    Communication diagram
+        - dynamic behavior of use case
+    Activity diagram
+        - describes flow of control of target system
+        - states, swim lanes, branch, fork, start/end
+    State transition diagrams
+        - similar to activity w/ diff notations/usage
