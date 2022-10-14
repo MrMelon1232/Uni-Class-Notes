@@ -1,0 +1,74 @@
+Project Planning techniques 1
+    - reqs = product specifications
+    - plan = process specifications
+
+    Project plan:
+        - not done properly(not enough time, lack of skills/tools, lack of info, bad understanding of project)
+        - documentation is important because: assess info (cost, schedule, resource estimate), for stakeholders
+        project plan good when:
+            1. formal contract agreement between acquirer/supplier
+            2. large, complex projects internal to org
+
+        Sequence for planning:
+            1. develop scope documents
+            2. plan ressources
+            3. plan costs
+        
+        Initial activities:
+            - develop a work breakdown structure (WBS)
+            - develop work packages for the tasks in the WBS
+            - we want to find project activities in order to balance all activities, budget, schedule, etc.(project management)
+                inputs:
+                    - project management plan
+                    - scope baseline (WBS, deliverables, constraints/assumption)
+                    - enterprise environmental factors (culture/policies)
+                    - organizational process assets
+        After scope basedlined:
+            - we get activity list after decomposing work packages from WBS
+            - helps build schedule and management
+
+                outputs:
+                    - activity list (links activity to work package)
+                        = contains activity ID, WBS ID, name, descrip.
+                    - activities attributeså
+                    - milestone list
+                    - pm plan updates
+                    - change requests
+        
+    
+    Work Breakdown structure (WBS):
+        - hierarchical decomposition of work activities
+        - done after scope and reqs defined
+        - tree or indented list
+        - decisions tied to WBS (for risks, activities, costs)
+        - based on project deliverables (top -> down)
+        - result to what is required to reach it
+        - each task = single owner
+        ex: see C5_wbs
+
+        Tools used to define activities
+            - decomposition (breaking down deliverables into smaller pieces(until work packages))
+            - meetings
+            - expert judgement
+        
+        Activity attributes:
+            - predecessor
+            - successor
+            - logical relationships
+                1. finish to start (most common | start next once predecessor is done)
+                2. finish to finish
+                3. start to finish
+                4. start to start
+            - leads and lags (leads and delays)
+            - imposed dates (no control)
+            - ressouce reqs
+            - location
+            - level of effort (discrete (can be done by 1 person), apportioned)
+                ex: discrete: technician will take 1 hour for assembly
+                    apportioned: qa
+            - constraints/assumptions
+        
+        Milestone list
+            - based on schedule management plan and scope
+            - ID, activity ID, event, name, date
+            - also called zero-duration events (no duration/critical pts)

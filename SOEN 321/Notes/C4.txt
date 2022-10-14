@@ -66,15 +66,15 @@ Block Ciphers
             - bit errors in a single ciphertext affect decipherment of that block only
 
             Weakness:
-                - Does not hide data patterns
-                - Malicious substition oc ciphertext is possible
+                - Does not hide data patterns (not full scramble ex: image ecnrypted w/ ECB can still be seen (its pattern))
+                - Malicious substition of ciphertext is possible
                 - Do not use for:
                     - Multi-block messages (requires ind. blocks for ciphering)
                     - keys are reused for more than a single block
         
         Counter mode (CTR) (see C4_CTR)
-            - CTR different for each block
-            - IV/nonce value used w/ counter for uniqueness
+            - CTR different for each block but same key
+            - IV/nonce value used w/ counter for uniqueness (concat/add/XOR) 
             - Software and hardware efficiency: different blocks can be encrypted in parallel
             - Preprocessing: encryption part can be done offline, when msg known we do XOR
             - Random access: decryption of a block can be done in random order, useful for hard-disk encryption

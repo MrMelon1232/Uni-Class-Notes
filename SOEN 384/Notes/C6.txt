@@ -1,0 +1,67 @@
+Project Planning techniques 2
+
+    - schedule overview:
+        - monitor project performance, stay up-to-date
+
+        Critical Path Method (CPM) (see C6_CPM)
+            - calculates early, late start and finish date for each activity
+            - calculating float to determine activities w/ least scheduling flexibility
+                - means how long project can be delayed w/out impacting project schedule
+            - how long takes to complete project based on activities
+                - so helps for planning
+                - helps for min length time reqs / which step critical
+
+            - shorter time = sub-critical / non-critical path
+
+            Steps:
+                1. list all activities
+                2. plot all activities as network diagram
+        
+        Activity-on-node networks (look at C6_node)
+            - nodes that represent activities w/ transitions
+            - shows ealiest and latest times
+            - format shown in C6_node
+            Note:
+                when convergence occurs:
+                    wait for longest activity ends
+                    early start depends on longest activity
+                - perform early from start to finish
+                    1. Early start: 1 iteration after previous activity (ex: if prev = 5 then current = 6)
+                    2. Early finish: early start + duration - 1
+                - perform late from start to end
+                    - if convergence: take earlier start
+                    - start (last one) take early = late
+                    - backtrack (similar as doing early)
+                    1. Late finish: 1 iteration before next activity(ex: if next is 12 then current is 11)
+                    2. Late start: late finish - duration + 1
+                
+            flexibility(float): early finish - late finish (or start)
+                |see C6_float|
+                in C6_node: A, B, C, D, E and F have 0 float 
+                Total: look at how many months/time that does not contain any activities (use early)
+                       sum of free
+                Free: delay possible for an activity so that it doesn't affect the next one
+                      compare finish of current to early of next
+                no float for critical path
+                Usage:
+                    can figure out if we can push some activities due to shared ressources being 
+                    or delay for reducing ressources (intensive)
+
+            WBS vs node
+                - wbs no sequencing (scheduling)
+                - node no hierarchical (aggregation)
+        
+        Resource optimization techniques:
+            - ensure demand <= availability
+            Leveling: moving resources from 1 activity to another   
+                      non-crit extend in duration
+            Smoothing: delaying activity timing
+
+        Schedule compression: reduce duration w/out changing scope
+
+            Crashing: bring additional ressources to complete 2 tasks simutaneously
+            Fast Tracking: reworks task to be done simutaneously (increase risk)
+        
+        Gantt Charts (look at C6_gantt)
+            - plans tasks, distributes estimated efforts
+            - plot graph

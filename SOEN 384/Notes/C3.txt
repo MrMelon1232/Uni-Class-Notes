@@ -61,7 +61,7 @@ Estimation Technique
                         - larger projects less productive than smaller ones
 
                     
-                    CoCoMo IIL:
+                    CoCoMo II:
                         Dev stages:
                             1. Application Composition (external features designed)
                             2. Early design (fundamental structure designed)

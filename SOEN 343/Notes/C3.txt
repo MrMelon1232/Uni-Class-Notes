@@ -45,7 +45,7 @@ UML Diagrams
             Links: (see C3_class_ex)
                 - Association:
                     - straight line(binary) or arrow (a --> b | a knows about b but not vice versa)
-                - aggregation: 0
+                - aggregation: 
                     - one class belongs to a collection
                     - empty diamond on side of collection
                 - composition:
