@@ -95,7 +95,7 @@ Block Ciphers
                 - key = mapping between plaintext and ciphertext
                 - adds confusion (makes relationship between key and ciphertext as complex as possible)
             
-            Transpotiion cipher
+            Transposition cipher
                 - with fixed period t, groups plaintext into block of t chars.
                 - applyed to each block a single permutation e on the numbers 1 to t
                 - add diffusion (spreading out bits so redundancy in plaintext is spread over ciphertext)

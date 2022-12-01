@@ -1,0 +1,36 @@
+Classical object-oriented metrics
+
+    From OOD (object oriented design), we can measure:
+        - coupling
+        - inheritance
+        - cohesion
+        - application size
+
+    Class oriented metrics:
+        - Lack of cohesion of methods (LOCM)
+            - between data and methods
+            - for each var: # of func using it / total # of func
+              find total percentage by doing 1 - avg * 100
+        - Coupling between object classes (CBO)
+            - couples with other classes
+            - higher = changes can be detrimental as it affects multiple places
+                       also harder to comprehend and test
+        - Depth of inheritance tree (DIT)
+            - length from note to the root (if parent has 1 child then depth = 2) (treat as position)
+            - > 6 = 2 much testing effort
+            - < 2 = bad use of OO
+        - Number of children (NOC)
+            - large # =  a lot of maintenance
+        - Weighted methods per class (WMC)
+            - # of methonds in class
+            - large # = small reuse
+            - used to check effort needed for re-write/modify
+        - Response for a class (RFC)
+            - measure of # of methods that can be executed (including methods called by methods in class)
+            - note that methods are only counted once even when called at multiple areas
+            - larger the number = greater complexity
+            - higher value = higher level understanding req for tester
+
+    
+    Assessing quality of design based on single metric can lead to errors and anti-oatterns (bad habits patterns)
+    Solution: Keep refactoring

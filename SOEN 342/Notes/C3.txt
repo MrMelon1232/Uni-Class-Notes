@@ -1,6 +1,6 @@
 Fundamentals of Requirement Engineering II
 
-    RE Process (can intertwine, overlap, backtrap, iterative):
+    RE Process (can intertwine, overlap, backtrack, iterative):
         1. domain understanding:
             - studying system-as-is (business organization, applicaiton domain)
             - identifying system stakeholders

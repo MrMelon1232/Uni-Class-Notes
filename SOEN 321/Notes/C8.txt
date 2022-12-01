@@ -1,0 +1,75 @@
+Domain Fronting
+
+    definition:
+        - critical for open web
+        - obfuscates (hides) the true domain of an HTTPS connection
+        domain of https = how website is read and data transfered
+        enables:
+            - users to connect to blocked service (via DNS, IP, deep packet inspection)
+            - malware to exfiltrate(export) data to unwanted destination
+
+    Tor browser:
+        - used for:
+            1. privacy (do not use website that reveals like fb)
+            2. anti-censorship
+            3. protect publisher privacy
+        - Tor hidden services allows client and publisher to hide privacy
+    
+    Can be used for both following:
+    Anti-censorship vs malware covert channel
+
+    Some definitions:
+        - Content Distribution Network (CDN)
+            = geographically distributed network of proxy servers and data centers used for high availability and performance
+            TLDR: servers are distributed in order to provide faster transmissions
+            ex: if I want to open aws web, my request will be sent to nearest CDN point instead of origin 
+        CDN "Origin Pull" see C8_cdnOG
+            - PoP server pulls web page data and other elements from origin server
+            - In "Origin Push", dev pushes directly to PoP servers
+
+
+        - DNS, HTTP, HTTPS
+            = domain name system: naming system used to identify pc reachable through internet
+            = http: application protocol for transmitted data
+            = https: secure communication over computer network
+        - TLS server name indication (SNI)
+            TLS extension for a client to indicate which hostname it is attempting to connect
+            Multiple HTTPS sites hosted from same IP address w/ diff certs
+        
+
+    How does it work:
+        different layers:
+            - front domain: used at plaintext layers visible to the censor (DNS, TLS SNI)
+            - destination: HTTP layer, not visible to censor, but visible to frontend server
+
+        CDN and fronting:
+            - essential for domain fronting
+            - CDN'S frontend server (edge server --> allowed.example) on receiving request from ressource not cached forwards request to domain found in host header (origin server)
+
+    Meek Plugin (see C8_meek)
+        - blocking-resistant pluggagle transport for Tor
+        Steps:
+            1. encodes datas stream as sequence of HTTPS requests and responses
+            2. wraps HTTP traffic in TLS connection to server hosted in same CDN cloud
+            3. CDN server decrypts TLS traffic, identifies hostname in HTTP header and redirects traffic to reflection server
+            4. Reflection server reconstructs original Tor traffic from stream and sends to Tor network which routes to true destination
+
+        - everything between meek client and meek server is an opaque data transport to Tor
+        - host receives no traffic
+        - This is adopted by signal, Tor, Psiphon
+
+        Weaknesses:
+            - censor is not crazy (front domain to too important to block)
+            - need friendly CDNs
+            - traffic analysis (packet length, connection, duration)
+            - cost of CDN bandwidth
+            - TLS interceptors can cause trouble
+    
+    Malicious use 
+
+        "Safe" data exfiltration: (see C8_mal)
+            - backdoor used Tor hidden services and Meek Plugin to provide secure, discrete remote acess
+            - full remote control
+            - Modified registry to enable RDP
+        
+        Essentially, security toold are double-edged

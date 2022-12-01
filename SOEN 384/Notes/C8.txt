@@ -1,0 +1,28 @@
+Measuring and Controlling Work Processes part 2
+
+    Earned-value analysis
+        - analyze past to control future
+        - answers 2 questions:
+            1. did we get what we want for what we spent ?
+            2. is cost less or equal to estimate
+    
+    Monitor and Control Processes
+        - monitor inputs (plan, team, status)
+        - control plan to modify
+
+    Measurement process
+        - continual improvement --> change --> evaluation requires measurement
+        - measurements lead to action
+
+    For sucess:
+        CPI,SPI not exceed +- 15%
+
+    Software Measurement Plan (SMP)
+        - document measure plan by:
+            1. identifying quality objectives
+            2. Presents the plan 
+        Steps:
+            1. Purpose
+            2. Organizational Description
+                - affected by scope
+            3. References

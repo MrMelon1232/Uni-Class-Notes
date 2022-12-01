@@ -1,0 +1,21 @@
+Visibility
+
+    - ability of an object to see
+    - receiver must be visible to sender
+    - 4 common ways:
+        1. Attribute
+            B is attribute of A
+            permanent visibility 
+        2. Parameter
+            B is parameter of method A
+            temporary visibility
+        3. Local
+            B is local object in method A
+            temporary visibility
+        4. Global 
+            B is global to A
+            permanent visibility 
+    
+    Design Class Diagram
+        - similar to class diagrams but with more info (info type, methods)
+        ex: C10_dcd

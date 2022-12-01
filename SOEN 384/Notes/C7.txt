@@ -1,0 +1,31 @@
+Measuring and Controllig Work Processes part 1
+
+    - planning is the most important process
+    - we monitor cost and schedule
+
+    Tracking indicators for schedule and cost:
+        - Planned Value (PV): effort planned for task in cost (budget is a PV)
+        - Earned Value (EV): % of PV of the work actually completed by a given pt in time
+                        so if task is 70% done then we have earned 70% * EV of cost
+        - Actual Cost (AC or ACWP): total costs of of completed tasks at a given pt in time
+
+    Look at C7_EVPV
+    if EV > PV --> ahead of schedule (doesnt mean its good) (behind for opposite)
+    if AC > PV and EV --> over budget (under for opposite)
+
+    Calculations:
+
+        1. Cost Variance (CV)
+            EV - AC
+        2. Schedule Variance (SV)
+            EV - PV
+        3. Cost Performance Index (CPI)
+            EV / AC
+            we want a value close to 1.0 (over = cost higher than planned | lower = less)
+        
+        4. Schedule Performance Index (SPI)
+            EV / PV
+            rate of progress
+            value 1.0 --> efficient | > 1 --> favorable | < 1 --> not favorable
+    
+    example: C7_EX

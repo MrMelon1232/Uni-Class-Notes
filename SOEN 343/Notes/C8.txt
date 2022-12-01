@@ -1,0 +1,34 @@
+Grasp: Designing objects with responsability
+
+    Responsabilities and Methods
+        types:
+            1. Doing
+            2. Knowing
+    
+    Patterns:
+
+        Creator:
+            - which class to create object (depend on relationship)
+            - if it contains, aggregates, records or initiates
+
+        Information Expert
+            - solves issues using expertise
+            - may sacrifice cohesion and low coupling
+
+        Controller:
+            - non-user interface object that defines method for the system operation
+        
+        Indirection:
+            - assign responsability of 2 objects to intermediate
+            - supports low coupling
+
+        Low Coupling:
+            - we want lower dependancy between classes
+
+        High cohesion:
+            - focus and highly related elements
+            - done with low coupling
+
+        Related patterns:
+            1. Protected variation
+            2. 

@@ -190,3 +190,4 @@ Requirements Evaluation
             1. estimate contribution of req to value
             2. estimtate contribution of req to cost
             3. value-cost diagram (shows which req fits which prio)
+            (high value ex: location, time, medium: conflic res, low: language)

@@ -1,0 +1,4 @@
+Object Design examples with Grasp
+
+    when designing, find pre and post conditions
+    look at slides (essentially a bunch of examples)

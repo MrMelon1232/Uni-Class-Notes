@@ -1,0 +1,95 @@
+Software measurement and controlling part 1
+
+    definition:
+        - measurement is the process by which numbers/symbols ae assigned attributes
+        - crucial to progress
+        - helps understand
+        - allows control
+        - encourages improvement
+
+        Some words:
+            - theory (abstract)
+            - proposition (abstract)
+            - hypothesis (empirical)
+            - entities (empirical)
+            - attributes
+    
+    Levels of measurement
+        - Various scales exists
+
+        1. Nominal Scale 
+            - most simple
+            - sorting elements into categories depending on attribute
+            - categories must be:
+                1. Jointly exhaustive
+                2. Mutually exclusive
+            ex: programming language (c++, python, Java, other)
+
+        2. Ordinal Scale
+            - categories are ranked
+            - categories are transitive (ex: If a > b | b > c then a > c)
+            - same reqs as nominal
+            ex: degree-classification (high, medium, low)
+
+        3. Interval Scale
+            - exact difference between measurement points
+            - 0 does not mean absence of measurement (0 exists)
+            - only +/- no multiplication/division (so 60 degrees is not 2x hotter than 30 degrees)
+            ex: temperature
+
+        4. Ratio Scale
+            - highest level of measurement and most powerful (rank 1-4 with 1 being lowest)
+            - when absolute 0 can be located in interval scale
+            - multiplication/division applied
+    
+        Note that the higher levels scale possesses all properties of their lower ones
+        so they can be reduced to lower but not vice versa
+
+        - Measure
+        - Metric: relates measure in some way
+        - Indicator: a conclusion drawn
+        - Proportion: like a ratio but numerator is involved in denominator
+
+
+    Measuring Software
+        - software quality definition is not compatible with manufacturing
+        - software quality depends on multiple things (stakeholders, type of system/users, etc)
+
+        Measuring and Controlling:
+            Measuring is concerned with feedback:
+                1. Collecting
+                2. Validating
+                3. Analyzing 
+            Controlling is concerned with applying corrective action when actual != planned
+                - work products (quality, quantity)
+                - development process (schedule, budget, ressoures, risk)
+        
+        We measure:
+            1. Product (size, functionality offered, cost, quality attributes)
+            2. Process 
+            3. People (controversial as people dont want to be numbers)
+        
+        Software metrics:
+            Control:
+                - process
+                - support process management
+                - 3 kinds of control metrics:
+                    1. time taken
+                    2. ressources required
+                    3. number of occurences
+            Predictor:
+                - product
+                - predict characteristics of software
+                - find if rdy to release or needed changes
+
+
+        Since we can't measure external quality attributes such as maintainability, understandability, usability,
+        we measure internal attributes (size, complexity, etc.) and assume that these are related to the ones we are concerned with
+        can use internal attributes as predictors
+
+        Collecting Data
+            - get useful info w/out being a burden
+            - be as un-intrusive as possible
+            - try to make data collection automatic
+
+        - Software analytics aim to identify issues that are interest to devs

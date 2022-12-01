@@ -1,0 +1,52 @@
+Requirement Specification part 1
+
+    - Precise def of all features of system (objectives, concepts, domains, assumptions, etc)
+    - reasoning involved as well
+    - documentation of these in easy to understand format (results in Req Doc. (RD))
+
+    Free documentation in unrestricted natural language(NL)
+        - easy, free (expressiveness and communication) but prone to errors + flaws (ambiguities)
+
+    Disciplined documentation in structured NL
+        - identify reader, what is being written and why
+        - define concepts for ease of understanding
+        - short sentences
+        - use of verbs shall and should
+        Fit criterion: quantifying statements
+
+    Diagram notations (decision tables)
+        - matrix representation for logic decision
+        - decisions and their resulting actions
+
+        Decision tables (see C6_table)
+            - for complex logic
+            steps:
+                1. list conditions relevant to decision
+                2. actions that result from given set of conditions
+                    (indifferent condition: value does not affect which action taken from 2+ rules)
+                3. rules: which actions are to be followed depending on conditions
+                4. simplify tables due to indifferent condition
+                    (see example exercise for simplification)
+            - for testing we want to have the most coverage possible
+
+            Pros vs Cons:
+                - simple representation
+                - effective combinations and coverage for testing
+                - business --> decision table easy
+                    vs
+                - more inputs = more complex (since 2^n)
+        
+        Decision Trees (see C6_tree)
+            - used when each set of input system behavior is different
+            - good for choosing actions/conditions and simple rules
+            - benefits:
+                - graphical = ease of understanding
+                - efficient
+                - modifiable
+                - reavealing
+                - complementary
+            - Steps:
+                1. start at root (left to right)
+                2. add branches with decision (yes/no, etc.)
+                3. legend (for conditions)
+        

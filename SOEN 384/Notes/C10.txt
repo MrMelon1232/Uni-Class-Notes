@@ -1,0 +1,64 @@
+Software measurement and controlling part 2
+
+    Product Metrics
+        - used to quantify internal attributes of system
+        - 2 categories:
+            1. Dynamic
+                measurements made of a program in execution
+                ex: bug reports, processing
+            2. Static
+                measurements made of representations of systems such as diagram, program, doc
+                ex: size, complexity
+
+    Issues with LOC (lines of code)
+        note: KLOC = thousands of lines of code
+        - different readings depending on languages or devs
+        - In order to calculate, we need to wait for system implementation
+        Physical LOC: one line starting with first character and ends with return or EOF (end of line)
+        Logical LOC (LLOC): given # of statements (example for-statement and print-statement)
+        examples:
+            C10_physical
+            C10_logical
+    
+    McCabe Cyclomatic Complexity
+        - code coverage (paths)
+        - produces untested test conditiions to improve test effectiveness
+        - measures complexity and paths to predict testing effort, defects, maintenance costs
+        - small programs can be calculated manually, bigger needs tools
+
+    
+    Control-Flow Graph
+        see C10_cfg for example and review
+        note: Fan-in = # of edges going in nodes 
+              Fan-out = # of edges going out of node
+
+        if G is control flowgraph of P with "e" edges and "n" nodes
+        CC(G) = e - n + 2 where CC(P) = number of linearly independant paths in G
+        CC(G) = d + 1 where d = # of decisions
+
+        - Lower = better
+        1-10 (cost/effort low, testability high, structured and well written code)
+        10-20 (medium)
+        20-40 (low and bad)
+        >40 (bad)
+
+        Control structures (loop, conditions, etc) see C10_control
+        exercise: C10_complexity_ex
+    
+    McCabe Essential Complexity
+        - measures how much unstructured logic exists
+        - we want to reduce to simplest structure possible
+        - best value EC(G) = 1
+        - lower = better (more structured)
+        see C10_essential for more information
+
+    Note: increase in complexity is proportional to complexity of new code
+    ex: if adding 4 decisions --> complexity increases by 4
+    as such, can be desastrous for EC since disrupts current structure
+
+    Some definitions:
+        depth of conditioning nesting: how deep is statement nested
+        length of identifiers (higher = more info)
+        fog index: avg length of words and sentences in doc (more = difficult to understand)
+                   calculated using avg sentence length (words/sentence) + percentage of long words
+                   business (20-25) | technical(30-35) | more = 2 complex

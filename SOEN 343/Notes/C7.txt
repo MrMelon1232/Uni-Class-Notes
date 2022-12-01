@@ -1,0 +1,34 @@
+System Sequence diagrams
+
+    UC specifies function-ality
+    UC scenario is a time-ordered series of function calls invoked by actor
+    Key tasks:
+        - identify functions in UC scenario
+        - translate them to UML 
+        - draw sequence diagrams
+    
+    Definition:
+        - diagram that models scenario executing in system
+        - for use cases
+        - participants and message in horizontal axes (vertical being time)
+
+        notation for actors see C7_actors
+    
+
+    Notations:
+        
+        Messages:
+            1. Synchronous message (arrow filled) caller waits for receiver b4 sending other
+            2. Asynchronous message (arrow not filled --> just naked) opposite of synchronous
+            3. can add return message going back to box (instantiation of objet)
+            4. Message can create participant
+                ex: [obj 1]
+                       |
+                       |
+                      [ ] ---- <<create>> ----> [obj 2]
+                                                   |
+                                                   |
+            5. Destroy --> delete participant (add big X at end of arrow)
+            6. Can send to own self (reflexive)
+
+            see for example C7_seq_ex
