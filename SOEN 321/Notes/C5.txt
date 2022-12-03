@@ -1,0 +1,28 @@
+Hash and MAC functions
+
+- how do you know if data has been altered ?
+
+    Use Hash Functions
+        - aka message digests
+        - input: string M called preimage
+        - H(M) = string called hash-value
+               -> compact, representative image of the input
+            - properties:
+                1. Compression
+                2. Ease of computation
+
+        Collisions:
+            H(M) is many-to-one function
+            - t-bit inputs and n-bit outputs | t >> n
+            - if H random then 2^(t-n) inputs would map to each output
+            - 2 random inputs --> sasme output (collision) w/ probability 2^-n
+            - collisions difficult to find computationally
+            see C5_class
+        
+        Desirable properties
+            - we want compression and ease of computation
+            - pre-image resistance (impossible to determine an input based on given output) | 1-way property
+            - second pre-image resistance (impossible to find 2nd input that leads to same output) (need 2^n inputs to guess) | weak collision resistance
+            - collision resistance (impossible to find any 2 distinct inputs that hash to same output) | strong collision resistance
+                            note: difference here is that both inputs are not fixed
+
