@@ -68,7 +68,7 @@ Domain Fronting
     Malicious use 
 
         "Safe" data exfiltration: (see C8_mal)
-            - backdoor used Tor hidden services and Meek Plugin to provide secure, discrete remote acess
+            - backdoor used Tor hidden services and Meek Plugin to provide secure, discrete remote access
             - full remote control
             - Modified registry to enable RDP
         

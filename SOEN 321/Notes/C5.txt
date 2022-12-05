@@ -26,3 +26,58 @@ Hash and MAC functions
             - collision resistance (impossible to find any 2 distinct inputs that hash to same output) | strong collision resistance
                             note: difference here is that both inputs are not fixed
 
+        Structure:
+            - iterated hash functions
+            - iterated compression of input (output reused as input) until we get final output
+            - process successive fixed-size blocks of input
+        
+        Application of hash Functions
+            - data integrity
+            - confirmation of knowledge
+            - cryptographically secure pseudo-random bit sequences
+                - func designed to be random of input
+                - still need good source of random bits for seed (avoid simple values like pid, system time)
+        
+        Pre-computation attacks
+            - pre-compute hash values under given inputs and store fraction of them to optimize future searches
+            - aka rainbow table (more efficient hash-chain attacks) | called space-time tradeoff
+            ex: passwords
+            - vairable-length msgs dont have this problem since input space large
+            - sys admins use "salts" -> random value S prepended to p prior to calculation: H(S||p)
+                --> attacker needs table for each salt value
+        
+        Message authentication code (MAC)
+            - encryption alone != data integrity
+            - B decrypts msg w/ shared key k does not mean that it came from A (reordering possible or plaintext no meaning)
+            - MAC = keyed hash function w/ string M and key K as input
+                - we want to add authentication to hash-value using key (so we want to know key)
+
+                plaintext: Ek2(M || hk1(M))
+                ciphertext: Ek2(M) || hk1(Ek2(M))
+                MAC does not provide non-repudiation (can't validate author identity )
+            - don't use MDC for MAC since, attacker can use compression function f of MDC to find MAC w/out key k
+                (called length-extension attack, MAC prevents this)
+
+
+            Hash-based MAC (HMAC)
+                HMAC(x) = h(k||p1|| h(k||p2||x))
+                        k is key K padded with zeroes on left (so length = 1 block for compression func)
+                        p1 and p2 are distinct strings
+                H is any cryptograhic hash function (common: SHA256, SHA-3)
+                SHA-1 has collisions, even though it has HMAC can be secure w/out hash func being non collision resistant
+                SHA-3 immune to length extension attacks --> no need for type nested construction
+
+            Password-based key derivation function (PBKDF2)
+                - derive key from password that is resistant (increase cost of attacks)
+                DK = PBKDF2(PRF, P, S, c, dkLen)
+                    PRF = MAC/hash func
+                    P = password
+                    S = salt value
+                    C = # of iter
+                    dkLen = req key len
+                some usage: WPA, WinZip,iOS
+
+                Weaknesses: 
+                    1. can be implemented w/ little ram
+                    2. ASIC (application-specific integrated circuit + gpu can be used in attacks)
+                Alternatives: bcrypt (req more ram), scrypt (more expensive), Argon2 (new and best for now)

@@ -48,7 +48,7 @@ Stream Ciphers
             cipher_text = plain_text XOR chacha_stream(key, nonce, counter)
 
         Decryption:
-            plain_text = cipher_text XOR chacha_stream(key, none, counter)
+            plain_text = cipher_text XOR chacha_stream(key, nonce, counter)
 
     Entropy sources:
         A physical source of information whose output either appears to be random in itself or by applying some filtering/distillation process

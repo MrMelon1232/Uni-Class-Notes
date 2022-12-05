@@ -1,0 +1,149 @@
+Public Key Cryptography
+
+    definition:
+        - aka asymmetric cryptography (complement symmetric (single key))
+        - slower but more secure (key has mathematical properties and generation is expensive)
+        - you split key (private and public)
+
+        Private key: kd 
+        Public key: ke 
+        scenario:
+            1. Alice generates kd only known to her
+            2. Alice generated ke known to her, Bob and Oscar since its published
+            3. Knowing ke does not give kd
+        
+        2 basic applications:
+            1. Encryption = let any1 send you a msg that only you can read
+            2. Signatures = let any1 verify msg came from you
+        
+        - Public key cryptography relies on trapdoor one-way functions (can invert if u find some secret information)
+
+    Encryption
+        Scenario:
+            1. Alice encrypts M using ke of Bob, producing C
+            2. Bob decrypts C using kd of Bob (only kd can decrypt it ke)
+        - impossible to find decryption key(private) from encryption key(public)
+        Note: all public keys are vulnerable to MITM attacks
+            (network attacker subs diff public keys in between)
+    
+    Signatures
+        - integrity and authentication
+        Scenario:
+            1. Alice sign M using kd Alice producing Sig Alice (M) (can also sign H(M))
+            2. Bob verifies Sig Alice (M) using ke Alice
+    
+    Typical usage:
+        - since its expensive, we encrypt session key in which that key encrypts msg
+        - create hash H(M) and sign it
+
+    Advantages:
+        - only private key secret
+        - # of keys reqs is less (symmetric needs around 0(n^2) (n(n-1)/2 keys), this only O(n) (2n keys))
+    
+    Disadvantages:
+        - slower encryption
+        - key size larger
+        - no public key proven to be secure
+
+
+    Diffie-Hellman Key Exchange
+        - D-H key exchange 
+        - enables 2 parties to jointly establish a shared key
+        weakness: no authentication
+        - easy for parties to compute since its based on exponentiation in a finite field
+        - security relies on difficulty of computing discrete logarithms
+    
+        Scenario:
+            1. Alice and Bob agree on:
+                - p -> large prime integer
+                - g -> primitive root mod p (for every # between 1 and p-1 ; there is x = g^k mod p)
+                - both p and g are public
+            2. Session key calculated (see C6_dh)
+                - both parties calculate KAB = g^(ab) mod p
+            3. In order for Eve to obtain session key,
+                - solve either logarithm problem (g^a mod p or g^b mod p)
+                - could also figure out by public key (no clear way)
+        
+        MITM
+            - attacker can intercept, modify, insert/delete msg of network (during calculation of key for example)
+            - similar attacks possible on RSA & other PKC protocols
+        
+        Security:
+            DLP(find a in g^a mod p) vs DHP (find g^(ab) mod p) problem
+            - both hard 
+
+    
+    RSA Encryption
+        - 1st method
+        - based on intractability (hard to control) of integer factorization problem
+
+        Encryption:
+            - large integers for key size (1024, 2048, etc.)
+            - 1024-bit RSA equivalent to 80-bit symmetric key
+            - we factor large numbers = security
+            we have:
+                n = modulus
+                e = encryption exponent
+                d = decryption exponent
+            Scenario
+                1. Bob want to send Alice msg
+                2. Bob must obtain Alice public key (e,n)
+                3. Represent msg M into integer m in interval [0, n-1]
+                4. Compute c = m^e mod n
+                5. Send c to Alice
+                6. For decryption, m = c^d mod n
+
+        Digital Signatures
+            - data string which associates msg with og entity
+            - secret signing key and public verification key
+            - provides:
+                - authentication
+                - data integrity
+                - non-repudiation
+            w/ appendix: req msg as input in verif algo
+                         hash of msg is signed
+                         less susceptible to existential forgery attacks
+            w/ msg recovery: knowledge of msg is not req for verification
+                             msg signed can be recovered from signature
+                             RSA, Rabin
+
+            Certificates
+                - set of public keys and identifcation info
+                - helps obtain the proper public key (one we know belongs to person who claimed it) over network
+                - signed by other source (included in cert) | cert authority (CA)
+                - root is self-signed (makes sure that owner has private key)
+                    - if not --> key can be modified
+                - helps add extra verification especially for MITM attacks
+
+
+        SSL recent attack
+            Apple goto fail:
+                - apple devices affected for over a year
+                - 2 consecutive goto fail statements (other gets executed no matter what)
+                - so signature passes even if it shouldnt 
+            
+            Heartbleed:
+                - bug in OpenSSL
+                - any1 on internet can read memory of system protected by OpenSSL softwares
+                - secret keys are compromised
+            
+            FREAK:
+                - susceptible to MITM
+                - vulnerabilities in OpenSSL allows to downgrade strong RSA to export grade RSA
+                - Scenario:
+                    1. client asks for RSA ciphersuite
+                    2. MITM changes to export RSA
+                    3. Server responds and client accepts cause of bug
+                    4. Attacker can now get decryption key and see any plaintext
+
+                Export Grade
+                    - ensure NSA has ability to access comms but still good for commercial use
+                    - export control gone but export cipher still there
+                    - most modern clients will use strong crypto and wont offer export even if supported
+
+        Entropy
+            if key is DES-58 bit --> then its 2^58
+            but if only 28bits of entropy --> then its 2^28
+            if its 1000 bits of entropy --> then its 2^56
+            extending bit key does not change entropy
+

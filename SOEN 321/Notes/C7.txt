@@ -1,0 +1,84 @@
+Human factors in security
+
+    3 topics:
+        1. Social engineering attacks
+        2. Usability evaluation for security solutions
+        3. Deception as a defense
+
+    - many security errors attributed to users
+    - solutions might be secure but not usable = bad
+         = since can't rely on user to operate
+         = users might make mistakes or prio smth else
+    - other factors re: usability and security
+        - safe defaults
+        - automated and in background (users still have "control")
+        - feedback from software with guidance (ease of use and reliable | avoid errors)
+    
+    Usability analysis methadologies
+        1. Expert review (walkthrough from expert)
+            Walkthrough:
+                1. inspection
+                2. must define tasks for evaluation and expectations
+            Pros:
+                - cheap and fast feedback
+                - more info since expert
+            Cons:
+                - expert could be bad (miss usability or focus non-issues)
+                - not a normal user
+
+        2. User study(selected users or limited world/lab)
+            Methadology:
+                1. Get personal data (ethics review)
+                2. Recruit users (target)
+                3. Pre-study (questionaire, experience, get info for valid user)
+                4. Pay users
+                5. Perform actual study (compare, assign, iterate)
+                6. Post-study (test hypothesis, stats signif)
+                7. Post-study questionaire (important, random and consistent)
+            Pros:
+                - relies on some users (no need to find experts)
+                - reveal learnability and issues
+            Cons:
+                - representativeness (background, exp, etc)
+                - ecological validity (lab != real world)
+                - time consuming
+                - limited # of tasks/scenarios can be tested
+                - compensation ? expensive
+
+        3. Field study (users in real-world)
+            Pros:
+                - real world
+                - can do tests, measure data
+                - strong representative
+                - ecologically valid (since real world)
+                - larger and longer tests
+            Cons:
+                - req full done system
+                - hard, expensive
+
+        PGP user study
+            - 1999
+            - generate key pairs, integrate w/ email, publish public key
+            Encryption:
+                1. generate key
+                2. encrypt data using key
+                3. encrypt key using receiver public key
+            Decryption:
+                1. decrypt key using receiver private key
+                2. decrypt data using key
+
+            Expected standard (what its expected to do):
+                - privacy through encryption
+                - authentication through signatures
+                - need to publish key, generate, etc.
+        
+        Effective security reqs diff usability standard
+            - so we design for security 
+        
+        Problematic properties of security
+            1. unmotivated user property (security is 2nd goal, optimal only)
+            2. abstraction property (policies are abstract: example: choose "strong" pass)
+            3. lack of feedback property (state and warning)
+            4. barn door property (once door is open, we can't guarantee anything)
+            5. weakest link property (1 mistake can be fatal)
+        
