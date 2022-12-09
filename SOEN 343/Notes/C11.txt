@@ -1,0 +1,31 @@
+Behavioral model
+
+    DFD: process specification w/ input and output but no detail of processes using OO/pseudocode
+    Petri: special form of state diagrams showing concurrency
+
+    Activity diagram:
+        - similar to state diagrams (one activity after another from start to finish)
+        - we have events (triggers), state (condition), transitions
+    Statechart diagrams:
+        - same thing, life cycle of object
+        - state transition --> can be decomposed into subdiagrams
+        - use case state --> legal order of external events
+        - reminder [guard(condition)]name/action and we can have states within another state (substates)
+        
+        Classes benefitting: State-independant(same response to all events) and dependant(diff response to events/states) objects
+        ex: dependent --> systems, windows
+
+    Petri Net
+        - 2 types of nodes:
+            1. places (circles/like states)
+            2. transitions(bars)
+        - we have arcs(arrows) and tokens(dots) contained in places (could have 0...inf)
+        - node is rdy to fire if there is at least 1 token for input
+        properties:
+            1. sequential (one at a time, 2 can't go b4 1)
+            2. Synchronization (transition only enabled after both token got input)
+            3. Merging (2 --> | --> 1)
+            4. concurrency (multiple process execution concurrently)
+            5. Conflict (a transition is disabled if another one got fired first if both occur same time)
+        
+

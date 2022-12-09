@@ -1,0 +1,35 @@
+Design Patterns
+    - helps solve problems (reuse, inheritance, coupling)
+    - problems related to third-party
+    - pattern = idea to solve issue of class (anti-pattern is bad design)
+
+    Categories:
+        1. Creational (create objects)
+        2. Structural (integrate existing code)
+        3. Behavioral (Manage variations in behavior)
+    
+    Adapter(Structural)
+        - adapt interface to another class to allow diff interfaces to work together
+        - have adapter class, promotes reusability of system, high cohesion
+        - similar to facade (wraps subsystems)
+        - applies GRAP interfaces and polymorphism
+    
+    Facade(Structural)
+        - unified interfaces responsible for collaborating with other interfaces (make a new interface at higher level)
+        - hides complexity w/ references to other objects/classes
+    
+    Factory(Creational)
+        - assign object creation to an entity for better cohesion, hide complexity, seperation
+        - related to singleton
+    
+    Strategy(Behavioral)
+        - design for variation but related algorithms (we have 1 common interface for seperate class)
+    
+    Composite(Structural)
+        - treat structure of objects the same as non-composite (use interface)
+        - class contains group of its own objects, hides group behind single object
+        - used with Strategy and command
+
+    Observer (Behavioral)
+        - on event, publisher publishes to subscribers
+        - ex: sale(publisher) on change publishes to its subscribers (UI for example to display info)

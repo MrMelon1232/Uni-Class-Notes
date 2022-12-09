@@ -1,0 +1,4 @@
+Software Quality
+
+    quality of design: reqs, specs, design
+    quality of conformance: implementation
