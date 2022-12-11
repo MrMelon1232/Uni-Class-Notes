@@ -2,3 +2,40 @@ Software Quality
 
     quality of design: reqs, specs, design
     quality of conformance: implementation
+    - creates useful product that can measured by creator and users
+    McCall's quality factor model
+        1. Product operation
+            - Correctness (meet reqs)
+            - Reliability
+            - Efficiency
+            - Integrity (ease of use)
+            - Usability
+        2. Product revision
+            - Maintainability
+            - Flexibility
+            - Testability
+        3. Product transition
+            - portability
+            - reusability
+            - interoperability (interactions)
+        
+    - effective software process --> infrastructure that produces high quality product
+    - umbrella, software techniques and management contributes, quality control and assurance
+    - useful product --> delivres content, func, features that users want
+
+    Costs:
+        1. Prevention (planning, reviews, test, training)
+        2. Internal failure (rework, repair)
+        3. External failure (return and replacement, complaints, warranty, help support)
+        - costs more from 1-3 w/ 1 being lowest
+
+
+
+Interface design
+
+    process:
+        1. use, scenario dev
+        2. interface structure design
+        3. interface standards design
+        4. interface design prototyping
+        5. interface evaluation
