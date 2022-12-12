@@ -1,0 +1,94 @@
+Requirement Evolution
+    - study and management of process making changes to software over time(dev, maintenance, re-eng)
+    Revisions: correct and improve version
+    variant: multi-product version
+
+    Prepare for change:
+        - Identify likely changes, assess likelihood, document
+        - sort similar items together or same level
+        Analysis:
+            - for highest stability level: group features w/ contradiction, extension or variant
+            - intentional & conceptual more stable than operational/factual
+            - func meeting key obj more stable than non-func
+    
+    Traceability management (TM)
+        - traceable if: we know where, what, why, how
+        - identify, doc, retrieve rationale and impact of RD items
+        - goal:
+            1. assess impact
+            2. easily propagate changes (among RD and between RD items)
+        - use taxonomy
+            - inter-version(revision, variant)
+            - intra-version(derivation, use)
+        Steps:
+            1. define policies
+                - find balance for cost and benefit
+                - inputs: sizem dist, turnover, lifetime, timing, etc.
+                - outputL scope, granularitym accuracy, 
+            2. Establishing links
+                - consider issues:
+                    1. granularity (ressemblance)
+                    2. richness
+                    3. accuracy
+                    4. overhead
+            3. expoiting links:
+                - evolution support (dependancy)
+                - rationale analysis (derivation)
+                - coverage analysis (derivation links)
+            4. maintaining links:
+                - upgrades
+        
+        Techniques:
+            - Cross referencing
+                - any granularity level
+                - lightweight
+                - single (lexical ref)
+                - hidden traceability info
+            - Traceability matrix
+                - forward/backward nav
+                - simple analysis
+                - bad for large graphs
+            - Traceability list
+                - bad for backward nav
+            - Feature diagram
+                - variant link type (the multi-products)
+                - represents large # of variants
+            - Traceability DB
+                - store graph in DB
+                - scaleable, generic
+                - tool support
+                - manual customization needed(can be hard)
+                - no structure
+            - Spec-based traceability management
+                - built-in links w/ consistent rules
+            - Traceability link generator
+                - shortcut
+                - widely applicable
+                - purely lexical
+                - could miss or inaccurate links
+            Consistency checker:
+                - tool support
+                - applicable to distributed docs
+                - generic
+
+    Change control
+        - pre-cond: anticipation and traceability management
+        - formality depends on importance of changes, type of project, app domain
+        Steps:
+            1. Initiation
+                - wishlist of changes wanted (in change request)
+                - spec-form and periodicity
+            2. Evaluation & prio
+                - review board checks
+                - cost/value assessment
+                - outcome = agreed status for changes
+            3. Consolidation
+                - perform approved changes
+    
+    Runtime speec monitoring
+        - final check
+        - RE time: identify specs to be monitored and have a spec monitor
+        - Dev time: dev according to spec
+        - system runtime: monitor, reconciler
+        ex: identify unstable/unrealistic assumption, derive monitor detecting, design implement and alternative route then monitor event
+        

@@ -1,0 +1,88 @@
+Requirements Quality Assurance (Validation)
+
+    - system testing, QA should understand reqs
+    - complements req evaluation phase (more accurate analysis)
+    
+    QA Tasks:
+        1. Find errors and flaws in RD (validation, verification, checks)
+        2. Report defects, analyze cause, fix them
+
+        This results in:
+            - consolidated RD
+            - acceptance test data, prototype
+            - dev plan
+            - project contract
+
+    Inspection and review
+        - ind. plan, ind. review, meeting review, RD consolidation
+        - can have check-list based (issues, defect type, RD parts) or process based (roles, procedure,)
+        - walkthrough = internal | more structured = external review, proper meetings, reports
+        - may not reveal subtle errors
+
+        Guidelines:
+            - inspection is accurate, constructive (no offensive/opinion)
+            - inspector is not an author, diff backgrounds
+        
+        Checklists:
+            - Defect-driven (omission, contradictions, inadequacies, ambiguities, unmeasureable, noise, etc.)
+            - Quality-specific (NFR categories)
+            - Domain-specific
+            - language based (could be for diagram specific, language used, )
+        
+        Pros & consolidation: 
+            - experienced --> better than code inspection
+            - wide applicability
+            - burden, cost of inspection
+            - might miss details
+
+        Queries on specification database
+            - specs maintained in reqs database
+            - DB engine can be generated from meta-spec language
+            - queries capture checks for structural consistency
+        
+        Validation by specification animation
+            - check req adequacy and completeness
+            Approaches:
+                1. show concrete interaction scenarios in action
+                2. Use spec animation tool (simulate sys behavior, visualize and evaluate)
+                    - Define scope
+                    - Produce executable model
+                        ex: compile specs into state 
+                    - run simulation
+            Pros & cons:
+                - best way to check adequacy
+                - supp stakeholder involvement
+                - can animate counter-examples
+                - replay
+                - coverage not guaranteed
+                - formal spec needed
+        
+        Formal checks:
+            - language checks (syntax, typing, static semantics, circularity (last 2 are vars))
+            - consistency/completeness check
+            - property verification
+                1. Model checking
+                    - if behavioral model satisfies req, domain property or assumption
+                    - check reachability, safety(always hold), liveness(will hold)
+                    - we can build reach graph, recursive search, bfs
+                    Pros & cons:
+                        - automated checks
+                        - flaws cannot be missed
+                        - counter-example(can reveal errors)
+                        - trace visualization
+                        - popular
+                            vs
+                        - unusable for large systems (loss accuracy/completeness)
+                        - counter-example can be complex
+
+                2. Theorem proving
+                    - show logical consequences of specs and inconsistencies
+                    - interactive
+                    Pros & cons:
+                        - soundness & completeness of formal system
+                        - shows inconsistent specs, inadequate consequences
+                        - large systems
+                        - fail proofs can reveal issues
+                            vs
+                        - hard to use
+                        - no counter-examples

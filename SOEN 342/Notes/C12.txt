@@ -1,0 +1,8 @@
+Ressource Description Framework (RDF)
+
+    - describes data by defining relationships between objects
+    - data integration from multiple sources
+    - built around Web standards (XML, URL)
+    dev strategy:
+        - domain model linked to code (not like UML)
+        - Schemas used at runtime 

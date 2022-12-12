@@ -1,0 +1,60 @@
+Formal Specification part 1 | see C9_summary 
+
+    Pros:
+        - used to complement NL (since ambiguous, assumptions, etc.)
+        - helps find errors
+        - good for critical systems (security, safety, etc.)
+        - formalization of RD items 
+        - we get higher precision for interpretation, statement, automation of checks
+    Cons:
+        - limited express power
+        - hard to write/read
+
+    Formal methods:
+        - Formal specification 
+        - specification analysis and proof
+        - transformational development
+        - program verification
+
+        Not mainstream:
+            - hard for scaling
+            - no benefit for user interfaces and interactions
+            - no "time to market" reduction (market changes)
+            - other methods solve the same issues and also less expensive
+            - risk > cost
+        - Although costs go down overall, specification cost goes up
+
+        Techniques:
+            - algebraic approach: operation and their relationship via axioms
+            - model-based approach: state model and change of system state
+
+        Logic-based
+            Propositional logic:
+                - and, or, arrows, etc w/ truth values
+                - reminder of inference logic  
+            
+            First order predicate logic:
+                - for all and for some
+                - documenting interpretations --> essential for communication, non-ambiguity, adequacy
+
+            First order specification languages:
+                - variables, states
+                - specification errors: contradiction, ambiguity, redundacy
+                - automated derivation theorems good for:
+                    1. adequacy checking
+                    2. consistency checking
+        
+        History-based
+            - system histories in temporal logic (TL) as sequence of states
+            - diff time/hist structure = diff TL
+            - reminder: empty = future, full = past, square(always in the ...) and diamond (for some time in the ...), empty circle (in the next state)
+            - use computation tree logic (CTL) for branching TL
+        
+        State-based
+            - state of system at specific time (Z-spec)
+            - pre and cost condition | invariant = always true
+            - simple, powerful, amenable (checking consistency, etc.)
+            - limited expressive power
+            
+
+

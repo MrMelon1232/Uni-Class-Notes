@@ -1,0 +1,14 @@
+Use case
+
+    - func reqs analysis and reqs
+    - we have actor, name, trigger, input/output
+    - we have initiator and participating actor(supporting(helps complete uc) and offstage)
+
+Requirements Specification Documentation for user stories
+
+    - description template (usually: "as a ... i want ... so that ...)
+    - personas: fictional chars created based on research to represent users
+    - NFR:
+        - no clear concepts in scrum (can be acceptance tests, user stories, etc.)
+    - need to include effort estimation (hours, story pts, etc.) + priority
+    - burntdown chart: overall progression of project

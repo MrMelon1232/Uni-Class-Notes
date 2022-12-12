@@ -1,0 +1,38 @@
+Requirement Specification part 2
+
+    - use diagrams for --> visual, ease communication of idea
+
+    Context diagram:
+        - system components and interfaces
+        - for system scope
+        - first DFD
+    Entity-relationship diagrams:
+        - conceptual structures
+        - think of regular class diagram lmao
+        - multiplicity can capture reqs/domain properties
+        - specialization = inherited class
+    
+    SADT diagrams:
+        - activities and data
+        - actigram (related activities through data)
+            - input left to output right
+            - up = controlling data, south = processor
+        - datagram (relates data through control)
+            - producing activity left to consuming activity right
+            - up = validation activity, south = ressources
+        - as such, data in actigram should appear in datagram and vice versa for activities
+
+    Dataflow diagram (see C7_dfd)
+        - information flaws
+        - system ops linked by data (more simple and cheaper than actigram)
+        - operations transforms data
+        - transformation as annotation or DFD
+    
+    Decomposition: process of representing system of DFD
+    balancing: representation of DFD iss accurate in next
+    Level 0 diagram = overall system w/ major processes
+    
+    Use case diagrams (see C7_uc)
+        - for system operations
+        - <<include>>: specify suboperations
+        - <<extend>> + precondition: specify variant operation in exception
