@@ -1,0 +1,42 @@
+Boxplot (short summary)
+    - describes distribution of a continuous variable(s) by plotting 5-num summary(min, lower quart, median, etc)
+    - can display outliers (outside range of +/- 1.5*(IQR) where IQR = upper quartile - lower quartile)
+    - notch --> if 2 boxes dont overlap = medians differ
+
+Inpections and code reviews
+    - structued reading of artifacts --> imp QA technique
+    - can detect errors
+    Process:
+        - more formal from 1 to 3
+        1. walk-through
+            - gives understanding of contents of analysed artifacts to participants
+            - no specific technique and applied to all
+        2. Peer review
+            - find defects and comment on style
+            - artefact review done by colleague
+            Leader preparation:
+                - determine which sections w/ author
+                - select team members and distribute doc
+                - schedule sessions
+        3. Technical review
+            - indiv checking, group discussion and decision
+            - roles depending on type of artefacts
+            - diff reading techniques, usually checklist-based
+        4. inspection 
+            - indiv and grp checking using diff source/standards
+            - roles: author(questions, correct minor issues after), inspection leader, inspector, scribe
+            - planning --> kick off(overview) --> indiv checking --> logging meeting(final review) --> edit/follow up(change requests)
+        
+        Reading techniques:
+            1. Checklist-based
+            2. usage-based 
+            3. defect-based
+            4. perspective-reading
+
+        Review report defects:
+            - can be identified by:
+                1. extremely short review, no defects and approval only
+                2. short report, no action items
+                3. no follow-up to action items and no follow-up activities
+    
+        
