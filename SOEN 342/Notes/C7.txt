@@ -29,7 +29,7 @@ Requirement Specification part 2
         - transformation as annotation or DFD
     
     Decomposition: process of representing system of DFD
-    balancing: representation of DFD iss accurate in next
+    balancing: representation of DFD is accurate in next
     Level 0 diagram = overall system w/ major processes
     
     Use case diagrams (see C7_uc)

@@ -1,8 +1,25 @@
 Ressource Description Framework (RDF)
-
+    
+    - graph-based data model used in Web 3.0 (semantic Web)
     - describes data by defining relationships between objects
     - data integration from multiple sources
     - built around Web standards (XML, URL)
+    - can be queried
     dev strategy:
         - domain model linked to code (not like UML)
         - Schemas used at runtime 
+    - helps connect data (example book info, wikipedia) by merging (need matching URIs)
+    RDF triples
+        - labelled connection between 2 ressources
+        s,p,o --> subject, property, object |IRIs
+        - URIs make the merge possible | grounds RDF into Web (Universal Ressource Identifier)
+    
+    RDF Schema (RDFS)
+        - use common vocab to merge (since we cant merge w/ non-matching URIs)
+        - type information to restrict s,p,o (domain and range)
+        - organize items in hierarchy (taxonomy) for relation 
+        
+        RDFS solves issues
+            - provides language for writing vocab, type info, taxonomy
+            - RDF can read RDFS but maybe prod. diff results | RDFS is RDF
+            - everything in RDF is a ressource | RDFS defines ressources and classes

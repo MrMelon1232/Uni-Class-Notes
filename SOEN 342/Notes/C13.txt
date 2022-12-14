@@ -1,0 +1,65 @@
+Conceptual modeling
+
+    Use-Case model: for uc, sequence, activity and state diagrams
+    
+    Domain model: 
+        - class diagrams
+        - can be considered visual dictionary of abstractions, domain vocab, information content of domain
+        - model contains no methods (class diagram w/ simple attributes/data)
+        - representation of real world conceptual classes
+        - use noun phrase (NP) identification for concepts/entities
+        - specification/description concept instead of overloading w/ attributes
+            ex: ProductSpecification(description, price, itemID)
+
+Testing activities
+    - aims to identify and reveal erros, level up quality, error prevention (indirect error), req tests efficiently
+
+    Strategies:
+        - incremental testing
+            1. bottom-up
+                - easy but late scope
+            2. top-down
+                - early entire program tests
+                - hard to prep stubs and analyze results
+            3. BFS (horizontal)
+            4. DFS (vertical)
+            - Note: use stubs (dummy module) and drivers for testing (top-down)
+            - therefore, need stubs and numerous testing for same program
+
+        - big bang testing (entire system)
+            - when program small
+    
+    Black box testing
+        - ignores internal, focus on output
+        - evaluate compliance of a system or component
+        - output correctness, documentation, availability, reliability, etc.
+        - Equivalent class (EC) partitioning --> helps increase efficiency and improve coverage of errors
+        - EC = input var produces same output results
+        E ach valid/invalid EC included in at least 1 test case 
+        D efinition of test cases done seperattely for valid/invalid ECs
+        I n defining test case for valid ECs, we try to cover as many as new EC
+        I n defining invalid ECs, assign 1 test case to each new invalid ECs
+        T est cases are added as long as there are uncovered ECs
+        Pros & cons:
+            - majority of testing classes
+            - fewer ressources
+                vs
+            - aggregation of errors produce right response, prevent error detection
+            - no control line coverage
+            - no test for coding quality/standards
+
+    White box testing
+        - testing that takes into account the internal mechanism of system/component
+        - verify program statement/comment | tests operations, code, module 
+        - check test cases for path coverage and line coverage (code lines | every line executed)
+        - line coverage --> flow chart and graph used
+        Pros & cons:
+            - software correctness
+            - line coverage follow up
+            - check code quality and standards
+                vs 
+            - more ressources than black box
+            - no test for response time, reliability, durability, etc.
+    
+    CC: high = untestable
+        
