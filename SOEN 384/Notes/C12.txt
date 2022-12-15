@@ -5,7 +5,7 @@ Boxplot (short summary)
 
 Inpections and code reviews
     - structued reading of artifacts --> imp QA technique
-    - can detect errors
+    - can detect errors and help communicate ideas clearly (better understanding)
     Process:
         - more formal from 1 to 3
         1. walk-through
@@ -26,6 +26,13 @@ Inpections and code reviews
             - indiv and grp checking using diff source/standards
             - roles: author(questions, correct minor issues after), inspection leader, inspector, scribe
             - planning --> kick off(overview) --> indiv checking --> logging meeting(final review) --> edit/follow up(change requests)
+            guidelines:
+                - constructive discussion
+                - staying on track
+                - no solution discussion
+                - end debates and shift them to another forum
+                - document discussions
+                - max 2 hours
         
         Reading techniques:
             1. Checklist-based
@@ -38,5 +45,23 @@ Inpections and code reviews
                 1. extremely short review, no defects and approval only
                 2. short report, no action items
                 3. no follow-up to action items and no follow-up activities
+        
+        Effectiveness and efficiency
+            - 1/3 of defects found by reviews
+            - may vary
+            - 1 person-hour for reqs defect | 2 for design | 3 for code
+            - diff defects found compared to tests
+            - V&V methods better than single
+            - reviews can be applied in early dev phases
+            - can find exact area of error 
+        
+        Automation:
+            - crucial include review in quality control
+            - diff aspects can be automated:
+                1. material handling (file format, version)
+                2. comment handling
+                3. support for process
+                4. interfaces
+            ex: RevAger useful for logging
     
         

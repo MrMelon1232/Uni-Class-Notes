@@ -1,0 +1,58 @@
+Managing changes
+
+    Software configuration management(SCM)
+        - idenfity config of system at diff points in time for controlling changes and system integrity/maintainability
+        - life cycle process benefiting management, dev, maintenance, QA activities, customers 
+        activities:
+            1. version control
+            2. system building
+            3. change management
+            4. release management
+    
+    Change management:
+        - part of software quality management
+        - analyze costs/benefits of changes then approve
+        - depends on product and tool support vary
+        - bug reports/new reqs = change request 
+            - look for costs, benefits, consequences, release
+        - no need for formal process over time
+
+        Version management system:
+            - checks verions of software components
+            - codeline = sequence of versions of source code
+            - baseline = component version that are included in system and libraries used 
+                       - necessary to re-create indiv version of system
+            - mainline = sequence of system versions dev from baseline
+            centralized system = single master repo w/ all versions (subversion)
+            distributed system = multiple versions of component repo exist at same time (git)
+                pros:
+                    1. provides backup
+                    2. offline work
+                    3. project support
+                cons:
+                    - codeline may branch (independant sequences)
+            Storage:
+            - storage management using deltas
+            - git does not use deltas, compresses files (no dups | deltas used within packfiles to reduce size)
+    
+        System building:
+            - build system by linking components, libraries
+            - dev system includes dev tools (compilers, source code editors)
+            - build server: build exec 
+            - target env: platform where system execs
+        
+        Release management:
+            - version to customers
+            - major, minor, patch
+            - expensive --> must be prep
+            - factors to consider: competition, marketing reqs, platform changes, techical quality
+            - creation process:   
+                1. exec code and files identified w/ proper release
+                2. config descriptions
+                3. updated documentation
+                4. scripts for installation
+                5. web pages w/ proper release
+                6. exec master image for clients
+            - must be able to recover all component versions used in system 
+            - new releases can't rely on prev(SAAS can solve this)
+

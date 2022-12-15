@@ -1,0 +1,19 @@
+Managing people in software environments
+
+    impacts:
+        - identity project scope and objectives
+        - identify project activities
+        - identify activity risks
+        - allocate ressources
+    
+    Taylorism
+        - 3 basic objectives:
+            1. select best people
+            2. instruct them best methods
+            3. give incentives (higher wages, rewards, etc)
+        - reprensted as crude and mechanistic but best practice is valid
+    McGregor theory
+        x = people dislike work and avoid responsability
+        y = work is natural
+    Recruitment
+        - suitable vs eligible

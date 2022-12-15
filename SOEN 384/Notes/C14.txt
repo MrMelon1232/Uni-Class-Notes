@@ -1,0 +1,29 @@
+Managing Process risk part 1
+
+    Definition:
+        ISO/IEC: risk = prob of event and neg impact
+        PMBok: may or may not happens, can be identified in advance and is pos/neg
+               threat = neg
+               opportunity = pos
+               Risk averse = some1 who does not want to be neg impacted
+    
+    Management process
+        - Risk assessment (early of project)
+            gold plating = working on project past pt of deminishing returns (ex: work on extra stuff not asked and it turns out bad)
+            1. identification
+            2. analysis
+                - assess likelihood & impact
+                - RE (risk exposure) = prob * impact
+                - establish threshold
+            3. prioritization
+                - likelihood and impact
+        - Risk control 
+            1. planning
+                - develop strategy for neg risks (acceptance, avoidance, transfer, mitigation)
+                - RRL (risk reduction leverage) = (RE b4 - RE after) / cost of reduction
+                - EMV (expected monetary value) = P*I with prob * impact for trees | EMV(A) = sum of all strategy A
+            2. resolution
+            3. monitoring
+                1. risk response audits (document risk response and effectiveness)
+                2. periodic risk review
+                3. additional risk response planning

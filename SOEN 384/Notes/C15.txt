@@ -1,0 +1,23 @@
+Managing project risk part 2
+    
+    - use metalanguage to seperate causes/effects 
+        - "as a result of "cause", "event" may occur, which lead to "effect"
+    
+    Risk-based scheduling: transition of definition to time and cost to interdependancy
+                           - use pert to find (worst, optimal, expected) cases for 2 greatest risk
+    
+    Risk management plan 
+        -Types of risks:
+            1. technical risk
+            2. management risk
+            3. commercial risk
+            4. external risk
+
+        1. Methodology
+        2. Roles and responsabilities
+        3. budgeting (sizing (cosmic pts), CoCoMo | caused by uncertainty = errors)
+        4. timing
+        5. reporting formats
+        6. tracking
+        7. risk categories
+        8. probability and impact 
