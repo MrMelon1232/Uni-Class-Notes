@@ -1,0 +1,79 @@
+Introduction to databases
+
+Database management systems (DBMSs)
+    - encompasses OS, languages, theory, AI
+    - provides data independance
+        --> apps insulated from how data are structured and stored
+        2 types:
+            1. logical (shielded from conceptual)
+            2. physical (shielded from physical)
+    - value to users --> depends with ease of query
+    - provides query language --> SQL (builds upon relational calc, algebra)
+    - concurrent operations
+    - ensures atomicity (ACID) (all-or-nothing property) -> guarantees reliability of db
+        --> done by maintaining log (WAL: write ahead log )
+        
+
+NoSQL databases:
+    - new class of databases
+    1. no strict schema reqs
+    2. no strict adherence to ACID properties
+    3. consistency is traded in favor of availability
+    types:
+        - document stores
+        - graph databases
+        - key-value stores
+        - columnar databases
+    
+definitions:
+    database: collection of data with relationships
+    DBMS: software packages designed to store/manage databases
+    database system = data + DBMS + app program
+    
+    Data models
+        - collection of high-level data description 
+
+Entity-Relationship model (ER)
+    -> allows users to pictorally denote entities and their relationships
+
+    Relational Model:
+        - most widely used
+        - relation = tables(sets) w/ rows(records/tuples) and columns(fields/attributes)
+        - every relation has a schema (describes relation)
+        - integrity constraints ->conditions in relation that must satisfy
+
+        ex: see C1_relational
+
+        3 levels of abstraction:
+            1. conceptual/logical (describes data in terms of model)
+            2. physical (how data described in conceptual is stored in ssd)
+            3. external/views (data access customized at level of individual users/group)
+        
+            ex: conceptual -> student entity database info
+                physical -> stored as heap, index on first column
+                external -> course info enrollments 
+    
+    5 groups who works with db:
+        1. end users
+        2. application programmers
+        3. db admins (DBA)
+        4. implementers
+        5. researchers
+
+    Reminders:
+        Entities: 
+            - real life objects
+            - described using attributes (ex: color, id, name, etc)
+            - each attribute has a domain and each entity set a key (primary keys are underlined)
+            ex: see C1_ERdiag
+            - ternary relationships: in between relationship such as location of where employee works
+            rectangles for entities and diamonds for relationships
+        
+        Cardinalities
+            - relationships such as 1-1, 1-many, many-many
+            - total participation are denoted by a thick line and w/ key constraints an arrow 
+            - partial are denoted with thin line
+            - total means --> ex: every department entity must appear in an instance of manages relationship
+            ex: see C1_participation
+        
+       
