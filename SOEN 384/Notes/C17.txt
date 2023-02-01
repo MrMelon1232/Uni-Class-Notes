@@ -1,0 +1,6 @@
+Working in teams
+
+    additive tasks
+    compensatory tasks
+    disjunctive tasks (only 1 correct answer)
+    conjunctive tasks (wait for all people to finish)

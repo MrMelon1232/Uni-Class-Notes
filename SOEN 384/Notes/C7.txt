@@ -6,7 +6,7 @@ Measuring and Controllig Work Processes part 1
     Tracking indicators for schedule and cost:
         - Planned Value (PV): effort planned for task in cost (budget is a PV)
         - Earned Value (EV): % of PV of the work actually completed by a given pt in time
-                        so if task is 70% done then we have earned 70% * EV of cost
+                        so if task is 70% done then we have earned 70% * PV of cost
         - Actual Cost (AC or ACWP): total costs of of completed tasks at a given pt in time
 
     Look at C7_EVPV

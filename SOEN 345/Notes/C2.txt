@@ -1,0 +1,89 @@
+Control Flow and Converage
+
+    program graph (CFG)
+        - nodes connected by edges
+        - nodes = statements (can group them)
+        - edges = transfer of Control
+
+    Test Coverages
+        - note: test coverages are cumulitive (meaning test cases coverage add up from previous to represent current)
+        - loops: decision to traverse loop or not | nested loops tested separately
+
+        Statement Coverage = # of executed lines / totsl  statments
+        (all but brackets)
+
+        issues:
+            - tested for only 1 value (misses bugs)
+            - loop 1 iteration 
+            - achieved w/out branch coverage
+
+        Segment (block) coverage
+            - depends on segment
+
+        Branch coverage
+            - every branch from node executed once
+            - D + 1 paths where D = depth 
+            - Coverage = # of executed branches / total # of branches
+            - branches are considered decisions such as true/false (if/else)
+        
+        Condition coverage
+            - reports true/false outcome of each condition
+            - conditions independently from each other
+            - Coverage = # of conditions that are both T and F / total # of conditions
+        
+        Modified Condition/Decision Coverage
+            - test important combinations and limiting testing costs 
+            - evaluation of unique outcomes only once
+
+Data flow and Coverage
+        
+    Path coverage:
+        - test case for each possible path 
+        - # of paths can be infinite / some paths are infeasible
+        - implies branch coverage
+        - but not condition coverage (vice versa)
+            --> example:
+                in if(A && B)
+                    - condition coverage checks A=T, B=F | A=T, B=F 
+                    - path coverage only checks the path (since prev results in same path, having only 1 of them suffices)
+    
+    data:
+        c-use:
+            - computational usage of variable
+            - assignment, output, parameter func call, subscript expressions ([])
+            - definition of A[E] --> c-use of variable E
+            ex: z = x + 1 (1) | A[x+1] = B[2] (1) | foo(x*x) (2) | output(x) (1)
+        p-use:
+            - predicate case
+            - condition in a branch statement
+            ex: if(z>0) (output(x)) ; while(z>x) {..} ; | 2 p-use of z and 1 p-use of x | also 1 c-use of x
+                if(A[x+1] > 0) {output(x)} | x in subscript is c-use and p-use
+        formal definitions:
+            d(v,n) --> value "v" assigned at node "n"
+            c-use(v,n)
+            p-use(v,m,n)
+            k(v,n) --> kill/deallocated
+        
+        DFG
+            - annotate each node with def and c-use, each edge with p-use
+            - order is important, def after uses
+            see ex: C2_dfg
+            Paths:
+                - complete path (start-end)
+                - simple path (all nodes except possibly first/last are distinct)
+                - loop free path (all nodes distinct)
+                definition-use (du) path:
+                    - there exist def(v,m) and use(v,n) where m = initial node and n is final node
+                    - note that for each "use" statement, there is a path
+                    see ex: C2_dupath
+                def-clear path: du-path where initial node of path is only defining node of v
+            
+        Data flow Coverage
+            - All-Definitions: at least 1 def-clear path from every defining node of v to at least one use of v 
+            - All-Uses: at lesat 1 def-clear path from every defining node of v to every reachable use of v + successor node of each use
+            - All-P-Uses/ Some C-uses: at least 1 def-clear path from every defining node of v to every p-use of v, if none to a c-use
+            - All C-uses/ Some P-uses: vice versa
+            - All DU-paths
+            - NO loops
+
+            see examples: C2_alldef, C2_alluses, C2_allpcuses, C2_someC, C2_someP

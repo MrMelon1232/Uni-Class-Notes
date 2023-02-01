@@ -1,0 +1,27 @@
+Mutation testing
+    - modify some statements in code so we have multiple versions
+    - each version is a bug
+    - should be used in conjunction w/ traditional testing techniques
+    - fault-based testing 
+        - create similar faulty programs, if test data detects all differences in mutants then test set is adequate and mutants are killed
+    - based on 2 hypothesis:
+        1. competent programmer (small errors)
+        2. coupling effect (simple faults can cascade)
+    - mutants operators: cna be anything (change + to - )
+    
+    Types of mutants:
+        1. stillborn: syntactically incorrect, compiler killed it 
+        2. trivial: killed by test case 
+        3. equivalent: same output as original
+
+    Coverage:
+        - complete = killing all non-equivalent mutants
+        - called mutation score (ratio of dead mutants over all non-equivalent mutants)
+        Mutation score = 100 * D / (N-E), where D = dead, N = non, E = equivalent
+        - # tend to be large
+        strong vs weak
+            - strong = fault must be reachable, infect the state, propagate to output
+            - weak = reachable, infect state 
+        Strongly killing mutants : outputs are different
+        weakly killing mutants: ouputs are same
+        

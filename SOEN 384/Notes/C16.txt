@@ -17,3 +17,17 @@ Managing people in software environments
         y = work is natural
     Recruitment
         - suitable vs eligible
+    piece-rates = workers paid fixed sum
+    day-rates = paid for time worked
+
+    motivation hight if:
+        1. expectancy (work hard = good performance)
+        2. instrumentality (better perf = better reward)
+        3. perceived value (resulting reward)
+
+        to improve:
+            1. set goals
+            2. provide feedback
+            3. job design
+            job enlargement and enrichment
+    

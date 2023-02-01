@@ -1,0 +1,65 @@
+Intro to testing
+
+    - Errors are costly --> testing was created
+    - bug --> fault
+    - Error = mistake caused by fault and made by people
+    - Fault = result of an error
+    - Failure = incorrect behavior of a program (bad output)
+
+    example: 
+        failure --> result returned is 9 instead of 6
+        fault --> at line 3
+        error --> a typo (hopefully)
+
+    Testing
+        - shows presence of bugs but not their absence
+        - # of inputs = # of valid numbers^2
+        - test cases: (input and expected output)
+        process:
+            1. test planning
+            2. test case development
+            3. running test cases
+            4. evaluating test results
+        
+        Levels:
+            - unit testing (implementation)
+            - modules (design)
+            - integration testing (related units | interfaces)
+            - system testing
+            - acceptance
+            - regression
+        
+        Black-box
+            - software specification (description)
+            - specified behavior
+            - can't reveal errors due to implementation details
+
+        White-box
+            - based on code
+            - coded behavior
+            - can't reveal errors due to missing paths
+
+        note: grey box = both
+        
+    Quality assurance (QA)
+        - QA approach w/ most subjective bias --> inspection/review
+        testing(no false pos but incomplete) --> static verif(complete but false pos/expensive) --> inspection/review/walkthrough(systematic but informal) --> formal proof(strong but complex/expensive)
+        - Correctness (impossible to demonstrate): do spec + program meet customer reqs
+        - Validation = intended usage at end of dev (do right thing)
+        - Verification = if product at stage fulfills reqs (do the thing right)
+    
+    3 conditions to find failure:
+        1. Reachability (if node can be reached)
+        2. Infection (state of program is incorrect)
+        3. Propogation (infected state propagate to cause bad output)
+    
+    testing techniques:
+        - no perfect and best techniques (diff contexts, best effort)
+
+    inheritance tests: applies to testing as well (ex: figure test should work for triangle as well)
+
+    Defnitions:
+        - complete testing: complete coverage, no more new bugs, plan complete
+        - complete coverage: testing of certain attrbutes (statement, branch, condition)
+            - impossible since inputs too large/2 many paths
+            - measuring shows how far you are from complete testing and NOT how close

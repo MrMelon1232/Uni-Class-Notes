@@ -22,7 +22,7 @@ Software measurement and controlling part 2
     
     McCabe Cyclomatic Complexity
         - code coverage (paths)
-        - produces untested test conditiions to improve test effectiveness
+        - produces untested test conditions to improve test effectiveness
         - measures complexity and paths to predict testing effort, defects, maintenance costs
         - small programs can be calculated manually, bigger needs tools
 

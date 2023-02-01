@@ -1,7 +1,7 @@
 Software measurement and controlling part 1
 
     definition:
-        - measurement is the process by which numbers/symbols ae assigned attributes
+        - measurement is the process by which numbers/symbols are assigned attributes
         - crucial to progress
         - helps understand
         - allows control
