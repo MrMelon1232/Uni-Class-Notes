@@ -67,7 +67,7 @@ Data flow and Coverage
         DFG
             - annotate each node with def and c-use, each edge with p-use
             - order is important, def after uses
-            see ex: C2_dfg
+            see ex: C2_dfg and C2_dfgTable
             Paths:
                 - complete path (start-end)
                 - simple path (all nodes except possibly first/last are distinct)

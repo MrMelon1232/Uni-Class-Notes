@@ -1,2 +1,8 @@
 Relational Model
 
+    Weak entities
+        - identified by considering primary key of another owner entity
+        - owner --> one-to-many --> weak entity
+        - weak entity has total participation
+        - set of attributes called: partial key
+        see example: C2_weak

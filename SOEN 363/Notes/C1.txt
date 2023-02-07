@@ -64,7 +64,7 @@ Entity-Relationship model (ER)
         Entities: 
             - real life objects
             - described using attributes (ex: color, id, name, etc)
-            - each attribute has a domain and each entity set a key (primary keys are underlined)
+            - each attribute has a domain and each entity set a key (primary keys are underlined) ; primary key = unique identifier
             ex: see C1_ERdiag
             - ternary relationships: in between relationship such as location of where employee works
             rectangles for entities and diamonds for relationships
