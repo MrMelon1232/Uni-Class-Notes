@@ -24,4 +24,8 @@ Mutation testing
             - weak = reachable, infect state 
         Strongly killing mutants : outputs are different
         weakly killing mutants: ouputs are same
-        
+
+    Mutators
+        - conditional boundary mutator: replaces relational operator (<, <=, >=, >)
+        - negate condtionals mutator: negate current relational operator
+        - return values mutator: change return value of method (usually if og returns 0, then return 1 (vice-versa))

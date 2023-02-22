@@ -1,0 +1,101 @@
+SQL
+
+    Definitions:
+        - structured query language
+        - not a programming language (not turing complete, not for calculations)
+
+        2 aspects:
+            - Data definition language (DDL)
+                - allows creating, modifying, deleting relations and views
+                - allows specifying constraints
+                - allows admin users, security, etc
+            - Data manipulation language (DML)
+                - allows posing queries to find tuples
+                - allows adding, modiying and removing tuples
+
+    Syntax
+        Creation:
+            create table student(
+                id: INTEGER,
+                sid: CHAR(20),
+            );
+
+        Adding/inserting:
+            INSERT INTO Students (sid, name, login, age, gpa)
+            VALUES (53688, 'Smith','smith@ee', 18, 3.2)
+
+        Deleting:
+            DELETE
+            FROM Students S
+            WHERE S.name = 'Smith'
+
+        Querying
+            - note: you can querry multiple tables at once
+            - find all 18-year old Students
+            SELECT *
+            FROM Students S
+            WHERE S.age = 18
+            - find just names and logins
+            SELECT S.name, S.login
+            FROM Students S
+            WHERE  S.age = 18
+
+        Destroying/altering relations:
+            destroy:
+                DROP TABLE Students
+            alter:
+                ALTER TABLE Students
+                    ADD COLUMN firstYear: integer
+        
+    Integrity Constraints (ICs)
+        - condition that must be true for any instance
+        - based on real world | check DB instance to see if IC is violated (NOT instance)
+        - specified when schemas are defined
+        - checkedwhen relations are modified
+        Legal instance of a relation --> satisfies all ICs
+        DBMS --> no illegal instances allowed
+        if DMBS checks ICs --> stored data is faithful to real world
+        
+    Keys:
+        - Helps associate tuples in different relations
+        - a form of ICs
+
+        Types of keys:
+            1. Superkey: 2 distinct tuples can have the same values in all key fields
+                - note that the set of all fields is always a superkey (since relation are guaranteed to have a key)
+            2. minimal superkey
+            3. More than 1 key = candidate key (specified as UNIQUE) for the rest and 1 primary (underlined)
+            4. Foreign keys: set of fields reffering to a tuple in another relation
+                    -> if all foreign keys enforced = referential integrity achieved
+        
+        Full example of keys:
+            CREATE TABLE Enrolled(
+                sid CHAR(30),
+                cid CHAR(30),
+                name CHAR(20),
+                PRMARY KEY (sid, cid),
+                UNIQUE (name),
+                FOREIGN KEY (sid) REFERENCES Students
+            )
+        
+        Enforcing integrity:
+            - making sure that after any action taken, DB still respects the rules
+            as such, we can use (after <references "item">):
+                ON DELETE CASCADE (cascade = delete all tuples that refer to deleted one)
+                ON UPDATE SET DEFAULT (sets foreign key value referencing tuple)
+                NO ACTION (action is rejected)
+                NOT NULL (must exist)
+    
+    Views
+        - table whose rows are not stored but computed
+        CREATE VIEW YoungActiveStudents (name, grade)
+            AS SELECT S.name, E.grade
+            FROM Students S, Enrolled E
+            WHERE S.sid = E.sid and S.age < 21
+        - can be queried
+        - can be dropped with DROP VIEW 
+    
+        Security:
+            - present data while hiding details (restrict access)
+            - views can represent old schema after a change
+            - Logical data independance

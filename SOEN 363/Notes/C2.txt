@@ -1,8 +1,51 @@
 Relational Model
 
-    Weak entities
+    Weak entities:
         - identified by considering primary key of another owner entity
         - owner --> one-to-many --> weak entity
         - weak entity has total participation
-        - set of attributes called: partial key
+        - set of attributes called: partial key (denoted using dotted lines)
         see example: C2_weak
+
+    ISA:
+        - used to classify subclasses of an entity
+        - attributes are inherited by subclasses
+        - we can have multiple levels of ISA
+        - see: C2_ISA
+        Constraints:
+            - Overlap
+                - can an entity belong to multiple subclasses (if yes --> then there's a overlap constraint)
+                - we say that B overlaps C
+            - Covering
+                - can an entity belong to neither subclasses (if yes --> then there's a covering constraint)
+                - we say that B and C covers A
+            see: C2_isaConstraints
+    
+    Conceptual Design Choices:
+        Entity vs Attribute:
+            - depends on usage 
+            - ex: employee and address: if ther are multiple address per employee, then address is an entity
+            - note that relationships can be created as well such as manager from employee (ISA)
+        
+        Binary vs Ternary (3 parts) relationships:
+            - consider relationships between all 3 for ternary (if relationships differ, then separate them)
+            - sometimes can't convert to binary (too much information)
+            aggregation: abstraction to represent relationships as higher level entitiy sets 
+            see: C2_aggregation
+    
+    Relational Models:
+        - tabular representation
+        - db = collection of relations
+        - relation = table of rows and columns
+        - simple and easy queries can be expressed
+        - Object relational mapping (ORM) hides relational model
+        ex: look at C2_relational
+
+        Contents:
+            - Schema --> name of relation, column and domain of column
+            - Instance --> set of tuples (# of columns = # of columns in schema)
+        
+        Domain Constraints:
+            - specifies condition that each instance of a relation should meet
+            - defines constraint: DBA
+            - enforces constraint: DBMS

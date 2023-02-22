@@ -1,0 +1,18 @@
+Relational Model part 2 SQL
+
+    Translate ER model to SQL statements
+      see C4_sqlex1, C4_sqlex2, C4_sqlex3
+      - less table = no need to get info from multiple relations but space might be wasted (what if several departments have no managers)
+
+      Participation constraints
+        - add "NOT NULL" to the foreign key when using 1 table approach
+      
+      Weak Entities:
+        - use 1 table approach
+        see ex: C4_weak
+
+      ISA:
+        - create relation for the original entity and all sub entities
+        - subentities has the original entity's primary key as a foreign key and primary key
+        - subentities should be "cascaded" in the case of deletion of employee
+        - note: we can always just create the subentities and mention the superentity

@@ -74,6 +74,7 @@ Entity-Relationship model (ER)
             - total participation are denoted by a thick line and w/ key constraints an arrow 
             - partial are denoted with thin line
             - total means --> ex: every department entity must appear in an instance of manages relationship
+            - ask, should every department have a manager ? 
             ex: see C1_participation
         
        

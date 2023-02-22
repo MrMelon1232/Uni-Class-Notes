@@ -1,0 +1,45 @@
+Test Driven Development 
+
+    Procedure:
+        1. Write a failing test case
+        2. Compile it
+        3. Make it pass (write simplest code that will make it pass)
+        4. Remove duplication
+        5. Make the test case pass but not good in all cases
+        6. Write a failing test case
+        7. Get it to compile and make it pass
+
+        For legacy code
+            - write failing test case
+            - get it to compile
+            - make it pass (try not to change code)
+            - remove duplication
+            - repeat
+
+    Issues: 
+        1. Distracts from writing code
+        2. Takes discipline
+        3. Some simple/useless tests
+        4. Maintain tests
+        5. Architecture based on tests
+        6. Need mock objects (dont affect DB)
+        7. Maintenance tests also need to be done
+    
+    Compromise:
+        - commit has test associated with it
+        - so write test before 
+    
+    Benefits:
+        - focus on 1 thing at at time
+        - writing code or refactoring (never both)
+        - good for legacy (write new code independently of old)
+
+        Example:
+            - write code for for simple calculate average function
+            1. Pick input, calculate avg
+            2. Write class calculator, method average, return failing value, run it
+            3. Write simplest code to pass
+            4. no duplication
+            5. divide by zero with empty set of elements, NoElementsException
+            6. Make calculator class with no elements
+            7. Create exception NoElementsException, throw exception, add the check for exception, update tests
