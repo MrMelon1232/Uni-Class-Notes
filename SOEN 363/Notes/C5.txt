@@ -1,0 +1,175 @@
+SQL part 2
+    
+    SQL (structured)
+        benefits:
+            - has triggers and advanded ICs (trigger = actions taken whenever smth changes)
+            - embedded and dynamic language (use another language to call SQL code | queries can be constructed at run time)
+            - remote access
+            - transaction management
+            - security
+        Basic form: C5_sqlBasic
+
+        Symbols:
+            - "%" --> 0 or more arbitary characters
+            - "_" --> 1 arbitary character
+            note: use the work "like" for this scenario
+            ex: find students "ssn" who live on "main" ("main st" or "main str", etc)
+                select ssn
+                from student
+                where address like 'main%'
+            ex2: find ages of sailors whose names begin and end with "B" and has at least 3 characters
+                select S.age
+                from Sailors as S
+                where S.sname like 'B_%B'
+        
+        Self-joins
+            - renaming
+            see ex: C5_selfjoins
+
+SQL part 3
+
+    set operations:
+        - operation when checking same relation twice
+        - use word: intesect (and) | union (or) | except (but not)
+        see ex: C5_setOp for intersect example 
+    
+    Aggregation functions
+        - find average grade accross all students
+            select avg(grades)
+            from take
+        - other functions: Count([Distinct]A), Sum ([Distinct] A), Max(A), Min(A)
+        - note: if aggregate func used, then ONLY aggregate function should be used unless "group by" clause
+        ex: find total number of students in 15-415
+            select count(*)
+            from takes
+            where c-id = '15-415'
+        
+        GROUP BY and HAVING clauses
+            ex: find age of youngest sailor for each rating level
+                since we don't know how many rating levels exist nor what rating values for these levels are
+                we group them, where every column in "select" must appear in "group by"
+                    select S.rating, min(S.age)
+                    from Sailors S
+                    group by S.rating
+
+                if we say: age >= 18 for each rating level with at least 3 sailors
+                    select S.rating, min(S.age) AS minage
+                    from Sailors S 
+                    where S.age >= 18
+                    group by S.rating
+                    having count (*) > 1
+                    
+SQL part 4
+
+        Nested queries w/ set comparison
+        ex: we want sailors with highest sid
+            SELECT *
+            From Sailors S
+            WHERE S.sid
+            >= ALL
+            (Select S2.sid
+            FROM Sailors S2)
+        
+        if we do it without nested and use comparison (S1.sid > S2.sid), it gives all but the smallest (other way around is all but the highest)
+        - instead of intersect use "AND S.sid IN" (S.sid for this example)
+        - possibilities of multiple alternative ways (see C5_alternatives)
+
+        ex2: find name and age of oldest sailor
+        SELECT S.snmame, S.age
+        FROM Sailors S
+        WHERE S.age = (SELECT MAX (S2.age) FROM Sailors S2)
+
+
+SQL part 5
+    - column values can be unknown and may be inapplicable
+    - as such, NULL (or unknown) can be used
+    for aggregate:
+        COUNT (*) handles NULL
+        SUM, AVG, MIN, MAX discards it
+    For comparisons and operators:
+        - !unknown --> unknown
+        - True or unknown -> true
+        - False or unknown -> unknown
+        - False and unknown -> False
+        - True and unknown -> unknown
+        - unknown [AND|OR|=] unknown -> unknown
+        (for duplicates, comparison of 2 NULL --> True)
+
+    Inner join
+        tuples of a relation that do not match some rows in another relation, do not appear in the result
+
+        ex:
+        select ssn, c-name
+        from takes, class
+        where takes.c-id = class.c-id
+
+            equivalently (===)
+
+        select ssn, c-name
+        from takes join class on takes.c-id = class.c-id
+
+        ex2: Find all SSN(s) taking course s.e
+        Results:
+            ssn | c-name
+            123 | s.e
+            234 | s.e
+
+    Outer join
+        tuples of a relation that do not match some rows in another relation, can still appear exactly once in result
+        - results columns will be assigned NULL values
+        select ssn, c-name
+        from takes outer join class
+        on takes.c-id = class.c-id
+
+        ex: Find all SSN(s) taking course s.e
+        Results:
+            ssn | c-name
+            123 | s.e
+            234 | s.e
+            null| o.s
+
+    TLDR: inner = remove parts we don't want | outer = parts we don't want appear as null
+
+
+    General constraints:
+        - use word "CHECK"
+        ex1: 
+            CHECK (rating >= 1 AND rating <= 10)
+        ex2: see C5_generalConstraints
+
+        ex3: Enforce that the # of boats plus the # of sailors should not exceed 100
+            CREATE ASSERTION smallClub
+            CHECK
+            ((SELECT COUNT (S.sid) FROM Sailors s)
+            + (SELECT COUNT (B.bid) FROM Boats B) < 100)
+
+            do this because, possibilities of no sailors and more than 100 boats ; assertion does not rely on tables
+    
+    Domain creation:
+        ex: CREATE DOMAIN ratingval1 INTEGER DEFAULT 1
+                CHECK (VALUE >= 1 AND VALUE <= 100)
+            note: here, our source type is "INTEGER"
+
+    Distinct Types
+        ex: CREATE TYPE ratingtype1 AS INTEGER
+
+    Triggers
+        Steps:
+            1. Set a timestamp field whenever a row in the table is updated
+            2. Create a function that sets the "updated" column with current timestamp
+            3. Invoke function when a row in the table is updated
+            ex: 
+                1.  ALTER TABLE takes
+                    ADD COLUMN updated TIMESTAMP
+                
+                2. CREATE FUNCTION update_col()
+                        BEGIN
+                            NEW.updated = NOW();
+                            RETURN NEW;
+                        END
+
+                3. CREATE TRIGGER update_takes_modtime
+                        AFTER UPDATE ON takes
+                        FOR EACH ROW (if we don't specify row, it will be statement level trigger)
+                        EXECUTE PROCEDURE update_col();
+

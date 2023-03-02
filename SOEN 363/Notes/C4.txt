@@ -16,3 +16,4 @@ Relational Model part 2 SQL
         - subentities has the original entity's primary key as a foreign key and primary key
         - subentities should be "cascaded" in the case of deletion of employee
         - note: we can always just create the subentities and mention the superentity
+        

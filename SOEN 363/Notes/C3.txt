@@ -24,10 +24,21 @@ SQL
             INSERT INTO Students (sid, name, login, age, gpa)
             VALUES (53688, 'Smith','smith@ee', 18, 3.2)
 
+            inserting in "bulk":
+                insert into student
+                    select ssn, name, address
+                    from foreign-student
+
         Deleting:
             DELETE
             FROM Students S
             WHERE S.name = 'Smith'
+
+        Update:
+            ex: udpate grade to 'A' for ssn=123 and course 15-415
+            update takes
+            set grade='A'
+            where ssn = 123 and c-id = '15-415'
 
         Querying
             - note: you can querry multiple tables at once
@@ -51,7 +62,7 @@ SQL
         - condition that must be true for any instance
         - based on real world | check DB instance to see if IC is violated (NOT instance)
         - specified when schemas are defined
-        - checkedwhen relations are modified
+        - checked when relations are modified
         Legal instance of a relation --> satisfies all ICs
         DBMS --> no illegal instances allowed
         if DMBS checks ICs --> stored data is faithful to real world
