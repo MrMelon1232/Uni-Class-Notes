@@ -1,0 +1,70 @@
+Design Process
+
+    design flow:
+        1. Understanding the problem
+        2. research (interviews, surveys)
+        3. analysis (why | journey maps, user scenarios, storyboards, personas)
+        4. design
+        5. validation
+
+    Analysis techniques:
+
+        personas: 
+            - include goals, behaviors, motivations, background info
+            - current state of UX, real data, user patterns NOT roles
+        Empathy maps: 
+            - group of users
+            - 4 major areas: said, did, thought, felt
+            - from this, we synthesize insights, needs, why, when, where, structure interviews
+        journey maps:
+            - sketch UX
+            - timeline of interactions between user and product 
+            - activities, feelings, experiences. expectation, stages
+            - macro view, emotions
+        User flow diagrams:
+            - actions people take to reach goals
+            - flow of app
+            - micro view, technicalities
+        scenario maps:
+            - scenario of user carrying out goal/task
+            - who, what. when, why, how
+        storyboards:
+            - sequence of illustrations, visualize a story
+            - effective and cheap
+            - pitch and critique, iterative approach
+    
+    Prototyping techniques:
+        - 4 key components:
+            1. people
+            2. object
+            3. location
+            4. interaction
+        - generate from scenario/use cases, from storyboards, card-based prototype
+        
+        Sketches/Diagrams:
+            - little effort, launch ideas
+            - can use paper interfaces
+
+        Storyboard:
+            - differences: user faces problem vs user reacts to solution
+
+        Wireframes
+            - layout produced 
+            - more details and better structure
+            - common language for designers, users, stakeholders, devs 
+        
+        Wizard of Oz:
+            - responses from human (fake functions)
+        
+        High-fidelity:
+            - use materials expected to be in final design
+            - users might take its full product tho 
+        
+        Mockup:
+            - mid/high-fidelity design (preview of final design)
+            - include colors, texts, etc
+            - usually use a software
+    
+    Compromises:
+        horizontal: wide range of functions but little details
+        vertical: lot of details for few functions

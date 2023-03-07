@@ -1,0 +1,33 @@
+UI/UX design
+
+Definitions:
+    UI: user interface (the screen)
+        - how the product looks (buttons, text, colors)
+    UX: user experience (in front of screen (aka user))
+    UI x UX = interaction design
+        - how a product behaves when interacted with (animation, transitions, etc)
+
+Human Computer Interaction (HCI)
+
+    Cognitive engineering:
+        - came with challenge of personal computing
+        - how nervous system represents, process and transforms information
+            - analysis, design and evaluation of complex people and technology systems
+        - HCI one of the first examples
+        consider: human factors/ergonomics
+        - document development
+
+        Original Focus:
+            - usability: easy to use and learn
+    
+    HCI (human-computer interaction)
+        - from comp sci/productivity app --> visualization, information systems, etc
+        - emerging technologies: graphical UI --> myriad interaction techniques and devices, multi-modal interactions, etc.
+
+        Early desktop:
+            - desktop was messy (design idea)
+            - then search was implemented
+            - now we have email for communications, phones, etc
+            - HCI moved beyond desktop
+        - benefits: investigate, develop and harness new areas of possibility to enhance UX
+

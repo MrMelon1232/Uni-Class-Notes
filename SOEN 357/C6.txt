@@ -1,0 +1,33 @@
+User Interface
+
+    4 categories:
+        - input controls
+        - navigation component
+        - informational component
+        - containers
+
+        examples:
+            - bento menu
+            - bread crumbs (see current location)
+            - cards
+            - carousel (browse sets)
+            - loaders
+        benefits:
+            - easy to learn
+            - fast
+    
+    Design process:
+        - Spiral:
+            1. analysis
+            2. designs
+            3. constructions
+            4. validation
+
+        - principles:
+            1. familiarity
+            2. consistency (if inconsistencies, then we want moderate)
+            3. least surprise
+            4. recoverability
+            5. user assistance
+            6. diversity
+            7. structure hierarchy (cluttered/simple and easy to the eyes)

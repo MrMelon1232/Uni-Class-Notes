@@ -1,0 +1,32 @@
+Data collection
+
+    - helps with planning, preparing (interviews, designs)
+    5 issues:
+        1. setting goals (what)
+        2. identity participants (how to sample) (who)
+        3. relationship with participants (bias)
+        4. triangulation 
+            - diff type of data (interviews, experiements)
+            - diff sources (people, places, sampling)
+            - perspective of data
+        5. pilot studies
+            - check structure
+            - validate methods
+    
+    examples:
+        - audio
+        - notes (descriptive, inferential, evaluative), pictures
+        - interviews (closed, open, structured/unstructured)
+                     - groups might have bias (emotional, artificial)
+                     - we want atomic, simple questions
+                     - varied, explore issues but subjective and time consuming
+        - Questionnaires (demongraphics, simple, scales)
+                        - likert (opinions, attitudes, beliefs) ex: disagree --> agree
+                        - semantic (measure meaning of objects, events) ex: rude --> courteous
+                        - simple and easy but less flexible, less probing
+        - Observations 
+            - person, place, thing
+            - passive or active
+            - think aloud, user describes what they are doing (solo or co-op)
+        - Ethnography
+            - immerse self in culture to study

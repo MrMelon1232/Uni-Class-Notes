@@ -1,0 +1,50 @@
+IxD process
+
+    Steps:
+        1. understand
+            - explore (needs, current market, current issues, reqs)
+        2. research 
+            - surveys, involve users
+        3. analyze
+        4. design
+        5. develop
+
+    double diamond of design:
+        discover, define, develop, deliver
+    
+    involving users:
+        - adds perspective
+        - expectations management
+        - ownsership (users active stakeholders)
+        types:
+            - active member (short,long term)
+            - ind activities or group
+            - online contribution
+            - after product release
+
+        User-centered design (UCD)
+            - full focus on users
+            - max usability and value
+            - steps:
+                1. find reqs
+                2. designing alt
+                3. prototyping alt
+                4. evaluating product and UX
+            - 3 principles:
+                1. early focus on users/tasks
+                2. empirical measurements
+                3. IxD
+            - google design sprint (unpack, sketch, decide, prototype, test)
+            - another lifecycle: research in the wild
+            issues: find who users are, their needs, alt designs, which to choose(A/B testing(online), other methods)
+                    lot of ressources, users are not designers
+
+            Integrate IxD within other models
+                - agile process good: iteration, feedback, handles reqs
+        
+        Human-centered design (HCD)
+            - focus on natural characteristics of humans
+         Activity-centered design (ACD)
+            - focus on human activity
+        Genius design
+            - relies on talented designers instead

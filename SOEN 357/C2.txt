@@ -1,0 +1,100 @@
+Interaction design (IxD)
+
+    bad designs:
+        - buttons are too similar or close
+        - distinction, no instruction, etc
+        TLDR: u want to address user needs
+        ex: hotal phone
+            - infuriating
+            - confusing
+            - inefficient, too many steps for basic function
+            - no indicator for messages left
+            - instructions not clear
+    
+    definitions:
+        - design for interactive products to help people (consider where, who, what)
+        - understand users (emotions, needs, business, technology, marketing, etc.)
+        - multiple teams (engineers, designers, psychologists, product managers, etc.)
+            AKA multidisciplinary
+        - note: IA = information architecture (how app is structured)
+        positives vs negatives:
+            - more ideas/designs generated
+            - creative and og designs
+                        vs
+            - hard to communicate and progress with design
+            - confusion when diff languages, values
+            - complex and costly
+
+    questions to ask
+        - what are people good/bad at
+        - what can help people with what they document
+        - improvements, what people want
+
+    some design practices contributing to IxD:
+        - graphic
+        - product
+        - artist
+        - industrial
+        - film industry
+    
+    processes that do IxD:
+        - HCI
+        - human factors
+        - cognitive engineering
+        - cognitive ergonimics
+        - information systems
+    
+    General Process:
+        1. users involved
+        2. identity UX and usability
+        3. Iteration through activities
+
+User Experience
+    7 factors that describe UX:
+        - useful
+        - usable
+        - findable
+        - credible
+        - desirable
+        - accessible
+        - valuable
+    - how product is behaved and used by people (emotions and attitudes towards it)
+    - pragmatic: simple, practical and obvious to use
+    - hedonic: evocative, stimulating interaction is to users
+
+    consider:
+        1. accessibility (accessible to users)
+            ex: focus on disabilities (VR is a HCI product)
+        2. inclusiveness (accomodate widest possible # of people)
+            ex: designed for all, regardless of disability, education, age, income
+        note: achieve accessibility through universal design
+            - some principles: equitable, flexible, simple, tolerance for error
+        
+
+    - 5 categories we can consider: physical, conceptual, economic, cultural, social
+
+Usability
+    - should be put into priority in general
+    - goals:
+        1. effectiveness
+        2. efficiency
+        3. safety
+        4. utility
+        5. learnability
+        6. memorability
+
+User interface
+    1. visibility
+        - make items clear
+        - add instructions or color association
+    2. feedback
+        - sending live info to users (helps with user guidance)
+    3. constraints
+        - also helps with user guidance
+    4. consistency
+        - internal: same withing application
+        - external: same accross apps/devices (ex: phone number pad (so if we have pad, do the same))
+        - aesthetic
+        - functional
+    5. affordances
+        - give a clue to usage (ex: mouse button --> invites to click/push)
