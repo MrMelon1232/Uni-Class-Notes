@@ -1,4 +1,41 @@
 Test patterns
 
     Inheritance
-        - can't reuse tests from superclass
+        - can't reuse tests/test suites from superclass
+        bugs:
+            - missing override
+            - direct access to superclass fields (need to retest superclass feature)
+            - square peg: subclass incorrectly located in a hierarchy
+                          LSP: func that use references to base classes must be able to use objects of derived classes w/out knowing it
+                          ex: Bird class w/ func "fly" | this is bad because Ostrich is a bird but can't fly
+                          --> Bird class, FlyingBirds class extends Bird w/ func fly | Ostrich would extend bird and Duck extends "FlyingBirds"
+        testing:
+            - inherited methods should be retested as subclass (more inheritance = more tests)
+            - if a method is affected by smth in the subclass, then it should be retested
+            - run all superclass tests on a subclass (even though it might not be effective)
+
+        Inheritance testing:
+            - all tests are ran, including any superclass tests
+            - therefore, subclass should declare any var/objects to be used in all classes
+            ex: class TestAccount has object Account a | then in class TestSavingsAccount, declare a = new SavingsAccount();
+    
+    Testing abstract classes
+        - test for functional compliance
+        
+        Abstract test patterns
+            - build test suite that can be reused
+            rules:
+                1. write abstract test (can't be overriden (final)) (should have abstract factory method for creating instances)
+                   note: factory methods include having an abstract method that can create any instance specified (have factory method be called in "setup")
+                2. write concrete test for every implementation of the interface/abstract
+                   (usually involves creating instance of class)
+    
+    Crash test dummy
+        - fake an error scenario
+    
+    Test smells
+        
+        Eager test
+            - separate test code into test methods that test only 1 method
+        Lazy test
+            - several test methods check same method but w/ diff instances

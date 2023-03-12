@@ -1,0 +1,30 @@
+Mocking
+    test doubles terms:
+        dummy: empty object just to satisfy invocation
+        fake: functional implementation to satisfy test
+        stub: hardcoded behavior object for test (state verif)
+        mock: programmed behavior, interactions in lifetime (behavior verif)
+        spy: mock created as a proxy to an existing real object
+    
+    Mock:
+        - dummy implementation w/ defined output of call and performs a certain behavior (isolation, faster)
+        - preferably mock interfaces, mock types owned, not everything, not value objects, use integration tests after
+        - configure (mock/spy) 
+            List ok = mock(List.class);
+        - define output (stub)
+            when(mockedList.get(0).thenReturn("first"));
+            overriding stubbs is possible, order matters
+        - call verify (verify interaction)
+            use func "verify()" to verify all interactions made (calls to methods)
+            ex: verify(mockStorage).bardcode("1A");
+            can use "InOrder" to verify order of calls
+                ex: InOrder inOrder= inOrder(mockDisplay, mockStorage);
+                    inOrder.verify(mockStorage).barcode("1A");
+            can use "ArgumentCaptor<String>" to capture argument value/types
+    
+    Spies:
+        - real methods called
+        - use partial mocks wen dealing with code u can't change
+        ex:
+            List list = new LinkedList();
+            List spy = spy(list);
