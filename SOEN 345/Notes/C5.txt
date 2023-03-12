@@ -1,0 +1,4 @@
+Test patterns
+
+    Inheritance
+        - can't reuse tests from superclass

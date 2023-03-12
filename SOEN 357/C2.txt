@@ -2,9 +2,9 @@ Interaction design (IxD)
 
     bad designs:
         - buttons are too similar or close
-        - distinction, no instruction, etc
+        - no distinction, no instruction, etc
         TLDR: u want to address user needs
-        ex: hotal phone
+        ex: hotel phone
             - infuriating
             - confusing
             - inefficient, too many steps for basic function

@@ -27,7 +27,7 @@ Design Process
             - micro view, technicalities
         scenario maps:
             - scenario of user carrying out goal/task
-            - who, what. when, why, how
+            - who, what, when, why, how
         storyboards:
             - sequence of illustrations, visualize a story
             - effective and cheap
