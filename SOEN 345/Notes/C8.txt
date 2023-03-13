@@ -1,0 +1,17 @@
+Blackbox testing
+    - testing w/out knowing details, based on specification
+    - specification => help test case generation and oracles
+
+    Advantages:
+        - no need for source code
+        - wide applications
+    Disadvantages:
+        - not test hidden functions
+    
+    Error guessing:
+        - ad-hoc approach (test cases built to cover error model made from existing errors)
+        ex: sorting array  
+            error models: empty array, already sorted, reverse-sorted, etc.
+            make test cases for these
+    
+    Derivation from func reqs

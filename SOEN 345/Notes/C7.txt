@@ -1,1 +1,43 @@
 Test anti-patterns
+
+    Mystery Guests
+        - external ressources --> test not contained, hidden dependencies
+        - solve:
+            1. Inline ressources (add ressouce in test code)
+            2. Setup external ressources
+
+    Ressource Optimism
+        - hope that external ressource "works"
+        - solve: setup external ressources
+
+    Test Run War
+        - runs for you but not everyone else (simultaneously)
+        - ressouce interference
+        - solve: make ressource unique
+
+    General Fixture:
+        - setUp too General
+        - solve: use setUp only for that part of the fixture using Extract Method
+                 put rest in method that uses it using Inline method
+
+    Assertion roulette
+        - no explanation for asserts
+        - solve: add assertion explanation
+        vs Eager: assertion is 1 functionality but many assertions, eager is multiple functionalities
+    
+    Indirect testing
+        - methods used for other objects
+        - solve:
+            1. extract method --> move method
+    
+    For testers only
+        - production class only used by test --> can be removed
+        - solve: extract subclass (move to new subclass in test code)
+    
+    Sensitive Equality
+        - relying on methods such as toString (map to object to string and compare), can fail tests if toString changes
+        - solve: replace it by Introduce Equality method (make ur own equals method)
+    
+    Test Code Duplication
+        - happens in setups, 
+        - solve: use extract method refactoring (generalize functionality to be reused)

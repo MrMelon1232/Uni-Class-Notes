@@ -36,6 +36,7 @@ Test patterns
     Test smells
         
         Eager test
+            - results in having too many methods called in 1 test (multiple functionality)
             - separate test code into test methods that test only 1 method
         Lazy test
             - several test methods check same method but w/ diff instances
