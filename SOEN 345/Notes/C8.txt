@@ -15,3 +15,61 @@ Blackbox testing
             make test cases for these
     
     Derivation from func reqs
+        - reqs testable
+        - test case for req,
+        - bouNdaries/constraints
+    
+    Derivation from use cases
+        - snecario graph of all possible scenarios
+        - CFG ish
+        - make table w/ ID, events, description
+        - if 2 many, then rank basedon criticality and frequency
+        see C8_scenarioGraph and C8_scenarioTable
+
+    Equivalence partioning
+        - partition of input set (range/sets)
+        - avoid disjoint classes (redundancy)
+        - we want completeness
+        - Weak (WECT) vs Strong (SECT --> assumes vars are independent)
+            - 1 var from each eq class
+                     vs
+            - cartesian product of partition subsets 
+        example:
+            3 input values A,B,C
+            A = A1 U A2 U A3
+            B = B1 U B2 U B3 U B4
+            C = C1 U C2
+            for WECT: max # of ECs of all vars = 4
+            for SECT: max # of Ecs for all vars = 3*4*2 = 24
+            tables: see C8_equivalence
+        example2:
+            3 input values, month, day, year
+                month = 3 options
+                day = 4 options
+                year = 3 options
+                WECT --> 4
+                SECT --> 3*4*3 = 36
+        
+        - include valid/invalid inputs if error conditions is prio
+        range: 1 valid, 2 invalid (1 outside each end of the range)
+        # of valid values: 1 valid, 2 invalid (none and more than N)
+        set of valid values: 1 valid, 1 invalid
+        write tests to cover as many ECs and only one for invalid ECs
+
+        Advantages:
+            - reduce # of test cases
+            - better than randomly generated test suite
+        Disadvantages:
+            - strong typing = don't need some invalid inputs
+            - specs may not define all behavior
+            - independence assumption
+            - impractical for large input spaces and dependencies
+    
+    Boundary value analysis (BVA)
+        - when errors occur at the edge of boundaries
+        - min, min+, nom, max-, max
+        - func with "n" var will require 4n+1 test cases | robust requires 6n+1
+    
+    Worst Case testing
+        - 5^n cases
+        - cartesian product of (min, min+, nom, max-, max)

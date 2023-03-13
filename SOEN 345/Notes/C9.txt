@@ -1,0 +1,32 @@
+Blackbox testing 2 
+
+    category partioning:
+        - informal functional specification to produce formal test specification
+        1. Decompose into functional units
+        2. idenfity parameters and conditions
+        3. find categories (array size, OS, etc)
+        4. divide categories into choices (100,0,1 | windows, linux, mac OS)
+        5. find constraints
+
+        Example: see C9_example
+
+        params:
+            - integer "x" (length)
+            - string "a"
+            - char "c"
+        categories:
+            - for "x", range 1-20 or out of range
+            - for "a", min, max, intermediate length
+            - for "c", beginning, middle, end or not in string
+        
+        then list input choices in a table (see C9_table)
+        and create test cases (see C9_test)
+    
+        
+        Criteria for choices
+            - all combinations (AC) (SECT)
+                # of test cases: cross product of params categories
+            - each choice (EC) (WECT): 1 value from each choice for each category must be used at least in 1 test case
+                # of test cases: max # of param categories 
+            - base choice (BC) (BVA): base choice chosen for each category has test cases linked to them
+                # of test cases: sum of param categories - "num of base choices" + 1

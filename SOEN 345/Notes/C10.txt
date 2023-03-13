@@ -1,0 +1,12 @@
+Blackbox testing 3
+
+    Decision tables
+        - conditions w/ yes/no
+        - actions (when they apply)
+        - normal state = no actions required
+        note: values that don't impact = "Don't care"
+        # of columns = # of test cases
+        2^n rules with "n" conditions
+        for each "don't care" , we use 2^n where "n" is the number of dont care in that column
+        then add them all up to get "n" to find # of rules
+        ex: see C10_tableFormat
