@@ -73,3 +73,6 @@ Blackbox testing
     Worst Case testing
         - 5^n cases
         - cartesian product of (min, min+, nom, max-, max)
+
+    Robust case testing
+	- 7^n cases
