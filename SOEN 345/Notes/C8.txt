@@ -17,13 +17,13 @@ Blackbox testing
     Derivation from func reqs
         - reqs testable
         - test case for req,
-        - bouNdaries/constraints
+        - boundaries/constraints
     
     Derivation from use cases
-        - snecario graph of all possible scenarios
+        - scenario graph of all possible scenarios
         - CFG ish
         - make table w/ ID, events, description
-        - if 2 many, then rank basedon criticality and frequency
+        - if 2 many, then rank based on criticality and frequency
         see C8_scenarioGraph and C8_scenarioTable
 
     Equivalence partioning

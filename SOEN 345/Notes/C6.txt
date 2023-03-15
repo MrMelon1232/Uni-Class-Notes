@@ -24,7 +24,7 @@ Mocking
     
     Spies:
         - real methods called
-        - use partial mocks wen dealing with code u can't change
+        - use partial mocks when dealing with code u can't change
         ex:
             List list = new LinkedList();
             List spy = spy(list);

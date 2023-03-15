@@ -32,7 +32,7 @@ Test patterns
     
     Crash test dummy
         - fake an error scenario
-    
+        
     Test smells
         
         Eager test
