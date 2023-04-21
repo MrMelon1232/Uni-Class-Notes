@@ -1,0 +1,23 @@
+Cognition
+
+    Process:
+        - attention
+        - perception
+        - memory
+        - learning
+        - reading, speaking, listening
+        - problem-solving, planning, reasoning + decision making
+    
+    - helps with:
+        - finding limits
+        - knowing what is possible
+        - explains nature and identifies nature of issues
+
+    types:
+        - experimental (play around exterior)
+        - reflective
+    
+    - fast thinking:
+        - automatic, fast but error prone
+    - slow thinking:
+        
