@@ -20,4 +20,33 @@ Cognition
     - fast thinking:
         - automatic, fast but error prone
     - slow thinking:
-        
+        - reliable, slow, complex decisions
+
+    - Causes of cognitive fluency: (min effort for brain)
+        1. fresh vs familiar: evolve gradually familiar design
+        2. Clear characters: space = more relax, colors (emotions, simplicity)
+        3. good mood
+        4. priming effect (influenced responsed from another stimulus)
+    
+    Attention:
+        - millenials --> shift attention but longer concentration
+
+
+Perception
+    -  4 principles:
+        1. emergence (whole picture)
+        2. reification (mind fills the gap)
+        3. multi-stability (multiple views)
+        4. invariance (diffs/similarities)
+        5. figure/ground = front/background
+    
+    laws:
+        1. jakobs: familiarity
+        2. pragnanz: regular, simple, symetrical
+        3. proximity
+        4. similarity
+        5. closure: objects are complete and focus on objects rather than gaps
+        6. symmetry
+        7. common fate: objects move along line
+        8. continuity: objects grouped = percept as whole
+        9. past experience

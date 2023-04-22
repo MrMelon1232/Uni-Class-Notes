@@ -1,0 +1,12 @@
+Memory
+
+    recall vs recognition
+        - find in memory vs find what is shown on screen then recog 
+    - chunks of memory can be remembered as a group
+    - organizing = easier to remember 
+    - help memory with recognizable patterns, clear simple and not too crowded information
+
+    improve UX:
+        - reduce cognitive load
+        - recognition > recall
+        - label information (folders, categories)

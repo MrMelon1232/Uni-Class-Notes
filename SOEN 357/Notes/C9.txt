@@ -1,0 +1,59 @@
+HCI models
+
+    Evaluation:
+        - evaluate design and implementation
+        - consider at all stages
+        by system designers/experts: early, cognitive walkthrough (who, what, when, why, problems, etc)
+        by end users: later
+
+        example of cognitive walkthrough:
+            1. identify user goals 
+            2. identify tasks to accomplish goals
+            3. document experience
+        
+        Heuristic evaluations
+            - broad rules
+            - systematic inspection
+            ex: system status, user control
+        
+        Nielsen recommends individual inspection (for no bias)
+
+    
+    Model-based vs Review-based
+        - evaluate usability, user behavior
+        examples: human model, KLM (keyboard, mouse, etc), GOMS (pc), TLM(touchscreens)
+    
+    FITTS'S law
+        - predictive model for human on HCI
+        - time depends on precision
+        - larger = easier
+    
+    Mental models
+        - how you think smth will work based on learning/experience
+    
+    Conceptual Models:
+        - research, use common terminology, test early
+        - evaluation and execution (gulfs)
+
+        Distribute cognition
+            - includes more than user's mind (external sources) ex: google maps
+            - distributed between users and groups
+        
+        Types of evaluations:
+            - controlled (experimental)
+            - natural
+
+        Examples:
+            - think aloud
+            - cooperative
+            - post task walkthrough
+    
+    Query techniques:
+        - interviews
+        - questionnaires
+        - nasa tlx
+        - subjective workload assessment technique (SWAT)
+        - workload profile method
+        - living labs
+        - physiological measurements (emotional response linked to physical changes)
+        - eye tracking
