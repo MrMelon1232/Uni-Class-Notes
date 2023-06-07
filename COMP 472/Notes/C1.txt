@@ -1,0 +1,21 @@
+Introduction to AI
+
+    1. definition
+        - system that think and acts like humans
+        - system that think and acts rationally 
+
+    - Acting humanly: turing test (can machines think?) (1950)
+    - cognitive revolution (1960)
+
+    Rational agents:
+        - entity that perceives and acts (achieve best outcome)
+        - autonomous, persistent, adaptation
+
+    Benefits vs risks:
+        - decrease repetitive work
+        - increase services/goods
+                vs
+        - weapons
+        - surveillance
+        - employment
+        - safety

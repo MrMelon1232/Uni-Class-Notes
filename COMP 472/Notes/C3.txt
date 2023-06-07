@@ -1,0 +1,59 @@
+Learning from examples
+
+    Forms of learning
+
+        3 types:
+            1. Supervised: agent observes input-output pairs and learns a func
+                 - we want the hypothesis to be consistent and closest to real world AKA ground truth (how well it handles new input)
+                 - function generalizes well if it accurately predicts the output
+                 - function --> hyposthesis about the world drawn from hypothesis space
+                 - perform tests to find proper space
+                 - we want to determine how probabl a hypothesis is, not if just possible/impossible
+
+                 Terms:
+                    - bias: tendancy of predictive hypothesis to deviate from expected value
+                    - underfitting: fails to find pattern in data
+                    - variance
+                    - overfitting: perform poorly on unseen data due to too much attention to particular data
+                    - bias-variance tradeoff: low-bias = better fit + simpler vs low-variance = better generalization
+
+                    h* = argmax P(h|data) P(h)
+
+                    we want to find hypothesis h* that max joint prob of posterior prob "P(h|data)" and prio prob "P(h)"
+                    tldr: we find the most probable hypothesis
+
+            2. Unsupervised: agent learns patterns in input (clustering)
+            3. Reinformence: agent learns from reinforcement (rewards/punishments)
+        
+
+        Decision Trees (see C3_tree)
+            - represents function that maps vectors of attributes to a single decision
+            - internal node = tests 
+            - branches = possible values
+            - leaf nodes = return values 
+
+            - entropy: measure of uncertainty of a random variable (more info = less entropy)
+            ex: coin --> 2 possibilities, entropy = 0.5
+        Formula: For random variable V with values Vk and prob P(Vk)
+                 - ∑ P(Vk) log2(P(Vk))
+                 for boolean: B(q) = - (qlog2(q) + (1 - q)log2(1 - q))
+                 for output variable on whole set: B(P / (P + N))
+
+        example: fair coin
+            H(Fair) = -(0.5log2(0.5) + 0.5log2(0.5)) = 1
+
+            - use attribute with lowest overall entropy as root node
+
+        Expected entropy remaining after testing attributes: where "p" = positive and "n" negative
+            Remainder(A) = ∑ (pk + nk)/(p+n) B(pk / (pk + nk))
+            Gain(A) = B(p/p+n) - Remainder(A) --> expected reduction in entropy
+                look at C3_gain
+
+        Pruning:
+            - combats overfitting (eliminate nodes that are not relevant/noisy)
+            - pruning starts w/ full tree and removing branches that don't improve accuracy
+            - stopping criterion can be based on variety of factors (size, # of nodes removed)
+                - when met, pruned tree is used for making decisions on new data
+
+    
+       

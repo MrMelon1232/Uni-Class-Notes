@@ -1,0 +1,63 @@
+Solving problems by searching
+
+    - Algorithms that superimpose search trees
+        - state spaces = set of possible inf states
+        - search tree = paths between states to goal
+
+    States vs nodes:
+        - states dont have parents, children, depth, path
+            - they are a reprensentation of physical configuration
+        - nodes = ds part of tree 
+
+    Best-first search
+        - choose node w/ min value of some evaluation
+        - each iteration, choose node w/ min value:
+            1. return state if goal
+            2. else, generate more children (expand)
+        - child nodes are added to frontier if:
+            1. not reached b4
+            2. re-added if path w/ lower cost than b4
+    
+    Data structures used:
+        - nodes (stores parents, state, action taken to reach current one, path-cost)
+        - to store frontier: queue
+            3 types:
+                1. priority (best-first search, pops node w/ min cost)
+                2. FIFO (breadth-first search, pops the oldest)
+                3. LIFO (depth-first search, pop newest)
+    
+    Redundant paths:
+        - cycles, loops, repeated states 
+        Eliminate by:
+            1. remember previous states
+            2. dont worry about repeating (sometimes imposssible for 2 paths to reach same state)
+            3. check for cycles
+        graph-search --> checks for redudant paths
+        tree-like search --> doesn't
+    
+    Evaluating performance of algorithms
+        1. completeness
+        2. cost optimality
+        3. time complexity
+        4. space complexity
+    
+    Uinformed search strategies (see C4_summary)
+        - has no prior knowledge
+        - ex: dfs (not cost-optimal, can get stuck), bfs (perfect for problems where all actions have the same cost), uniform-cost search, etc
+        - use best-first search when each action has diff costs (Uniform-cost search)
+        - usually O(b^d) where b = max branch factor, d = depth of solution
+
+        - depth-limited search prevents infinite search from dfs (eliminate cycles at the cost of time)
+        - although bfs is better, dfs maybe be faster with O(bd) space complexity
+        - diameter of state-space graph helps us choose depth
+        - can use iterative deepening search (combination of dfs and bfs)
+            - pereferred uinformed method when search state space is longer than can fit memory and depth of solution unknown
+
+        Total number of nodes generated:
+            N(IDS) = d(b^1) + (d-1)b^2 + (d-2)b^3 ... + b^d
+            N(BFS) = b^1 + b^2 + b^3 + .... b^d (repeat b^1 + b^2 .... d times)
+        
+    Bidirectional search
+        - searches from start and end 
+        - O(b^(d/2))
+        - keep track of 2 frontiers and 2 tables of reached states

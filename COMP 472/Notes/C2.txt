@@ -1,0 +1,62 @@
+Intelligent Agents
+
+    Agents and environments (see C2_env)
+        - agents = humans, robots | (perceives environment)
+        - sensors get info through actuators
+    
+    Rationality
+        - evaluate agent's behavior by consequence to determine the "RIGHT" thing
+        - evaluate performance
+
+        Fixed performance measure:
+            - evaluates env sequence
+            - rational agent chooses action that max expected value of performance measure given sequence
+
+        4 things to check rationality:
+            1. performance measure
+            2. agent's prior knowledge of env
+            3. actions
+            4. percept sequence
+
+        Specify task environment (PEAS) to design rational agent
+            - Performance measure | ex: safety, destination, profits, etc
+            - Environment | ex: Canada/US, traffic, streets, pedestrians
+            - Actuators | ex: steering, accelerator, brake, horn
+            - Sensors | ex: video, accelerometers, gauges, engine sensors, keyboards
+    
+    Environment types: (see slide to practice)
+        - fully observable (access to complete state of env at any pt in time)
+        - partially observable (noisy/inacurate sensors)
+        - unobservable (no sensors)
+
+        - single-agent | ex: vaccumm
+        - multi-agent | ex: chess
+
+        - deterministic: next state determined by current and action by agents
+        - nondeterministic
+
+        - determinism: same as deterministic
+        - stochastic-ism: same as nondeterministic but with stats 
+
+        - episodic: atomic & independant, percept and single action per episode | ex: finding defective parts
+        - sequential: decisions affect future | ex: chess
+
+        - static
+        - semidynamic: env changes with action performance score NOT with time
+        - dynamic
+
+        - discrete & continuous
+
+        - known & unknown (performance measure and agent knowledge)
+
+    Agent types 
+        - agent = architecture + program
+        - we want agent function to map percepts to actions
+
+        4 types:
+            1. simple reflex  
+            2. model-based reflex (w/ state, can use previous state to find partially observable aspects)
+            3. goal-based
+            4. utility-based
+    
+    For a summary, look at C2_summary
