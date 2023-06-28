@@ -1,0 +1,32 @@
+Deep learning
+
+    Neural networks:
+        - acts like neurons 
+        (dentritres receive info from other neurons which is transmitted to body/soma)
+        - deep learning --> circuits organized into many layers
+        - feedfoward network --> connections in 1 direction | inputs and outputs
+
+    Notations:
+        - We have input layers, hidden layers and output layers
+        - activation (number inside neuron 0-1) | generally higher number = input 
+        - many hidden layers can take care of different sections of the problem (ex: number recog: find edges, etc)
+        - we assign weights between connections of neurons to get patterns 
+            weighted sum = assembly of the pixels for that section
+            sigmoid function (weight) squeezes activation to either 0 or 1 so we can get a clear value and filter
+            ReLu is better tho, faster
+            add bias for inactivity (how high the weighted sum needs to be b4 neurons becomes meaningfully active)
+
+        generally:
+           # of weights = # of inputs * # of nodes in hidden layer 1 + # of nodes in hidden layer 1 * # nodes in hidden layer 2 + ...
+                          + # of nodes in hidden layer n * # of nodes in output layer 
+           # of biases = # of nodes in hidden layer n + # of nodes in output layer  
+
+           put weights in a matrix and have the cross product with the input nodes + bias = the following layer nodes
+
+        differences of cost --> how close/far are we to the actual results
+            - we get cost functions
+            function: sum of weights/biases --> cost number
+            - use slopes to find out if we are getting closer (bigger = bigger step)
+            - gradient of a function = direction of steepest increase (which direction do we have to step to decrease cost)
+            - helps us find which changes to which weight matters most
+            so we compute gradient, take a small step in -gradient, repeat

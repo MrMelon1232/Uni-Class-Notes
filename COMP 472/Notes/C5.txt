@@ -1,0 +1,40 @@
+Solving Problems by Searching
+
+    Informed search strategies
+        - uses domain-specific hints about the location of goals
+        - hints --> heuristic function (h(n))
+        - h(n) = estimated cost of cheapest path to goal
+
+    Greedy bfs
+        - expands first node w/ lowest value, the node that appears closest to goal
+        - takes certain world knowledge
+        - TLDR: take a node and find cheapest path (never expands non-solution path)
+        - not optimal cost however --> greedy search because being too greedy can lead to wrose results
+        - complete in finite state spaces but not inf 
+        - w/ good heuristic func, complexity can reach O(bm) | start is O(b^m)
+        - not optimal
+
+    A* search
+        - a BFS that uses evaluation function f(n) = g(n) + h(n)
+        where g(n) = path cost from initial state to node n
+        h(n) = estimated cost of shortest path from n to goal state
+        f(n) = estimated total cost of path through n to goal state
+        - optimal
+        see C5_a for example
+        - complete --> unless infinite many nodes with f <= f(g)
+        - time --> exponential in [relative error in h x length of soln]
+        - space --> all nodes in memory
+        - optimal
+
+
+    Admissible heuristics
+        - optimal solution of relaxed problem < optimal solution of real problem
+
+    Summary
+        - 5 parts for problem:
+            1. initial state
+            2. actions
+            3. transition model
+            4. goal states
+            5. action cost function
+        - uninformed vs informed (heuristics func that estimates the cost of a solution from n)
