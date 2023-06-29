@@ -1,0 +1,55 @@
+Natural Language Processing
+
+
+    3 reasons:
+        1. communicate
+        2. learn
+        3. scientific understanding
+    
+    Formal language (ex: first order language) --> defined, grammar, semantic rules
+    natural language --> ambiguous, vague
+
+    language model: prob distribution of likelihood of any string
+                - only approximations tho 
+    
+    Uncertainty:
+        - agents need to deal with this (choose the right decisions)
+        - due to partial observability, nondeterminism, adversaries
+        - solve this by keeping track of belief states (reprensentation of set of all possible world states + handle any possibility)
+
+        drawbacks:
+            - consider every explanation possible
+            - proper contingent plans
+            - must still act even if no plans exists
+
+    Large domains fail:
+        1. laziness (too much work to list full set)
+        2. theoretical ignorance (no complete theory)
+        3. practical ignorance (no tests)
+
+
+        Use probability thoery to solve degree of beliefs
+            - 0 meaning false and 1 certainly to true
+            - solves ignorance and laziness
+        
+        use utility theory to represent pref and reasons
+            - each state has a utility
+        
+        hence we have decision theory
+            decision theory = prob theory + utility theory
+
+        maximum expected utility (MEU)
+            - agent is rational if it picks action that yield highest utility
+
+    
+    Naive bayes
+        - see C7_bayes
+        - called naive bayes because order doesnt matter
+        - high bias but low variance
+
+    N-gram word model:
+        - each word is dependant on previous
+        - not practical
+    
+    character-level model: prob of each character = n - 1 prev chars (good for dealing with unknown words, words together)
+    skip-gram model: skip a word or more between for distinction (ex: ne and pas)

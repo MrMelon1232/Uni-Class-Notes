@@ -6,14 +6,19 @@ Deep learning
         - deep learning --> circuits organized into many layers
         - feedfoward network --> connections in 1 direction | inputs and outputs
 
+        formula: sigma(weight1 * input + weight2 * input + ... +/- bias)
+
+        universal approximation: network w/ 2 layers, 1st nonlinear and 2nd linear can approximate any continuous func
+
     Notations:
         - We have input layers, hidden layers and output layers
         - activation (number inside neuron 0-1) | generally higher number = input 
         - many hidden layers can take care of different sections of the problem (ex: number recog: find edges, etc)
         - we assign weights between connections of neurons to get patterns 
             weighted sum = assembly of the pixels for that section
-            sigmoid function (weight) squeezes activation to either 0 or 1 so we can get a clear value and filter
+            sigmoid function (activation function) squeezes activation to either 0 or 1 so we can get a clear value and filter
             ReLu is better tho, faster
+            note: activation functions are not linear 
             add bias for inactivity (how high the weighted sum needs to be b4 neurons becomes meaningfully active)
 
         generally:
@@ -24,9 +29,16 @@ Deep learning
            put weights in a matrix and have the cross product with the input nodes + bias = the following layer nodes
 
         differences of cost --> how close/far are we to the actual results
-            - we get cost functions
-            function: sum of weights/biases --> cost number
+            - we get cost functions 
+            function: sum of difference of activation (between layers) squared 
             - use slopes to find out if we are getting closer (bigger = bigger step)
             - gradient of a function = direction of steepest increase (which direction do we have to step to decrease cost)
             - helps us find which changes to which weight matters most
-            so we compute gradient, take a small step in -gradient, repeat
+            so we compute negative gradient of cost function, take a small step in -gradient, repeat
+
+    Backpropagation
+        - to want a specific output, we either want the previous node to be more active or less
+        - hence we get back propagation, output determines what should happen to the previous layers
+        - how a single training example wants to nudge the weights and biases
+
+        - sub divide examples to mini-batches to converge to local minimum (stochastic gradient descent)
