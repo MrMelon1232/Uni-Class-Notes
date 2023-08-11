@@ -1,0 +1,52 @@
+Nominal (r) and Effective (i) interest rates
+
+    nominal (r)
+        - interest rate w/out consideration of compounding
+        - not amount of rate that will accumulate per year
+        interest rate per month = r / m (rate / # of months)
+
+    effective (i)
+        -interest rate takes compounding into consideration
+        i = (1 + r / m)^m - 1
+        per payment period: i = (1 + r / ck)^c - 1
+                where m = # of compounding periods per year
+                      k = # of payment periods per year
+                      c = # of compounding periods per payment period 
+                      m = c*k
+    
+    look at slide 6A for examples
+    important to really understand the problems and look for variables
+
+
+
+Changing interest rates (see slide 6B)
+    - apply formula to present money with current interest rate
+    - then apply the new interest rate on the value money after n periods
+    ex: interest first 2 years = 12%, after 9%, find future value at year 5
+    find P at 2 years, then use P at 2 years to find F at 5 years
+
+Present worth analysis
+    - helps find present worth of future costs and benefits
+    Assumptions in solving economic analysis problems:
+        1. end of period convention (all cashflow amounts are calculated as amounts at the end of each period)
+        2. no sunk costs (consider current and pentential future only)
+        3. 2 viewpoints (investor and borrower)
+    
+    techniques:
+        1. equal lives (useful life of each alternative equals analysis period)
+        2. not equal lives
+        3. infinite analysis period
+
+        present worth analysis requires that analysis is made between equal time periods
+
+        what we want in an alternative:
+            - Max net present worth (present worth benefits - present worth of costs)
+            NPW = PW of benefits - PW of costs
+        
+        for not equal lives: 
+            - use LCM (least common multiple of lives)
+            - TLDR: repeat the cycle in that multiple
+            ex: 10 year project vs 5 year
+            LCM: 10 years --> reformulate the 5 years into 10 years (essentially 2 times the 5 year period)
+
+

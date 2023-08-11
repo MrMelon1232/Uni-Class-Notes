@@ -1,0 +1,60 @@
+Canadian Forms of business
+
+    4 types:
+        1. Sole Proprietorship
+            - fully responsible for all debts and obligations
+            - profits all yours
+            - creditor can make a claim against personal/business asset to pay off debts
+            Pros:
+                = easy and indexpensive
+                = lowest amount of regulartory burden
+                = tax advantages during losses:
+                    - deducting losses from personal income
+                    - lower tax bracket when profits are low
+            Cons:
+                = unlimited liability
+                = taxable at your rate
+                = relies on you (taxes, funding, time)
+
+        2. Partnerships
+            - divide risks and combine ressources
+            - Limited liability partnership (LLP): only lawyers and accountants in Canada
+                = dont take part in control or management but are liable
+            Pros:
+                = easy to start
+                = equal share
+                = tax advantage (include share of partnership in returns)
+            Cons:
+                = unlimited liability since no difference between you and business (business is part of you)
+                = conflicts possible
+
+        3. Corporations
+            - incoroporate business
+            - becomes legal entity, separate from owners    
+            Pros:
+                = limited liability
+                = ownership transferable
+                = continuous existence
+                = easier to raise capital
+                = possible lower taxes
+            Cons:
+                = closely regulated
+                = more expensive
+                = extensive corporate records
+                = possible conflicts, shareholders and directors
+                = residency of directors (diff areas/countries)
+
+        4. Cooperatives
+            - business owned by association of members
+            - least common
+            Pros:
+                = owned+control by members (democratic)
+                = limited liability
+                = share profits
+                = no double taxation
+            Cons:
+                = possible conflicts
+                = longer decision process
+                = less incentive of additional investment
+                = extensive record keeping
+                = participation of all matters

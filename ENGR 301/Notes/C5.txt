@@ -1,0 +1,37 @@
+Development of Network diagram and critical path
+
+    Procedure:
+        - make summary of activities (look at C5_activities)
+        - left to right
+        - no looping
+        - use unique start/stop when project has multiple starts/end nodes
+
+        Each node contains (look at C5_node):
+            1. t = duration of activity
+            2. ES = earliest start (0 at start)
+                - equal to the latest EF of prev activity (or max of the nodes converging)
+            3. EF = earliest finish
+                - equal to current ES + duration of activity
+            4. LS = latest start
+                - equal to its LF - duration of activity 
+            5. LF = latest finish
+                - for final activity: same as EF
+                - the rest: same as LS of next activity
+                - or minimum of the activities succeding it
+
+        Terms:
+            Forward pass: find ES and EF
+            Backward pass: find LS and LF
+
+            afterwards, we can find the slack: amount of delay w/out affecting project completion time
+            Slack/float = LS - ES | LF - EF
+            Total float: total delay for an activity w/out affecting project
+            Free float (FF) = min ES of next - EF | delay possible w/out delaying next (always 0 for last)
+            Interfering float (IF) = LF - min ES of next | delay that affects the next non-critical activities
+                                   = Total float - FF
+            Critical paths: 
+                - activities with slack zero
+                - longest path | continuous 
+                - min overall project time duration
+                - activities EF and ES are the same | LF and LS are the same
+                - highlighted by bold lines/double lines

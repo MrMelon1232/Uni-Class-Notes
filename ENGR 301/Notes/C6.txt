@@ -1,0 +1,48 @@
+Scheduling of Projects
+
+    Project schedule:
+        - sum of all activities
+        - in sequence
+        - schedule: plan that indicates what needs to be done, ressources to use, timeline
+
+        3 roles:
+            1. aid in planning project implementation
+            2. commununicate aspects of project exec progress
+            3. basis of controlling implementation
+
+        Representing schedules: simpler = better
+
+        Categories
+            1. pictorial charts (simple but limited in details)
+            2. gantt charts 
+            3. linear schedules
+            4. network diagrams
+
+
+        D = A / PT
+            where D = activity duration
+                  A = units of work
+                  P = Productivity rate (unit of work/hour)
+                        - found by historical data
+                        - factors affecting it: project conditions, learning curve, weather conditions
+                  T = number of crews
+        
+        Network diagrams:
+            2 types:
+                1. PERT (project evaluation and review technique)
+                    - uses probabilistic (uncertain) estimates of activity durations
+                    - activity-on-arrow network (AOA) (events as nodes and activities as arrows)
+                2. CPM (critical path method)
+                    - uses deterministic (certain) estimates of activity durations
+                    - activity-on-node (AON) (activities as nodes and events as arrows)
+    
+        Steps on drawing activity network:
+            Ask for each activity on the list:
+                1. Is it a "start" activity
+                2. precedence
+                3. concurrence (what activity can start/finish after)
+                4. sucession (what activities can begin after this one finished)
+
+            We then label at table:
+                PIB: preceded immediately by
+                - only 1 start and 1 finish activity (dummy could be used if we have multiple)

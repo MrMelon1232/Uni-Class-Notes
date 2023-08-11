@@ -1,0 +1,27 @@
+Other analysis techniques
+
+    Future worth analysis:
+        - analysis at some future point in time
+        - find F given A, G, etc
+
+    Benefit-cost ration analysis
+        - PW of benefits / PW of costs >= 1
+        - between 2 alternatives --> if delta B / delta C >= 1 choose higher-cost alternative
+
+        note: salvage value = value gained at the end of period
+                            usually used (A/F, i, n)
+    
+    Payback period
+        - interest rate not considered
+        - approximation
+        - economic consequences beyond payback ignored
+
+        steps:
+            - find the period/time it takes to cover cost
+            - find min period option
+
+    Sensitivity Analysis
+        - when we want a change in the future so we determine what current action to take
+    
+    Break-Even Analysis
+        - cost = benefit, you break even

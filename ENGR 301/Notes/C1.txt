@@ -1,0 +1,83 @@
+Introduction to project management
+
+    definition:
+        - project is :
+            1. temporary (beg and end)
+            2. unique
+        
+        - project management is:
+            1. application of knowledge, skills, tools, techniques
+
+            life cycle:
+                1. Initiating
+                2. Planning
+                3. Execution
+                4. Closing
+
+        - Charter:
+            - formal short document that describes the project
+
+        - Stakeholders (high risk and influence early)
+            - managers
+            - customer/user
+            - performing organization
+            - team members
+            - management team
+            - sponsor
+            - influencers
+
+    Project manager:
+        - objectives: time, cost, quality
+        
+        Some knowledge areas:
+            - integration (plan, execution, control)
+            - scope
+            - time
+            - cost
+            - quality
+    
+    Project phases:
+        1. inception (visualization)
+        2. planning and definition
+        3. design
+        4. procurement and production
+        5. start up and commissioning
+    
+    Organization Structure
+        - 2 types of view: Macro(big picture) and micro (details)
+        - organizational theory explains trade-off of macro and micro
+
+        types:
+            1. Functional organization (by function)
+                - coordinated by functional & upper level of management
+                - when design and construction dont overlap
+                - 1 clear superior
+                Pros:
+                    - stability and prof standards
+                    - latest technology, corporate memory, good discipline control
+                Cons:
+                    - poor communication accross functions
+                    - low adaptability
+                    - resistance to change
+                ex: universities, government, armed forces
+
+            2. Projectized organization
+                - based on projects
+                - most organization's ressources are involved
+                - manager --> independance and authority
+
+            3. Matrix organization  
+                - mixed of project and functional (ex: u could have functinal separation but have project managers as staff interact with other functional departments)
+                strong --> max power to project managers (more projectized) | have a group of managers
+                weak --> max power to functional managers (more functional)
+                - scpoe, cost, schedule --> taken care by project managers
+                - func objectives (QA, design standards, policies) --> taken care by functional managers
+                Pros:
+                    - pros of functional and projectized orgs
+                    - corporate memory
+                    - good env for new project managers
+                Cons:
+                    - difficult defining accountability
+                    - multiple bosses (violate unity command principle) (strong bosses dominate)
+                    - high admin and admin cost
+                see chart for more info @ C1_structure

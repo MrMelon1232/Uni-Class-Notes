@@ -1,0 +1,86 @@
+Project devlivery methods and contracts
+    
+    3 types:
+        1. Traditional: design activities are completed, then build starts
+            - single contractor
+            - longest
+        2. Phased: respected build activities start when their design activity is complete
+            - multiple contractors, req PM
+            - mid duration
+        3. Fast Track: build activities start during design activities
+            - multiple contractors
+            - shortest duration
+            - hard to manage, inadequate design + schedule
+    
+    Contracts
+        - used for: describe scope of work, project duration, specify payment
+        - sets control mechanisms, manage/allocate risks, assign responsabilities/
+        - a legal relationship (obligation between owner and performing org to execute scope)
+        - verbal/writing (must be in writting for a sale of land)
+        contains:
+            1. names
+            2. scope of work
+            3. period
+            4. price, method, terms
+            5. language, source of law gvt
+            6. listing of other docs
+
+        proof:
+            - mutual agreement
+            - consideration
+            - legal
+
+        types:
+            1. Lump sum
+                - high risk to seller/contractor
+                - when we can state the entire cost before build
+                - also includes profit
+                - paid by percentage of work done
+                - markup is usually higher to account for risk
+                formula: direct cost + indirect cost + markup
+                Cons:
+                    - not flexible (details b4 work done (traditional delivery))
+                    - deviations handled as change order
+                    - engineer estimates quantities for work items | contractor quotes price by unit for each work items
+            
+            2. Unit price
+                - when not possible to calculate exact quantity of materials
+                - best for when design responsability remains with the owner/design completed during construction
+                - lower risk than lump sum
+                - broken down into work items
+                - Total price = sum of work items prices
+                - Work item prices = quantity * price-per-unit
+                - when actual quantity differs estimated by more than 10%, unit price renegotiated
+                Cons:
+                    - true contract price not known until project completed
+                    - can be 
+                    
+            3. cost + fixed percentage or fee or profit sharing or sliding fees
+
+                cost + fixed percentage:
+                - contractor reimbursed for all direct expenses + paid percentage of that cost as fee
+                - best for contracts with new technology but not time limited
+                - risk toward owner
+
+                cost + fixed fee:
+                - same reimbursement as previous
+                - contract gets fixed fee for expertise (usually a percent of original estimated total cost)
+                - owner risk in direct cost
+                - contractor loses money if project is delayed (we want to finish ASAP)
+
+                cost + fixed fee + profit sharing:
+                - share any underrun savings but no penalty for overrun
+                - specify target price, if under --> share profit between owner and contractor
+                - common contractor gets 25% of the amount left
+
+                cost + fixed fee + sliding fee:
+                - bonus for under-run and penalty for overrun
+                - Sliding Fee = R (T - A)
+                    where R = base percent value
+                          T = target price
+                          A = actual cost 
+        
+        Provisions:
+            - in contracts
+            - assign responsability for covering the costs of possible/unforseen circumstances
+            ex: force majeure (earthquakes), insurances, liquidation damages

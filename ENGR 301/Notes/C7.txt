@@ -1,0 +1,77 @@
+Cost Estimating
+
+    Why estimates:
+        - obtain contracts
+        - establish budget/feasibility
+
+    types:
+        - estimates for conceptual planning: based on general paremeters of facility size, anticipated quality of construction and use of facility
+        - estimates for feasibility: based on preliminary design information
+        - estimates during engineering and design: based on schematic design and docs
+        - estimates for project execution/construction: prep using historical average costs
+        - estimates for change orders: developed using project implementation in response to owner change in project scope
+
+    Contingency:
+        - amount added to an estimate to allow unlikely situations (additional cost)
+        - based on estimator's past project experience
+    
+    Details:
+        - direct cost (labor, material, etc)
+        - indirect cost
+        - markup
+    
+    Estimating models:
+        1. triangulation: diff perspective approach
+        2. Learning curve: percentage or rate at which output is increased due to repetition
+            Tn = Tinitial x Nr
+
+            where Tn = time required for Nth unit of production
+                  Tinitial = time required for first unit of prod
+                  N = number of completed units
+                  r = learning curve exponent
+                    = log (learning curve as decimal) / log 2.0
+        
+            when ouput 2x --> decrease to learning rate (L%) for last item
+            see C7_learningCurve for examples 
+        
+        Types of cost estimating:
+            1. Rough
+                - used in initial planning and evaluation phase
+                - finding magnitude
+                - quick, no detail
+                - accuracy -30% to +60%
+            2. Budget
+                - used in conceptual and preliminary stage of project
+                - more detailed than Rough
+                - accuracy -15% to +20%
+            3. Detailed
+                - used in detailed design and contract bidding phase
+                - more time and ressources
+                - accuracy from -3% to +5%
+        
+        Difficulties:
+            1. one-of-a-kind: a lot of customization
+            2. time and effort
+            3. estimator expertise
+
+        More models:
+            - Per-unit model 
+                - uses per unit factor 
+                - simple and useful
+                - only for Rough estimates
+            - Segmenting model
+                - divide into components
+                - total = sum of components
+            - Cost indexes
+                - change in price over time
+                - Cost at time A/ cost at time B = index at time A / index at time B
+            - Power-sizing model    
+                - estimate costs of industrial plants and equipment
+                - Cost of equipment A / cost of equipment B = (Size (capacity) of equipment A / Size (capacity) of equipment B)^x
+                    where x = economies of scale in size/capacities
+                    if x = 1 --> linear relationship | if x > 1 --> diseconomics of scale | if x < 1 ---> economics of scale
+                - works best in middle range
+
+                see C7_indexPower for example
+                look at slide for more info or examples
+            

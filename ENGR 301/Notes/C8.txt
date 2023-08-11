@@ -1,0 +1,45 @@
+Earned Value Management
+
+
+    EVM:
+        - project control technique
+        - integrates scope, cost, schedule
+        - measure performancee of a project at any point in time
+
+    Cost schedule plan:
+        - plot of project's planned cummulative costs
+        - usually S shape ---> reffered to as S-curve
+
+        Actual vs budgeted: 
+            PV: planned Value | planned budget to be used for the work or scheduled cost
+            AC: actual cost
+            EV: earned Value | earned budget depending on work done (% complete * total budget cost)
+            ST: scheduled time | EV/PV * AT
+            AT: actual time
+            BAC: budget at completion | total PV of a project
+            
+            CV: cost variance | cost performance on a project | EV - AC
+                - CV positive --> under budget | negative --> over budget
+            SV: schedule variance | measure of schedule performance of project | EV - PV
+                - SV positive --> ahead of schedule | negative --> behind schedule
+            CPI: cost performance index | cost efficiency to work | EV / AC
+                - more useful than CV when comparing diff pts in time or diff projects
+                - CPI > 1 --> cost underrun | cost inefficiency = 1/CPI = AC/EV
+            SPI: schedule performance index | measures progress achieved | EV / PV
+                - SPI > 1 --> more work done then planned
+            ETC: estimated to completion | (BAC - EV) / CPI (assume remaining future follows past CPI)
+                - assume CPI = 1 if we assume current variance is atypical(not representative) to future variances
+                - EV should be equal to AC for remaining period if CPI = 1
+            EAC: estimated at completion | EAC = ETC + AC | EAC = BAC / CPI
+            CSI: cost schedule index | EV * EV / (AC * PV) | | on target if CV cancels SV
+            TV: time variance | ST - AT
+            TPI: time performance index | ST/AT
+    
+    Cost control:
+        - detect cost overrun
+        - timely corrective actions to minimize/elminate cost overrun
+    
+    S-Curve (PV Curve)
+        - predicting project cash flow reqs
+        - planned cost = budget (PV)
+        - planned time = schedule

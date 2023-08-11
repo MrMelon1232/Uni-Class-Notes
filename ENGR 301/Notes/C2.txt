@@ -1,0 +1,44 @@
+Project Delivery Systems
+    
+    definition:
+        - system used by agency or owner
+        - for organizing, financing design construction, operations and maintenance services
+        - done by entering into legal agreements
+    aka: contracting method, contract strategy, procurement strategy
+    - helps transfer risks to project participants
+
+    Types:
+        1. Tranditional (design-bid-build |DBB|) --> owner generates design specs, selects lowest bid
+            - 2 contracts: single designer and single general contractor (has its own contracts)
+            - contract types include: lump sum, unit price, cost plus fixed fee contract for contractors
+        
+        2. Turnkey (complete project)
+            - design-build --> generates req specs, selects lowest bid, single contract
+            - design-manage --> generates req specs, selects lowest bid, single contract for managing
+            - 1 contract, engineer and contractor (construction manager for design-manage) (they get multiple contracts)
+        
+        3. Owner-builder    
+            - 2 contracts (design and execution)
+        4. Professional Construction management
+            - general contractor (2 contracts: designer and general contractor)
+                = 3 party team of 
+                = separate designer and general contractor (GC) acting as construction manager
+                = lump sum or negotiated contracts
+                = some of his own force but mainly subcontractors
+            - project manager
+
+    
+    Planning
+        - define project by scope
+        - serves project manager as a map
+
+    Work Breakdown Structure (WBS)
+        - deliverable oriented grouping of project elements
+        - work not in WBS = outside scope of project
+        - hierarchical
+        - broken down into work packages 
+
+        Work packages
+            - well defined scope of work that usually terminates with deliverable product
+            - vary in size but measurable and controlable unit of work
+            - mutually exclusive + collectively exhaustive

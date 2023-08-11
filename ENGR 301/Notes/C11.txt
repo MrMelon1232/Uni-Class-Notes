@@ -1,0 +1,74 @@
+Annual Cash Flow Analysis
+
+
+    3 analysis methods:
+        1. Present worth / net present value (NPV)
+        2. Annual cash flow
+        3. Rate of return / internal rate of return
+
+    For annual cash flow:
+        - we want to compare alternatives
+        - convert present values to equivalent uniform values
+
+        salvage value:
+            - 1 time cash flow benefit at the end of asset's life
+            - when there is an initial cost (P) followed by a salvage value (S) 
+                --> equivalent uniform annual cost (EUAC) (installation, operating expenses, etc) | (becomes negative amount)
+                EUAC = P(A/P, i, n) - S(A/F, i, n)
+
+            EUAC = PW Cost (A/P, i, n)
+            - Expenditure of money increases EUAC
+            - Receipt of money decreases EUAC 
+
+            EUAB --> for benefits (savings, salvage value, etc)
+            EUAW = EUAB - EUAC
+
+            we want to:
+                1. Max EUAB
+                2. Min EUAC 
+                3. MAX EUAW
+
+        annualized salvage values and installation, the rest are already done
+
+
+    Types of analysis periods
+        - alternatives have equal lives
+        - alternatives have unequal lives
+        - no need for common analysis period between alternatives 
+        2 assumptions:
+            - AC of future instance = same as current instance
+            - common multiple of useful lives exist
+
+        since multiple of finite service life = 1 service life
+            --> EUAC inf = EUAC limited life
+            but for alternative w/ inf life --> EUAC inf = Pi + other annual costs
+
+
+Rate of return
+
+    - when present worth & EUAW = 0 (benefit = cost)
+
+    decisions are based on: minimum attractive rate of return (MARR)
+    IRR (internal rate of return): interest reate which equates to 
+        sum of present value of cash inflows + sum of present value of cash outflows
+        - discount rate tjat causes NPV = 0
+        - higher IRR = better    
+
+        PW of benefits - PW of cost = 0
+        PW benefits / PW cost = 1
+        Present worth = Net present worth = 0
+        EUAW = EUAB - EUAC = 0
+
+    
+    when finding interest rate, set NPW or PW to 0 and solve for rate or use EUAB - EUAC = 0 and use trial and error
+    see C11_IRR_EX1 and C11_IRR_EX2 C11_IRR_EX3 for examples
+
+    Incremental Analysis
+        - for evaluating multiple alternatives
+        - different between alternatives = increment
+        if delta IRR > MARR --> choose higher initial cost
+            else chose lower initial cost
+
+
+    
+

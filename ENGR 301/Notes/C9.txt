@@ -1,0 +1,65 @@
+Economic Decisions, Cash flow diagrams, interest and equivalence
+
+    - principal: initial amount of money involved in debt/investment
+    - plan for receipts or payments: cash flow pattern over a specified length of time
+    - future amount of money: end value
+
+    Variables
+        i = interest rate per interest period
+        n = number of interest periods
+        P = a present sum of money or present value/worth
+        F = future sum of money, n interests periods from the present, (its p with interest i)
+        A = end of period in a uniform series continuing for n periods
+
+    Problems:
+        - simple
+        - intermediate (primarily economic)
+        - complex
+    
+    engineering costs:
+        - fixed costs
+        - variable costs
+        - marginal costs (var cost for 1 more unit)
+        - avg costs
+        Total cost = total fixed + total variable
+        - chart for revenue --> when cost = revenue (breakeven point BEP)
+
+        others (sunk cost, opportunity costs, recurring, incremental, etc)
+    
+
+    Cash flow diagrams (CFD)
+        - costs/benefits of engineering over time
+        - basis of engeering economic analysis
+        - draw a horizontal line, divided into time units
+        - for each cash flow, draw a vertical arrow (up for profit, down for cost)
+
+
+    Interests and Equivalence
+        1. Simple interest --> applied only to the original sum
+            interest earned = P * i * n
+            F = P + P * i * n
+
+        2. Compound interest
+            - usual method
+            - calculated on the accumulated amount (compounding process)
+            F = P(1+i)^n 
+
+        3. Equivalence
+            - equivalence of present to future/past values
+            - dependent on interest rate
+            - finding present value to have in order to have a specified future value (discounting process)
+            function: P = F(1+i)^-n
+
+    Types of cash flow (look at C9_models)
+        - use compound interest table for diff interest at different number of periods
+        - diff periods are additive
+    
+    Uniform series
+        - cash receipt or disbursement in a uniform series
+        - ex: annual contribution
+        - use table to get the interest amount
+        - for sinking fund factor, calculate manually see slide 5
+    
+    Multiple factors: look at slide 5 for info
+    note: Gradient descent = continuous increase per year for example or a period
+    

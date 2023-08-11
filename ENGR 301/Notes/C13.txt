@@ -1,0 +1,18 @@
+Depreciation
+
+    Income:
+        - Revenue - Cost to obtain
+
+    defined as:
+        - decrease in value by:
+            1. decline in market value
+            2. decline in value to an owner
+        must be:
+            1. used to produce Income
+            2. useful life
+            3. decays/loses value
+        - business costs are either expenses or depreciations
+        - non-cash cost
+        - business expense over longer period
+
+    Types of property
