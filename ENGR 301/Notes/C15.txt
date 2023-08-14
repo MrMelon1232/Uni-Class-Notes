@@ -1,0 +1,48 @@
+Taxation
+
+    taxable income = gross income - deductions
+        where:
+            gross income = wages and salary, interest income, etc
+            deductions = pension, retirement plans
+    taxes are progressive (more money = more tax)
+
+    Avg tax rate = total taxes payable / taxable income
+        where:
+            total taxes payable = fed + prov + surtaxes
+        
+    marginal tax rate = tax rate that applies to next taxable dollar (tax bracket)
+
+    Corporate income tax:
+        - not progressive
+        - small business deduction (SBD) on the first 300k
+        - diff around the world
+        - only corporate companies (not sole, partnership)
+
+    
+    MARR
+        - before and after
+        - MARR after-text = MARR before-text * (1 - t)
+        same for IRR
+        UCC opening + additions - disposals - CCA = UCC ending
+    
+    look at C15_tax_depreciation example
+    look at C15_CCA_TAX example
+
+
+    CTF and CSF
+        - capital tax factor: constant for given CCA rate and interest rate
+            - summarizes effect of benefit of future tax savings due to CCA
+            - use for PRESENT
+        - capital salvage factor: used when asset is salvaged or scrapped as an ongoing tax effect
+            - when salvaged or scrapped, not half year rule
+            - use for FUTURE
+
+        formula:
+            CSF = 1 - td / (i + d) 
+            CTF = 1 - tf (1 + i/2) / ((i + d) ( 1 + i))
+                where:
+                    t = tax rate
+                    d = CCA rate
+                    i = after-tax interest rate
+            
+            PW of salvage value/sale =  salvage Base * CSF * (P|F, i or MARR, n)

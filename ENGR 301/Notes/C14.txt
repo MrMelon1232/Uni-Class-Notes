@@ -1,0 +1,39 @@
+Inflation
+
+    - makes future money less valuable than present
+    - increase = deflation
+
+    depends on:
+        1. money supply
+        2. exchange rates
+        3. cost-push (incrase operating cost = increase sell price)
+        4. demand-pulls
+
+    definitions:
+        1. inflation rate: annual rate of increase in price
+        2. real interest rate: increase in purchasing power (exlcude inflation effect)
+        3. market interest rate: rate obtained in marketplace (combines inflation and real interest)
+    
+    avg inflation "f"
+        f = (Pn / P0)^(1/n) - 1
+        where Pn = base * inflation percent n * inflation percent n+1 ...
+    
+    rates and dollars:
+        i = i' + f + i'*f where 
+            i = market interest rate
+            i' = real interest rates
+            f = inflation
+        
+        actual dollars: physical money / inflated dollars
+        real dollars: constant dollars representing purchasing power (inflation-free)
+    
+    Cost indexes:
+        - must use standard purchasing power base of money to compare 2 diff years of money
+        - better than predictors
+        --> use price change indexes
+            % increase = (new - old) / old * 100
+            F = P (1+i)^n --> f = (F/P)^(1/n) - 1
+
+        2 types:
+            1. composite: track historical price bundles of assets
+            2. commodity: ex: construction labour, iron-ore

@@ -16,3 +16,58 @@ Depreciation
         - business expense over longer period
 
     Types of property
+        1. Tangible --> can be seen, touched (real)
+        2. Real --> land, buildings, all things built, grown etc on land
+        3. Personal --> equipment, furnishing, vehicles, etc (tangible but not real property)
+        4. Intangible --> can't be seen or touched (patents, copyrights, franchises, etc)
+
+
+    Exceptions:
+        1. land never depreciates
+        2. Leased property
+        3. factory inventory
+
+        cost basis of an asset
+            - total charge that must be spent over the life of an asset
+            Book value = cost basis - depreciation charges till date
+
+    In canada --> Capital Cost Allowance (CCA)
+    
+    Methods:
+        1. straight line --> for intangible asset
+            d = (B-S) / N
+                - d = depreciation charge annual
+                - b = cost basis
+                - S = salvage value
+                - N = depreciable life in years
+                see ex: C13_SL_EX
+
+        2. sum-of-year digit (SOYD) --> general
+            SOYD = N * (N + 1) / 2
+            d = (N - t + 1) / SOYD * (B - S)
+                - d = depreciation charge in any year t
+                - N = number of years in depreciable life
+                - B = cost of asset 
+                - S = estimated salvage value after depreciable life
+            to find book value of asset in a year, subtract each depreciation charge until specified year (including the year we want to find)
+
+        3. declining-balance --> general
+            - like negative interest rate, constant depreciation rate "D"
+            - dn = D * B (1-D)^n-1 = D * BVn-1 | P = BV n = 0 
+            look at formula: C13_declining_formulas
+            B1 = B0 - d1 .... Bn = Bn-1 - dn
+
+        4. double declining-balance --> general
+            - 150% --> dt = 1.5/N * B at t-1
+            - double --> dt = 2/N
+            note: salvage value indicates the end value
+
+        5. unit-of-production --> machinery
+            - based on use
+            UOP = (production for year / total lifetime production) (B-S)
+
+        CCA
+            - asset-class accounting
+            - maximum capital cost allowance --> max company could take would be sufficient to reduce the taxable income to 0
+            - first year ownership rule --> only 50% of maximum rate
+            - CCA --> claimed by completing the CRA form shedule 8 | schedule II = income tax guide
