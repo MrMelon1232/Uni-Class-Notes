@@ -1,0 +1,185 @@
+Big-O = worst case
+Big-omega = best case
+Big-theta = medium case
+
+STACK PUSH FROM BACK OUT FROM BACK
+
+QUEUE PUSH FROM FRONT OUT FROM BACK
+
+LISTS:
+	arrays shift contents to left or right, have to increase size when full or use linked lists/circular array
+	node/linked lists changes reference when adding/removing
+
+trees:
+	depth = number of ancestors (from the top)
+	height = max height (from the bottom)
+	inorder traversal = left to right from bottom
+	euler tour traversal = left, below, right
+	preorder traversal = root first then subtree and children, left to right
+	example:  		 1
+			     2      5
+			   3   4   6  
+	postorder traversal = left to right descendants first
+	example: 		  9
+			     3	    7     8
+                            1 2   4 5 6  	
+	level traversal = go by level from root 
+	binary tree = internal nodes has max 2 children (exactly 2 for proper/full)
+	arithmetic trees = left to right 
+	
+properties:
+	n = number of nodes				e = i + 1
+	e = number of external nodes			n = 2e - 1 = 2i + 1		
+	i = number of internal nodes			h <= i
+	h = height					h <= (n-1) / 2
+							e <= 2^h
+							h >= log2e
+							h >= log2(n+1) - 1
+	look at properties slide/proofs for more info
+
+priority queues:
+	adding according to the priority of the items
+
+Heaps:
+	last node = rightmost node of max depth
+	key(v) >= key(parent(v)) aka child is bigger or equal to parent
+	minimum key is always at the root
+	heap is binary tree if h - 1 has maximum number of entries, each level(i) must have 2i nodes with root being level 0
+	inserts happen at the last node	
+	upheap/downheap restores order (swapping) runs n O(log n) time since height is O(log n)
+	bottom construction = O(n logn) and left to right from bottom
+	
+
+hash tables:
+	seperate chaining: where x mod n where n is the size of bucket
+	linear probing: A[x+1 mod n) if 1 does not work do 2,3,4....
+	quadratic probing: A[x + f(j) mod n) where f(j) j^2 , j=0,1,2,3...
+	double hasing: A[x + f(j) mod n), f(j) = j * h2(k), j = 1,2,3
+	answer indicates the index of the value in the bucket
+	load factor = number of placements/ size of bucket 
+	look at assignment 3 for examples
+BST:
+	inorder traversal = visit keys in increasing order
+	left = smaller than current key
+	right = bigger than current key
+	AVL are BST but balanced height of children has max difference of 1 {-1,0,1} do height(left) - height(right)
+	if not balanced, do rotation
+
+graphs:
+	vertex = point
+	edge = lines
+	edges incident on vertex = edges that are coming out/in of vertex
+	adjacent = next to each other
+	degree = number of edges of a vertex, incident
+	sparse = graph where lot less edges than vertices
+	dense = graph where close number of edges to vertice
+	euclerian paths/cycle = visits all edges once
+	hamiltonian paths/cycle = visits all vertices once
+	(-/- are edges)	
+		u
+	     -e- -g-
+	    v  -f-  w -h- z					
+
+
+	edge list structure:
+		V	    E	
+		-> u <-- e <-
+		     <--   	
+		-> v <-- f <-
+		     ...	
+
+	adjacency list structure:
+		V
+		-> u -> [e g]
+		-> v -> [e f]
+  		     ...
+	adjacency map structure:
+		V
+		-> u -> [ u w ]
+			[ | | ]
+			[ arrow down]
+			[ e g ]
+		   ...
+	adjacency matrix structure:
+			0 1 2 3	
+		u -> 0	0 1 1 0 	
+		v -> 1  1 0 1 0
+		w -> 2  1 1 0 1
+		z -> 3  0 0 1 0
+	
+	DFS:
+		takes O(vertices + edges) time
+		visits all edges and vertices
+		uses stack (this case, out from front ; insert from front) for travelling, pushes adjacent nodes in stack
+		example: graph A,B,D,F,E,C
+		Stack 	Output
+		A    
+		BC	A
+		DC	AB
+		FC	ABD
+		EC	ABDF
+		...
+		Tree example:
+				0
+			      1   2		
+			   3 4 5    6
+		Stack	Output
+		0	
+		12	0
+		3452    01
+		    ...
+                2 	01345
+		6	013452
+			0134526
+			
+
+	BFS: 
+		takes O(vertices + edges) time
+		visits all edges and vertices
+		uses queues (this case, out from front ; insert from back), pushes adjacent nodes in queue
+		example: graph A,B,D,F,E,C
+		Stack 	Output
+		A    
+		BC	A
+		CD	ABC
+		DE	ABCD
+		...
+	
+	bfs vs dfs: space time of bfs is lesser, requires more memory, dfs is faster, use bfs to find shortest path
+	
+	topological sort:
+		Organize the tasks into a linear order that allows us to complete them one at a time 
+		without violating any prerequisites. 
+		go by order following arrows and what is necessary/prerequisites
+		model the problem using a DAG ; a graph with a cycle cannot have a valid ordering
+		trees dont contain cycles
+	shortest path:
+	
+	Dijkstra's Algorithm:
+		find shortest path of all vertices
+		add adjacent nodes slowly 1 by 1 and update path from inf
+		example:
+		Shortest path Table
+   		V       | A | B | C | D | E | F | G | H | I | J |
+    		H,I,A,G | 2 |INF|INF|INF|INF|INF| 2 | 0 | 1 |INF|
+    		F,J,B   | 2 | 8 |INF|INF|INF| 3 | 2 | 0 | 1 | 3 |
+    		E,D,C   | 2 | 8 | 11| 6 | 6 | 3 | 2 | 0 | 1 | 3 |
+	minimum spanning trees:
+		find minimum cost set of edges that connect all vertices
+		kruskals algorithm: 
+			sort edges by increasing edge weight
+			select first |v| - 1 edge that dont generate cycle (no loops)
+		example:
+		edge	distance	yes/no
+		(D,E)   1		yes
+		(D,G)   2		yes
+		(E,G)   3 		no cuz makes a cycle
+
+		prim's algorithm:
+			select node min distance
+			update distance of adjacent, unselected nodes
+		make a table	
+		
+for sorting, look at assignment3 
+for proofs for Big-O look at assignment 1
+				

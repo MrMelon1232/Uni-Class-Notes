@@ -1,0 +1,176 @@
+Question1
+    a)   0     1       2         3          4             5         6        7         8     9        10           11      12  
+        [65] [105] [28, 223] [185, 120] [225, 69] [70, 122, 18, 44] [] [85, 111, 59] [177] [256] [10, 49, 140] [245, 180] [12]
+    
+    b) There are a total of 11 collisions
+
+Question2
+    Note: Assuming that modulo (mod) has the same operator priority as multiplication and division as of Java and C language
+    a) put(37) --> 37 mod 19 = 18
+       put(17) --> 17 mod 19 = 17
+       put(24) --> 24 mod 19 = 5
+       put(36) --> 36 mod 19 = 17, there is collision, therefore: 11 - 36 mod 11 = 8 | (17 + 1 * 8) mod 19 = 6
+       put(62) --> 62 mod 19 = 5, there is collision, therefore: 11 - 62 mod 11 = 4 | (5 + 1 * 4) mod 19 = 9
+       put(28) --> 28 mod 19 = 9, there is collision therefore: 11 - 28 mod 11 = 5 | (9 + 1 * 5) mod 19 = 14
+       put(58) --> 58 mod 19 = 1
+       put(47) --> 47 mod 19 = 9, there is collision, therefore: 11 - 47 mod 11 = 8 | (9 + 1 * 8) mod 19 = 17 but 17 slot is taken so (9 + 2 * 8) mod 19 = 6 but 6 is also taken so (9 + 3 * 8) mod 19 = 14 but 14 is also taken so (9 + 4 * 8) mod 19 = 3
+       put(19) --> 19 mod 19 = 0
+
+       0    1   2   3   4   5    6   7  8   9   10 11 12 13  14  15 16  17   18
+      [19] [58] [] [47] [] [24] [36] [] [] [62] [] [] [] [] [28] [] [] [17] [37]
+
+    b) The longest cluster size is 4
+
+    c) A total of 7 collisions occured
+
+    d) The load factor is 9/19 = 0.47
+
+Question3
+    a) put(37) --> (37 + 1) mod 19 = 0
+       put(17) --> (17 + 1) mod 19 = 18
+       put(24) --> (24 + 1) mod 19 = 6
+       put(36) --> (36 + 1) mod 19 = 18, there is collision, therefore: (36 + 2) mod 19 = 0 but 0 is taken so (36 + 3) mod 19 = 1 
+       put(62) --> (62 + 1) mod 19 = 6, there is collision, therefore: (62 + 2) mod 19 = 7
+       put(28) --> (28 + 1) mod 19 = 10
+       put(58) --> (58 + 1) mod 19 = 2
+       put(47) --> (47 + 1) mod 19 = 10, there is collision, therefore: (47 + 2) mod 19 = 11
+       put(19) --> (19 + 1) mod 19 = 1, there is collision, therefore: (19 + 2) mod 19 = 2 but 2 is taken so (19 + 3) mod 19 = 3
+
+       0    1    2    3   4  5   6    7   8  9   10   11  12 13 14 15 16 17  18
+      [37] [36] [58] [19] [] [] [24] [62] [] [] [28] [47] [] [] [] [] [] [] [17]
+
+    b) The longest cluster size is 2
+
+    c) A total of 6 collisions occured
+
+Question4
+    Look at pictures Question4_a and Question4_b  
+
+Question5
+
+    a)  17 total elements                   
+                                 12|47|74|19|89|4|63|26|53|8|93|71|15|87|50|17|82
+                                                    |           |
+                        12|47|74|19|89|4|63|26|53 <-|           |-> |8|93|71|15|87|50|17|82
+                                    |  |                                     |   |
+                   12|47|74|19|89 <-|  |-> 4|63|26|53           8|93|71|15 <-|   |-> 87|50|17|82
+                        |  |                  | |                   | |                 | |  
+             12|47|74 <-|  |-> 19|89   4|63 <-| |-> 26|53    8|93 <-| |-> 71|15 87|50 <-| |-> 17|82  
+                 |               |      |             |       |             |     |             |
+             12|47|74          19|89   4|63         26|53    8|93         15|71 50|87         17|82
+                |________________|      |_____________|       |_____________|     |_____________|
+                        |                      |                     |                   |
+                  12|19|47|74|89           4|26|53|63             8|15|71|93         17|50|82|87
+                        |______________________|                     |___________________|   
+                                    |                                          |
+                         4|12|19|26|47|53|63|74|89                    8|15|17|50|71|82|87|93
+                                    |__________________________________________|
+                                                          |
+                                   4|8|12|15|17|19|26|47|50|53|63|71|74|82|87|89|93
+
+    b) Pivot is the middle+1, 17/2 = 8.5 (round to 9), let's consider pivot to be element position 10 = 8
+       iterrating from the left to right is element i 
+       iterrating from the right to left point is element j
+       swap i and j whenever i > p and j < p
+
+       For pivot 8:
+            12|47|74|19|89|4|63|26|53|8|93|71|15|87|50|17|82
+            swap i = 12 and j = 4
+            swap i,j = 47 and p = 8
+            result: 4|8|74|19|89|12|63|26|53|47|93|71|15|87|50|17|82
+
+        for partition: 4
+            it is already sorted
+
+        for partition: 74|19|89|12|63|26|53|47|93|71|15|87|50|17|82, choose pivot at position 9: 93 
+            swap i,j = 82 and p = 93
+            result: 74|19|89|12|63|26|53|47|82|71|15|87|50|17|93
+
+        for partition: 74|19|89|12|63|26|53|47|82|71|15|87|50|17, choose pivot at position 8: 53
+            swap i = 74 and j = 17
+            swap i = 89 and j = 50
+            swap i = 63 and j = 15
+            swap i,j = 47 and p = 53
+            result: 17|19|50|12|15|26|47|53|82|71|63|87|89|74
+
+        for partition: 17|19|50|12|15|26|47, choose pivot at position 5: 15                 for partition: 53|82|71|63|87|89|74, choose pivot at position 5: 87
+            swap i = 17 and j = 12                                                              swap i = 89 and j = 74
+            swap i,j = 19 and p = 15                                                            swap i,j = 74 and p = 87
+            result: 12|15|50|17|19|26|47                                                        result: 53|82|71|63|74|87|89
+        
+        for partition: 12                                                                   for partition: 89                   
+            it is already sorted                                                                it is already sorted 
+                                                                                            
+        for partition: 50|17|19|26|47, choose pivot at position 4: 26                       for partition: 53|82|71|63|74, choose pivot at position 4: 63
+            swap i = 50 and j = 19                                                              swap i,j = 82 and p = 63
+            swap i,j = 50 and p = 26                                                            result:  53|63|71|82|74
+            result: 19|17|26|50|47                                                                  
+
+        for partition 19|17, choose pivot at position 1: 17                                 for partitions: 53
+            swap i,j = 19 and p = 17                                                            it is already sorted
+            result: 17|19
+            this is sorted!                                                                 for partitions: 71|82|74, choose pivot at position 3: 74
+                                                                                                swap i,j = 82 and p = 74
+        for partition 50|47, choose pivot at position 2: 47                                     result: 71|74|82
+            swap i,j = 50 and p = 47                                                            this is sorted!
+            result 47|50
+            this is sorted!
+
+        Combining all sorted parts we get: 4|8|12|15|17|19|26|47|50|53|63|71|74|82|87|89|93 
+
+    c) 10 Buckets with range from 0-99
+
+       Bucket 0 (0-10)  -> 4,8
+       Bucket 1 (11-20) -> 12,15,17,19
+       Bucket 2 (21-30) -> 26
+       Bucket 3 (31-40) -> 
+       Bucket 4 (41-50) -> 47,50
+       Bucket 5 (51-60) -> 53
+       Bucket 6 (61-70) -> 63
+       Bucket 7 (71-80) -> 71,74
+       Bucket 8 (81-90) -> 82,87,89
+       Bucket 9 (91-99) -> 93
+
+       We then have sorted list: 4|8|12|15|17|19|26|47|50|53|63|71|74|82|87|89|93
+
+    d) Unit digit:  50|71|12|82|63|53|93|74|4|15|26|47|87|17|8|19|89
+       Ten's digit: 4|8|12|15|17|19|26|47|50|53|63|71|74|82|87|89|93     
+
+   
+
+Question6
+    1.      0|1|2|3|4|5|6|7|8|9 
+        0 | 0 0 0 0 0 0 1 0 0 1
+        1 | 0 0 1 0 0 0 0 1 0 0
+        2 | 0 1 0 1 1 1 0 1 1 0
+        3 | 0 0 1 0 0 1 0 0 0 0 
+        4 | 0 0 1 0 0 1 1 0 0 0
+        5 | 0 0 1 1 1 0 1 0 0 0
+        6 | 1 0 0 0 1 1 0 0 1 1
+        7 | 0 1 1 0 0 0 0 0 1 0
+        8 | 0 0 1 0 0 0 1 1 0 1
+        9 | 0 0 0 0 0 0 1 0 1 0
+
+    2. 0[] -> [6]->[9]
+       1[] -> [2]->[7]
+       2[] -> [1]->[3]->[4]->[5]->[7]->[8]
+       3[] -> [2]->[5]
+       4[] -> [2]->[5]->[6]
+       5[] -> [2]->[3]->[4]->[6]
+       6[] -> [0]->[4]->[5]->[8]->[9]
+       7[] -> [1]->[2]->[8]
+       8[] -> [2]->[6]->[7]->[9]
+       9[] -> [0]->[6]->[8]
+
+       
+    3. Look at picture Question6_bfs (note: I wrote Question5 by accident)
+
+    4. Look at picture Question6_dfs
+
+
+Question7
+    Shortest path Table
+    V       | A | B | C | D | E | F | G | H | I | J |
+    H,I,A,G | 2 |INF|INF|INF|INF|INF| 2 | 0 | 1 |INF|
+    F,J,B   | 2 | 8 |INF|INF|INF| 3 | 2 | 0 | 1 | 3 |
+    E,D,C   | 2 | 8 | 11| 6 | 6 | 3 | 2 | 0 | 1 | 3 |

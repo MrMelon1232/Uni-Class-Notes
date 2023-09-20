@@ -1,0 +1,151 @@
+STUDY:
+
+Velocity and estimation of duration:
+    - Use story points as estimation/calculation of size (similar to ideal day)
+    - Velocity = estimation of duration, rate of progress
+               - sum of # story points or ideal days per iteration
+    - Computing duration and seperate estimation of effort
+    - consider buckets/sections for estimation scale
+    - consider risk and discussions with customer
+    - tasks = stories broken down in ideal hours
+
+DevOps:
+    - practice to reduce time (with same quality) (operations and development engineers)
+    - movement like agile
+    development:
+        - design --> code --> test --> release --> evolution
+    operation (fix current system):
+        - monitor --> troubleshoot --> capacity planning --> anomaly detection --> q&a --> tune
+    - SOLVES: 
+        - over the wall development (seperate tasks and teams)
+        - comms between dev and ops
+        - awareness of both sides
+        - minimizes synchronous coordination (meetings,etc)
+        - small team = same page
+    - completed code != production code (goes through deployment step first)
+    - important timelines = commit-deployment, deployment-production, testing/monitor in production
+    - PROCESSES:
+        - treat operators well
+        - make dev responsible for indident handling (short time for solving errors)
+        - deployment practices for dev and ops
+        - CICD
+        - infrastructure code same as dev
+        WE WANT TRACEABILITY
+
+Requirements:
+    - customer (service to be done) and system (func + operational constraints)
+    - STEPS:
+        1. Elicitation
+        2. Analysis
+        3. Specification
+        4. Validation
+    - Readers
+        > User:
+            - Client
+            - System End-users
+            - client engineers
+            - contractor managers
+            - System architect
+        > System: 
+            - System End-users
+            - Client engineers
+            - System architects
+            - Software Devs
+    2 Types:
+        1. Functional:
+            > what system should do
+            > user = high-level statement | system = in detail
+            > Main concerns:
+                - completeness
+                - consistency
+
+            Ambiguous (open interpretation) requirements:
+                - leads to imprecision
+
+        2. Non-Functional:
+            > specify constraints and properties of system
+            > ex: reliability, storage requirements
+            > Main concerns:
+                - quantifiability (measureable) NO GENERALIZATIONS
+                - ex: speed, size, ease of use, reliability, robustness, portability
+            > High-Level classification:
+                - product requirements
+                - organizational requirements (standard procedures)
+                - external requirements
+
+    Good and Bad Requirements:
+        GOOD: 
+            1. define system
+            2. may or should as verb
+            3. functionality
+            4. measureable
+            5. simple words
+            6. specific
+        
+        BAD:
+            1. avoid requirements on user (different case than user stories)
+            2. using vague statements
+            3. conditions, ambiguity, vague terms
+            4. conjunctions, speculation
+
+        - realism(feasibility)
+        - validity (necessity)
+        - verifiability (testability)
+        - consistency
+        - completeness
+
+    Determining bad cases:
+        - would other systems want the opposite
+        - ex: car shall have an engine (bad cuz all cars need one)
+
+    Ways of writing a system requirement Specification:
+        - natural language (easy, understandeable, flexible) | (can lack clarity)
+        - structural language (uniformity)
+        - design description languages
+        - graphical notations
+        - mathematical notations
+        NOTE: BE CONSISTENT
+
+Requirement Use Cases:
+    - behavior of system and Software
+    - user stories = simple, desires/needs
+    - use cases = describe complete interactions of actors and system
+    - originally to support elicitation
+    - each case = discrete task with external interaction with other system
+    - Roles in cases (diagrams helps):
+        - Actors (someone outside system acting)
+            - Primary => acts on system
+            - Secondary => acted on by the system
+        - Use Cases (name should be unique and verb with goal)
+        - Connections
+    SECTIONS: 
+        - description
+        - preconditions (does not mean action WILL start (only can) | can be triggers but rare)
+        - stimulus(triggers) | should handle errors
+        - post-conditions (true if case ends)
+        - minimal guarantee (true if cases ends not matter what)
+        - comments
+        - author, version, dates
+        - alternate paths (exceptions for example)
+
+    RELATIONS:
+        - extensions (add extra handing, functionality | optional)
+        - can have sub-classes
+        - inclusions (lower level task)
+
+ESTIMATIONS Techniques:
+    - experience-based
+        - issues: new softwares
+        - unfamiliar Techniques
+    - algorithmic cost 
+        - formula = Effort = A * Size^B * M
+        - estimate effort for develop System
+        - harder to use
+        - multiple uncertainties
+        - example: COCOMO 2
+        - sub-models of COCOMO 2
+            - Application composition model (supports prototypes)
+                - composition of multiple parts
+            - Early design model
+            - Reuse model
+            - Post-architecture model

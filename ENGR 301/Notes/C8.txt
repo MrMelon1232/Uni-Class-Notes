@@ -8,7 +8,7 @@ Earned Value Management
 
     Cost schedule plan:
         - plot of project's planned cummulative costs
-        - usually S shape ---> reffered to as S-curve
+        - usually S shape ---> referred to as S-curve
 
         Actual vs budgeted: 
             PV: planned Value | planned budget to be used for the work or scheduled cost

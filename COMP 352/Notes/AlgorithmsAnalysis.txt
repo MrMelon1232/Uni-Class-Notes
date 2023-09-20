@@ -1,0 +1,336 @@
+Correctness != efficiency
+Algorithm is efficient when:
+    - uses less memory
+    - execute time is quick
+To measure efficiency:
+    - measurement is independent of used software and hardware
+    - run-time analysis can have serious weakness
+Often focus on worst case running time = easier to analyse
+
+worst case   --> defined by maximum number of steps taken on any instance of size n
+best case    --> defined by minimum number of steps taken on any instance of size n
+average case --> defined by the average number of steps taken on any instance of size n
+
+Easier to talk about upper and lower bounds
+-------------------------------------------------------------------------------------
+Limitation of experiements:
+-------------------------------------------------------------------------------------
+    - need to implement Algorithm = difficult/costly
+    - compare 2 algorithms =  need same hardware + software
+    - need to pinpoint/single out task
+    - results are not indicative (different output depending on input)
+
+Efficiency depends to a great extent on the definition of the method/function
+This is called an abstract analysis (ignore various restrictions like cpu speed and memory,etc)
+-------------------------------------------------------------------------------------
+Pseudo code: 
+-------------------------------------------------------------------------------------
+    - set of primitive operations
+    - High-level description of an algorithm
+    - More structured than English prose
+    - Less detailed than a program
+    - Preferred notation for describing algorithms
+    - Hides program design issues
+    Contains:
+        - control flow
+        - method call and declaration
+        - expression assignments etc
+-------------------------------------------------------------------------------------
+Primitive Operation: a low level instruction with an execution time that is constant
+-------------------------------------------------------------------------------------
+    - Basic computations performed by an algorithm
+    - Identifiable in pseudocode
+    - Largely independent from the programming language
+    - Assumed to take a constant amount of time in the RAM model
+• Examples:
+    ▪ Evaluating an expression
+    ▪ Assigning a value to a variable
+    ▪ Indexing into an array
+    ▪ Calling a method
+    ▪ Returning from a method
+-------------------------------------------------------------------------------------
+Theoretical analysis:
+-------------------------------------------------------------------------------------
+    - high-level description of Algorithm instead of implementation
+    - characterizes running time as a function of the input size, n
+    - takes into account all possible inputs
+    - allows evaluation of speed independent of hardware/software
+-------------------------------------------------------------------------------------
+Estimating Running Time:
+-------------------------------------------------------------------------------------
+Evaluate the time it takes for pseudo code
+    - control flow and each step in it
+    - method calls and declarations
+    - expressions and assignments
+
+Example: Assume an array a [0 … n –1] of int, and assume the following code segment:
+```
+for (int i = 0; i < n - 1; i++)
+    if(a[i] > a[i+1])
+        System.out.println(i);
+```
+Find worstTime(n)
+
+Solution:
+```
+Statement               Worst Case Number of Executions
+i = 0                   1
+i < n - 1               n
+i++                     n - 1
+a[i] > a[i+1]           n - 1
+System.out.println()    n - 1
+
+Therefore the worstTime(n) is: 4n - 2
+```
+
+Example 2
+```
+int sumOfList(int A[], int n)
+{
+    int sum = 0,i;
+    for(int i = 0; i < n; i++)
+        sum = sum + A[i];
+    return sum;
+}
+```
+
+Solution:
+```
+Statement           Cost            Repetition          Total
+int sum = 0,1       1               1                   1
+int i = 0           1               1                   1
+i < n               1               n + 1               n + 1
+i++                 1               n                   n
+sum = sum + A[i]    2               n                   2n
+return sum          1               1                   1
+
+Therefore the solution is 4n + 4
+```
+-------------------------------------------------------------------------------------
+Seven functions that often appear in algorithm analysis:
+-------------------------------------------------------------------------------------
+❖ Constant = 1
+❖ Logarithmic = log n
+❖ Linear = n
+❖ N-Log-N = n log n
+❖ Quadratic = n^2
+❖ Cubic = n^3
+❖ Exponential = 2^n
+- In a log-log chart, the slope of the line corresponds to the growth rate
+- Look at slide for graph on what is looks like
+-------------------------------------------------------------------------------------
+Running time:
+-------------------------------------------------------------------------------------
+Define:
+    a = Time taken by the fastest primitive operation
+    b = Time taken by the slowest primitive operation
+
+Let T(n) be the running time of the solution 4n-4. Then
+    a (4n - 4) ≤ T(n) ≤ b(4n - 4)
+
+Changing hardware/software
+    - Affects T(n) by a constant factor 
+    - Does NOT alter growth rate
+
+Growth Rate:
+    - The linear growth rate of the running time T(n) is an intrinsic property of algorithm compareValues
+    - The runtime QUADRUPLES when problem size DOUBLES
+SEE GrowthRateTable.png for table 
+
+growth rate is not affected by
+    1. Constant factors
+    2. lower-order terms
+-------------------------------------------------------------------------------------
+Big-O Notation
+-------------------------------------------------------------------------------------
+    - approximation of the worst time
+    General Process:
+        - determine the upper bound of the algorithm AKA Limitation
+        - if g(n) is an upper bound of function f(n) then we say f(n) is Big-O of g(n)
+
+Given functions f(n) and g(n), we say that f(n) is O(g(n)) if 
+there are positive constants c and n0
+such that
+    f(n) ≤ c g(n) for n ≥n0
+• The idea is that if f(n) is O(g(n))then it is bounded above 
+(can not get bigger than) some constant times g(n).
+
+For instance, if g(n) = n^3, for n = 0, 1, 2,…., 
+then instead of saying that f(n) is O(g(n)), we say f(n) is O(n^3).
+-------------------------------------------------------------------------------------
+Linear Function:
+-------------------------------------------------------------------------------------
+Example 1:
+```
+What is O() if f(n) = 2n + 10?
+• 2n≤2n for n ≥0
+• 10 ≤ 10n for n ≥ 1
+So, for any n ≥1
+• 2n + 10 ≤12n →consider c = 12, n0 = 1 → g(n) = n
+Consequently, the above f(n) is O(n).
+```
+
+Example 2:
+```
+What is O() if 
+    f(n) = 3n^4+ 6n^3+ 10n^2 + 5n + 4
+• 3n^4≤3n^4 for n ≥0
+• 6n^3 ≤ 6n^4 for n ≥ 0
+• 10n^2 ≤ 10n^4 for n ≥ 0
+• 5n ≤ 5n^4 for n ≥ 0
+• 4 ≤ 4n^4 for n ≥ 1
+
+So, for any n ≥ 1:
+    3n4+ 6n3+ 10n2 + 5n + 4 ≤ 28n^4 →consider c = 28, n0 = 1 → g(n) = n4
+Consequently, the above f(n) is O(n^4).
+```
+-------------------------------------------------------------------------------------
+Logarithmic Function:
+-------------------------------------------------------------------------------------
+We can ignore the Logarithmic base (see slide part 2-3 for proof)
+
+Example 3:
+```
+What is O()if f(n) = 3 log n + 5
+•3 log n≤ 3 log n for n ≥1
+•5 ≤ 5 log n for n ≥ 2
+So, for any n ≥ 2:
+    3 log n + 5 ≤ 8 log n →considerc = 8, n0 = 2 
+→g(n) = log n
+•Consequently, the above f(n) is O(log n).
+```
+-------------------------------------------------------------------------------------
+Nested Loops
+-------------------------------------------------------------------------------------
+Example 4:
+```
+for(int i = 0l i < n; i++)
+    for(int j = 0; j < n; j++)
+The outer loop has 1 + (n+1) + n executions
+The inner loop has n(1 + (n+1) + n) executions
+Total is 2n^2 + 4n + 2 --> O(n^2)
+```
+
+More on Big-O:
+    Important Note: Big-O only gives an upper bound of the algorithm.
+    However, if f(n) is O(n), then it is also O(n + 10), O(n^3), O(n^2+ 5n + 7), O(n10), etc. 
+    We, generally, choose the smallest element from this hierarchy of orders. 
+    For example, if f(n) = n + 5, then we choose O(n), even though f(n) is actually also O(n log n), O(n^4), etc. 
+    Similarly, we write O(n) instead of O(2n + 8), O(n –log n), etc. 
+-------------------------------------------------------------------------------------
+Big-O Hierarchy
+-------------------------------------------------------------------------------------
+Elements of the Big-O hierarchy can be as:
+O(1) ⊂ O(log n) ⊂ O(n^½) ⊂ O(n) ⊂ O(n log n) ⊂ O(n^2) ⊂ O(n^3) ⊂ …….. ⊂ O(2^n) ⊂ …….. 
+Where the symbol “⊂ ”, indicates “is contained in”. 
+SEE picture "Big-OGrowthRateTable.png" for visual table 
+
+The following table provides some examples: 
+Sample Functions                     Order of O()
+f(n) = 3000                          O(1)
+f(n) = (n * log~2(n+1) + 2) / (n+1)  O(log n)
+f(n) = (500 log~2n) + n / 100000     O(n)
+f(n) = (n* log~10n) + 4n + 8         O(n log n)
+f(n) = n* (n + 1) / 2                O(n^2)
+f(n) = 3500 n^100+ 2n                O(2^n)
+
+Warning:
+Warning: One danger of Big-O is that it can be misleading when 
+the values of n are small. 
+For instance, consider the following two functions f1(n) and f2(n) 
+for n≥ 0
+f1(n)= 1000n →f1(n) is hence O(n)
+f2(n) = n^2/ 10 →f2(n) is hence O(n^2)
+However, and despite of the fact that f2(n)has a higher/worst 
+order than the one of f1(n), f1(n)is actually greater than f2(n), for 
+all values of n less than 10,000!
+-------------------------------------------------------------------------------------
+Finding Big-O Estimates Quickly
+-------------------------------------------------------------------------------------
+Case 1:Number of executions is independent of n → O(1)
+Example: 
+// Constructor of a Car class
+public Car(int nd, double pr) 
+{
+    numberOfDoors = nd;
+    price = pr;
+} 
+
+Case 2:The splitting rule →O(log n)
+Example: 
+while(n > 1) 
+{
+    n = n / 2;
+    …;
+}
+Example: 
+See the binary search method in Recursion6.java& 
+Recursion7.java
+
+Case 3: Single loop, dependent on n → O(n)
+Example: 
+for (int j = 0; j < n; j++ )
+    System.out.println(j);
+
+Note: It does NOT matter how many simple statement (i.e. no 
+inner statments) are executed in the loop. For instance, if the loop 
+has k statements, then there is k*n executions of them, which will 
+still lead to O(n). 
+
+Case 4:Double looping dependent on n & splitting → O(n log n)
+Example: 
+for (int j = 0; j < n; j++ )        ---> O(n)
+{
+    m = n;
+    while (m > 1)                   --> O(log n)
+    {
+        m = m / 2;
+        …;
+        // Does not matter how many statements are here
+    }
+}
+
+Case 4 (continues):Double looping dependent on n → O(n^2)
+Example: 
+for (int i = 0; i < n; i++ )
+    for (int j = 0; j < n; j++ )
+    {
+    …;
+    // Does not matter how many statements are here
+    }
+The number of executions of the code segment is as follows: 
+n + (n-1) + (n-2) + … + 3 + 2 + 1
+Which is: n(n + 1) / 2 = ½ n2+ ½ n → O(n^2)
+
+Case 5:Sequence of statements with different O( )
+O(g1(n)) + O(g2(n)) + … = O(g1(n) + g2(n) + …)
+Example: 
+for (int i= 0; i< n; i++ )
+{
+...
+}
+for (int i= 0; i< n; i++ )
+    for (int j = i; j < n; j++ )
+    {
+    ...
+    }
+The first loop is O(n) and the second is O(n^2). The entire 
+segment is hence O(n)+ O(n^2), which is equal to O(n + n^2), which 
+is in this case O(n^2). 
+-------------------------------------------------------------------------------------
+Big-O Rules
+-------------------------------------------------------------------------------------
+If is f(n) a polynomial of degree d, then f(n) is O(n^d), i.e.,
+    1. Drop lower-order terms
+    2. Drop constant factors
+• Use the smallest possible class of functions
+▪ Say “2n is O(n)” instead of “2n is O(n^2)”
+• Use the simplest expression of the class
+▪ Say “3n + 5 is O(n)” instead of “3n + 5 is O(3n)”
+-------------------------------------------------------------------------------------
+Math Review
+-------------------------------------------------------------------------------------
+• Summations 
+• Logarithms and Exponents 
+• Proof techniques 
+• Basic probability

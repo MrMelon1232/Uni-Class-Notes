@@ -1,0 +1,91 @@
+Question 1
+a)
+function algorithmOddEven(A)
+    Input: array A of n integers
+    Output: The total number of even positive numbers, the total number of odd positive numbers, the sum of even positive numbers and the sum of odd positive numbers
+    sumOfEvenPositiveNumbers <- 0;
+    sumOfOddPositiveNumbers <- 0;
+    totalEvenPositiveNumbers <- 0;
+    totalOddPositiveNumbers <- 0;
+
+    for i <- 0 to A.length() - 1 do
+        if A[i] >= 0 then
+            if A[i] % 2 = 0 then
+                totalEvenPositiveNumbers++
+                sumOfEvenPositiveNumbers += A[i]
+            if A[i] % 2 = 1 then 
+                totalOddPositiveNumbers++
+                sumOfOddPositiveNumbers += A[i]
+    return (totalEvenPositiveNumbers, sumOfEvenPositiveNumbers, totalOddPositiveNumbers, sumOfOddPositiveNumbers)
+
+b) Time Complexity in terms of Big-O is O(n)
+
+c) Space Complexity in terms of Big-O: O(1)
+
+
+2. 
+    a) f(n) = 45n^2 + 28n + 752 where f(n) is Ω(n)
+      There exist positive numbers c and n0 such that 0 ≤ cn ≤ f(n) for all n ≥ n0
+      Therefore, this is a true statement because this function lies above n for sufficiently large values of n.
+
+    b) f(n) 256n + 8nlog(n) where f(n) is Θ(log n)
+       There exists n0 such that f(n) > clog(n) for all n > n0
+       Therefore, this is a false statement because this function lies above log(n) for sufficiently large values of n.
+    
+    c) f(n) = n^0.8 + log(n) where f(n) is O(log n)
+       For sufficiently large values of n, n^0.8 > log(n).
+       Therefore, this is a false statement according to the Big-O definition.
+    
+    d) f(n) = 2n^2 log(n) + n^3 where f(n) is Θ(log n)
+       This functions's (f(n)) Big-Theta is Θ(n^3) and is greater than log n for all positive values of n.
+       Therefore this is a false statement.
+    
+    e) f(n) = 4nlog^2 n + 3n^2 log(n) where f(n) is O(log n)
+       f(n) is greater than log n for sufficiently large values of n.
+       Therefore, this is a false statement and f(n) is Θ(n^2 logn).
+    
+    f) f(n) =  n^7 + 0.00000001n^6 where f(n) is s Ω(n^6)
+       Since f(n) is greater than n^6 for sufficiently large values of n, there exist positive numbers c and n0 such that 0 ≤ cn^6 ≤ f(n) for all n ≥ n0
+       Therefore, this is a true statement. 
+
+3. 
+    a) First loop:
+        ```
+        currentMax <- A[0]
+        for i <- 1 to n - 1 do
+            if A[i] > currentMax then 
+                currentMax <- A[i]
+            { increment counter i }
+        ```
+        ->O(n)
+
+        Second loop:
+        ```
+        CurrentMaxOccurence = 0
+        for i <- 0 to n − 1 do 
+            if A[i] == currentMax then
+                { increment currentMaxOccurence}
+            { increment counter i }
+        ```
+        ->O(n)
+
+        Third loop:
+        ```
+        specialSum = 0
+        for i <- 0 to n − 1 do
+            for j <- 1 to currentMaxOccurence do 
+                { specialSum = specialSum + A[i] }
+                { increment counter j } 
+            { increment counter i }
+        ```
+        ->O(n * currentMaxOccurence)
+
+        time complexity = O(n) + O(n) + O(n * currentMaxOccurence)
+                        = O(n * currentMaxOccurence)
+    
+    b)  The time complexity in terms of Big-O is O(n * m)
+
+    c) The space complexity in terms of Big-O is O(1)
+
+    d) We can not improve this algorithm in order to achieve a better time complexity. It is already optimized where
+       the time complexity is already in O(n * m), the first two loops are in O(n) with the max occurence in the third one.

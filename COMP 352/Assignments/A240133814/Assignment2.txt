@@ -1,0 +1,148 @@
+Question 1
+    a) for the first loop:
+        ```
+        for i = 0 to n-1 do 
+            Var[i] = 0                      --> requires n times
+        end for
+        ```
+
+        for the second loop:
+        ```
+        for i = 0 to n-2 do
+            for j = i+1 to n-1 do
+                if A[i] <= A[j]             
+                    Var[j] = Var[j] + 1      --> requires (n-1) + (n-2) + (n-3) + ..... 1
+                else
+                    Var[i] = Var[i] + 1      --> requires (n-1) + (n-2) + (n-3) + ..... 1
+                end if
+            end for
+        end for
+        ```
+
+        for the third loop:
+        ```
+        for i = 0 to n-1 do
+            S[Var[i]] =  A[i]                --> requires n times
+        end for
+        Return S
+        ```
+
+        total = n + 2((n-1) + (n-2) + (n-3) + .... 1) + n
+              = 2n + 2((n-1) + (n-2) + (n-3) + .... 1)
+              = 2 (n (n+1) / 2)
+              = n^2 + n
+              therefore, the big-O is O(n^2) and the big-Omega is Ω(n^2)
+
+
+    b) A = (60,35,81,98,14,47) with n = 6
+       Var = (0,0,0,0,0,0) 
+
+       Values of array Var for each iteration of the loop in "for i=0 to n-2 do" at line 4
+        i=0;j=1 --> Comparison of 60 > 35 therefore Var[0] = 1
+        i=0;j=2 --> Comparision of 60 < 81 therefore Var[2] = 1
+        i=0;j=3 --> Comparision of 60 < 98 therefore Var[3] = 1
+        i=0;j=4 --> Comparision of 60 > 14 therefore Var[0] = 2
+        i=0;j=5 --> Comparision of 60 > 47 therefore Var[0] = 3
+        --> Var = (3,0,1,1,0,0)
+
+        i=1
+        --> Var = (3, 1, 2, 2, 0, 1)
+
+        i=2
+        --> Var = (3, 1, 4, 3, 0, 1)
+
+        i=3
+        --> Var = (3, 1, 4, 5, 0, 1)
+
+        i=4
+        --> Var = (3, 1, 4, 5, 0, 1)
+
+       Values of array S after loop "for i=0 to n-1 do" at line 13
+        S[var[i]] = A[i]
+        results in S = (14, 35, 47, 60, 81, 98) 
+    
+    c) The function "DoSomething" is a sorting algorithm that sorts the input array A in increasing or ascending order.
+       The array "Var" serves as an array of indexes that keeps track of the increasing order of the values of array A. The values of array A are then copied into the new array S with the
+       correct sorting order.
+
+    d) The runtime of "DoSomething" can easily be improved with a merge sort algorithm for example
+       
+       Merge Sort pseudo code
+       ```
+       Algorithm mergesort(A)
+       Input: Array A of integers
+       Output Array A
+        
+        if n == 1 then return A
+        leftArray = intarray[0] ... intarray[n/2]
+        rightArray = intarray[n/2+1] ... intarray[n]
+ 
+        leftArray = mergesort(leftArray)
+        rightArray = mergesort(rightArray)
+ 
+        return merge(leftArray, rightArray)
+
+       Algorithm merge(left, right)
+       Input: Array left of integers and array right of integers
+       Ouput: Array result of intergers
+        
+        
+        while left and right have elements do
+         if left[0] > right[0] then
+          add right[0] to the end of result
+          remove right[0] from right
+         else
+          add left[0] to the end of result
+          remove left[0] from left
+         end if
+        end while
+       
+        while left has elements do
+         add left[0] to the end of result
+         remove left[0] from left
+        end while
+    
+        while right has elements do
+         add right[0] to the end of result
+         remove right[0] from right
+        end while
+        return result
+        ```
+        This has a time complexity of θ(nLogn) in all 3 cases which is faster than O(n^2)
+
+    e) The current space complexity is O(n) which can be improved to O(1) if using linked lists instead of arrays and in place sorting algorithms.
+
+Question 2
+    For Category1, a List ADT should be used as it can utilise the lookup, set, add, remove functions to access containers.
+    For Category2, a Positional ADT should be used as it can utilise added and removed functions while also not being bounded to adding containers at the beginning, end or middle.
+    For Category3, a Sequence ADT would be optimal since any new added containers need to follow the sorted alphabetical order specified in Category 3.
+
+Question 3
+    See picture in zip folder
+
+Question 4
+    See picture in zip folder
+
+Question 5
+    a) Algorithm findallNodeDepths(t, n)
+       Input: tree t and node n
+       Output: the depth of the nodes
+
+       if n is the root of t then
+        return 0
+       else
+        return 1 + findallNodeDepths(t, u) where u is the parent of node n in the tree 
+       end if 
+
+       The time complexity in terms of Big-O of this algorithm is O(n)
+    
+    b) Algorithm Count-Full-Nodes(t)
+       Input: binary search tree rooted at node t
+       Ouput: the number of full nodes in the tree
+
+       if t == NULL or t.left == NULL or t.right == NULL then
+        return 0
+       end if
+       return Count-Full-Nodes(t.left) + Count-Full-Nodes(t.right)
+
+       The time complexity for this solution is O(n)    

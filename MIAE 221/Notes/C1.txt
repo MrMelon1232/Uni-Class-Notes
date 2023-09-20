@@ -1,0 +1,77 @@
+Introduction to materials
+
+
+    Our life revolves around:
+        - energy
+        - materials
+
+    material science:
+        - relationship between structures and properties of materials
+        - develop and design new materials
+        - relationship between processing and structures
+    
+    engineering: dev processing techniques ad create products
+
+    types:
+        1. metals
+            - strong
+            - high thermal and conductivity
+            - opaque and reflective
+            Alloy: combination of 2+ metals/non-metals
+        2. polymers/plastics (compound of non-metallic elements)
+            - soft, ductile
+            - low thermal and conductivity
+            - opaque, translucent/transparent
+            - low density
+        3. ceramics (compounts of metallic and non-metallic elements)
+            - hard but brittle
+            - low thermal and conductivity
+            - opaque, translucent/transparent
+            - low density
+
+        Table of properties(high to low)
+
+            Mechanical properties: Density| Stiffness | Strength  | Resistance to fracture
+            ---------------------------------------------------------------------------------
+                                metals    | ceramics  | mentals   | mentals
+                                ceramics  | metals    | composites| composites
+                                polymers  | composites| ceramics  | ceramics
+                                composites| polymers  | polymers  | polymers
+aa
+                - increase temp = increase resistivity
+                - increase impurity = increase resistivity
+                - deformation = increase resistivity
+
+            Electrical properties: Electrical conductivity 
+                                metals 
+                                semiconductors
+                                ceramics
+                                polymers
+
+            increase purity = decrease thermal conductivity
+            highly porous material = poor conductors (due to big space)
+
+            Magnetic property
+                magnetic storage
+                magnetic permeability
+            
+            Optical property
+                - light transmittance
+
+            Deteriorative property
+                - cracks formed by stress
+                - dimished by heat treating
+        
+        Procedure:
+            - ask for:
+                1. availability
+                2. properties
+                3. cost 
+            
+            1. for specific application --> determine reqs properties
+            2. from list of properties --> identify material
+            3. find material --> find processing technique
+            
+    Relationships:
+        - Processing affects structure
+        - Structure effects hardness

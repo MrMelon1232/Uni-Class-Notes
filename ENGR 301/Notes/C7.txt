@@ -23,7 +23,7 @@ Cost Estimating
     Estimating models:
         1. triangulation: diff perspective approach
         2. Learning curve: percentage or rate at which output is increased due to repetition
-            Tn = Tinitial x Nr
+            Tn = Tinitial x N^r
 
             where Tn = time required for Nth unit of production
                   Tinitial = time required for first unit of prod
@@ -31,7 +31,7 @@ Cost Estimating
                   r = learning curve exponent
                     = log (learning curve as decimal) / log 2.0
         
-            when ouput 2x --> decrease to learning rate (L%) for last item
+            when output 2x --> decrease to learning rate (L%) for last item
             see C7_learningCurve for examples 
         
         Types of cost estimating:

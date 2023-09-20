@@ -1,0 +1,67 @@
+Introduction to C++
+
+    - physical design: having multiple classes/functions/ds in a single file (unlike JAVA w/ 1-1)
+    - multiple libraries compiled and linked (multiple files)
+        - multiple files:
+            1. speed up compilation
+            2. increase organization
+            3. easy code reuse
+
+        - compilation units --> object files (have cross references between them)
+        - linker attempts to solve these references to create executable file
+
+    In CPP file, only have function definition, declaration done in header file
+     - each component is highly cohesive and coupled
+
+    Reminder:
+        cohesion: degree to which elements of a component belong together to achieve a goal
+            - increase by:
+                1. common functionalities
+                2. elements carry small # of related activities
+            - advatanges
+                1. understandability
+                2. maintainability
+                3. reusability
+        
+        coupling: degree to which element relies on other elements for operation
+            - not desired, side effect of cohesion
+            - coupling within is fine but not between components
+            - disadvantages:
+                1. ripple effect
+                2. more effort in other components
+                3. bad reusability
+    
+    To avoid redundant includes:
+        - use preprocessor directives
+            #ifndef NAME_H
+            #define NAME_H
+            ....
+
+            #endif
+
+            or use  #pragma once
+
+    Namespaces:
+        - collection of name declarations/definitions
+        - solves name clashes
+        terminology: "using namespace std;:
+        use "using std::cin" for specific names
+        - all code goes to a namespace (if not specified, then global namespace (no need to call this one))
+        - note unnamed (local scope) and global is not the same 
+
+        - needs to be declared in header and cpp file if an implementation is done
+        ex:
+            in header:
+            namespace space1 {
+                void greeting():
+            }
+
+            in cpp:
+            namespace space1 {
+                void greeting() {
+                    cout << "hello\n";
+                }
+            }   
+
+    Inlines:
+        use operator (::) to specify which scope object comes from
