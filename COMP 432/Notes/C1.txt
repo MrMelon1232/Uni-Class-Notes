@@ -1,0 +1,90 @@
+Introduction to machine learning
+
+    Definition:
+        - aims to mimic human intelligence 
+
+        turing test:
+            - quiz human and machine until can't distinguished
+            - chatGPT passes it
+        
+        Classical AI
+            - hard-code human knowledge using a set of rules
+            ex: if father --> !brother | hard set of rules w/ input/output
+        
+        Machine learning:
+            - machine that learns from data/experience
+            - uses model instead of written code and dataset instead of human knowledge
+            - use when problem can't be solved with rules and easy to collect data
+            - use normal traditional programming if problem can be solved w/ algorithm
+
+            Types of problems:
+                1. classification: classify inputs to categories
+                    - given A get B | if C then get D
+                2. sequence-to-sequence classification: converts input sequence to another
+                    ex: french to english
+                3. regression: predicts continuous value given some input
+    
+    Machine learning stages
+        1. Training (find function that explains well data)
+            ex: find how cat vs dog
+        2. Test (test on new data)
+            ex: try on new cats and dogs data, mearsure performance
+            ability to do so = generalization
+        3. Inference (use model)
+            - run live data points
+    
+    Basic Components
+        
+        1. Datasets (inputs-output mappings)
+            - inputs gathered in matrix
+            Feature:
+                - measurable property
+                - each example contains a feature vector
+                ex: for flowers, use petal length, sepal length, width, etc
+            
+            - have training and test dataset (diff examples, if not we overestimate performance)
+                - usually sampled from the same data generation process Pdata
+                - each sample is drawn independently from other pts
+                    --> therefore, samples independent and identically distributed
+
+            Learning types:
+                1. Supervised learning:
+                    - learn from labeled examples | training + test contain input x and desired output y
+                    - classification and regression are supervised learning problems
+                    ex: see C1_supervised
+                
+                2. Unsupervised learning:
+                    - learn from observation, find useful properties
+                    - data only contains input x
+                    methods:
+                        a) Clustering: group close data (can't label tho)
+                        b) Probability density estimation (estimate Pdata)
+                
+                3. Reinforcement learning:
+                    - learn by interaction
+                    - ML algorithm in an immersed environment
+                    - agent performs actions and maximized rewards
+
+
+        2. ML model (func that maps the inputs-outputs)
+            - set of possible func that ML model can implement = hypothesis space
+            - training = finding optimal functional
+            - for every solution we compute objective func, says how good 
+
+        3. Objective func (measures how well solution fits data)
+            - how good is function of the ML model
+            - also called criterion
+            - want to minimize this (called empirical risk minimization)
+            - written as avg/sum over training samples where:
+                term L = loss
+            
+            examples of functions:
+                1. Mean Squared Error (MSE)
+                    - for regression problems
+                    see ex:C1_MSE
+                2. Classification accuracy
+                    - for classification problems
+                    - easy to understand but hard metric
+                    see ex: C1_classAccuracy
+                
+        4. Optimization algorithm (algorithm that finds f(x))

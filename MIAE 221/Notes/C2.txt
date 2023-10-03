@@ -1,0 +1,17 @@
+Atomic Structure and Interatomic bonding
+
+    atom composition:
+        - electrons: 9.11 * 10 ^-31 kg
+        - protons 
+        - neutrons (total of both: 1.67 * 10^-27 kg)
+    
+    Atomic mass unit (AMU)
+        - 1/12 atomic mass of 12C
+        - 1 amu/atom = 1 g/mol
+
+    Atomic weight (wt)
+        - 6.023 * 10^23 molecules
+
+    isotopes: atoms w/ 2/+ different atomic masses
+
+    ex1: calculate avg atomic weight of its isotopes (see C2_ex1)

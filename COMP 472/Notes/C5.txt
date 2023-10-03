@@ -9,7 +9,7 @@ Solving Problems by Searching
         - expands first node w/ lowest value, the node that appears closest to goal
         - takes certain world knowledge
         - TLDR: take a node and find cheapest path (never expands non-solution path)
-        - not optimal cost however --> greedy search because being too greedy can lead to wrose results
+        - not optimal cost however --> greedy search because being too greedy can lead to worse results
         - complete in finite state spaces but not inf 
         - w/ good heuristic func, complexity can reach O(bm) | start is O(b^m)
         - not optimal

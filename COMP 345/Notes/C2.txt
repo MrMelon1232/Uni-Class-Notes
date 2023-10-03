@@ -1,0 +1,140 @@
+Preliminary Topics
+
+    Some topics:
+        - struct and class are the same (just for backward comp)
+            - struct sets members to public by default
+        - literals = constants
+
+        different syntax for init:
+            Type a1 {v};
+            Type a2 = {v};
+            Type a3 = v;
+            Type a4(v);
+        
+            exceptions:
+                int a1 = 1.5;
+                int a1 {1.5} --> illegal because of type checking (1.5 is a float/double that needs to be placed into an int)
+        
+            - init safer but more longer (memory space allocated and used vs previous memory value kept until changed)
+            types:
+                1. default init = no value assigned
+                2. value init = empty value assigned
+                3. direct init = value assigned
+                4. copy init = value of another var is assigned (only to named objects)
+                5. list init
+                6. reference init (using & operator)
+                7. aggregate init (list w/ aggregation (array, object/class w/ public & no constructors))
+
+
+    Type checking:
+        - C++ allows type coercion (change of types)
+            --> makes it a weak type lang.
+        ex: int var = 2.99 --> leads to only storing 2
+
+        casting:
+            static_cast<double>(intVar) | same as (double) intVar
+
+            - can use:
+                static_cast (compile time cast)
+                const_cast
+                dynamic_cast --> used for downcasting from super to sub (see ex: C2_classCasting)
+                             --> solves having a superclass not know about a subclass
+                             --> run-time checking
+                reinterpret_cast --> makes binary copy, unsafe
+
+        Conversion sequence
+            - conversion constructor (changes type to another)
+                A::A(int){...}
+            - conversion operator (has name of type)
+                A::operator int(){...}
+            
+            use "explicit" to have it not be used as a conversion
+                ex: explicit B(int)
+        
+    Pointers:
+        - memory address
+        - holds the address of a variable
+        - use try, catch
+        - * --> pointer to an object
+        - & --> memory address of an object
+        types:
+            1. void pointer --> use casting to specify type
+            2. wild pointer --> points arbitrary mem location | can lead to segmentation fault or arbitrary value
+                            ex: int *x --> point to what ever value was allocated to x
+            3. dangler pointer --> pointer freed, dereferencing works until points somewhere else
+                               --> should be assigned to null
+            4. null pointer --> points no where
+                            --> init as null
+
+        examples:
+            p1 = &v1; --> p1 points to the memory address of v1
+            *p1 = 42 --> value p1 is pointing to is now 42, so v1 = 42
+        
+        Use pointers to allocate dynamic variables (variables who's memory varies)
+            - use "new" and "delete" (like malloc and free)
+        
+        memory:
+            - local vars are allocated on the stack (automatic vars)
+            - if pointer declared in func, allocated on stack BUT value pointed to is on heap
+        
+        in functions:
+            - int* findOtherPointer(int* p)
+                --> takes pointer in param
+                --> returns pointer to an int
+
+        ex: see C2_pointers
+    
+        Arithmetic:
+            d[i] == *(&d[0]+i) == *(d+i)
+        
+        pointers and constants: see C2_pointers&const
+
+    References:
+        - refer to other values held by other variables w/out having to copy
+        - pointer variables w/out disadvantages but loses some power
+            1. pointer arithmetic can't be applied to references
+            2. any operation applied to reference, applies to var
+            3. can't be changed afterwards, so has to be init
+        ex: int& r {v1}, &r returns pointer to object that "r" refers to
+        - note: changing values of reference also changes value of original
+            ex: int reference1 = 0
+                int& x = reference1; | x == 0, reference1 == 0
+                int y = 1 | x == 0, reference1 == 0
+                x = y | x == 1, reference1 == 1
+                x = 0 | x == 0, reference1 == 0
+                f2(x) = 3 | x == 3, reference1 == 3
+                    - here x is passed as a ref to f2(x) then a ref to x is returned by f2, thus making f2(x) a ref to x
+        
+        references are often used as a parameter, in which it can be returned
+        in cout << "f2(x)   : " << f2(x) << f2(x) << f2(x) << end1; 
+            expressions are evaluated from right to left
+    
+
+    Smart pointers:
+        - solution to leaks and dangling pointers
+        - in <memory> library
+        - prevents 2 ptrs from pointing to the same address
+        happens here:
+            MyClass* p (new MyClass);
+            MyClass* q = p;
+            delete p;
+            p->DoSmth();   | p is dangling
+            p = NULL;      | p is not dangling
+            q->DoSmth();   | q is dangling
+
+        ex: use auto_ptr<MyClass> p(new MyClass); instead of MyClass* p(newClass)
+            p->DoSmth();
+
+    
+    Parameters:
+        - copy of a value (done by copy constructor at runtime, value used is local)
+        - by pointer (value can be changed in func)
+        - by reference (same as ptr but can't change where received ptr is pointing)
+            - can't pass NULL
+            - can accept unamed values (void f(const T& t) called as f(T(a,b,c)) or f(a+b))
+            - calls by constant ref used often --> saves memory (for params that aren't to be changed locally)
+
+    Strings:
+        - in C, string = array of char
+        - use <cstring> for manipulation
+        - C++ brings <string>

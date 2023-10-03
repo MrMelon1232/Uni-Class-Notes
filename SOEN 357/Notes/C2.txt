@@ -92,7 +92,7 @@ User interface
     3. constraints
         - also helps with user guidance
     4. consistency
-        - internal: same withing application
+        - internal: same within application
         - external: same accross apps/devices (ex: phone number pad (so if we have pad, do the same))
         - aesthetic
         - functional
