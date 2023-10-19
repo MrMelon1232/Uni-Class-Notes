@@ -1,0 +1,60 @@
+Diffusion
+
+    definition:
+        - diffusion --> mass transport by atomic motion
+
+        mechanics:
+            - gas & liquid: random motion
+            - solids: vacancy & interstitial
+
+        interdiffusion: diffusion of atoms of one material into another
+            -> migrate from high concentration to lower
+        self-diffusion: atomic migration in a pure metal
+
+
+    Diffusionn mechanisms:
+        1. Substitutional
+            - atoms exchange place with vacancies
+            - depends on # of vacancies and activation energy to exchange
+            - higher temp = higher # of vacancies and energy | so diffusion is faster
+        2. Interstitial 
+            - small atoms move spaces in between the other atoms
+        
+        Carburising:
+            - diffusing carbon into steel to harden surface layers
+            - requires touch material and hard material that resists to wear
+
+        Case hardening
+            - hardens surface
+    
+    Rate of diffusion:
+        J = flux = M / At 
+            where M = mass of diffused species
+                  A = area
+                  t = time
+        
+        when diffusion flux does not change w/ time, diffusion in = diffusion out
+            --> this is called steady-state diffusion
+            as such, J = -D dC/dx
+        
+        for non-steady diffusions:
+            dC / dt = d^2C / dx^2
+            look at C5_nonsteady for more equations
+    
+    Diffusion in semiconductors
+        doping: diffusion of very small concentrations of atoms of an impurity into semiconductors
+        process:
+            1. predeposition (deposit P rich layers on surface)
+            2. drive-in (heat treat sample to drive P in material)
+
+    
+    Diffusion coefficient increases with T:
+        D = Do exp(- Qd / RT)
+        where:
+            D = diffusion coefficient
+            Do = pre-exponential
+            Qd = activation energy
+            R = gas constant [8.314 J/mol-K]
+            T = absolute temperature [K]
+        
+        see C5_diffusion problem

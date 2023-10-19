@@ -1,0 +1,162 @@
+Structure of Crystalline solids
+
+    - gases --> atoms no order
+    
+    Amorphous
+        - no repeating bond pattern
+        - short range order
+        - complex structures, rapid cooling
+
+    Crystalline 
+        - repeating 3D pattern (crystal structures)
+        - long range order
+        - repeated parts are called unit cells (size in nm)
+            --> defines basic structural unit (smallest entity)
+            --> are prisms
+            --> use highest level of geometrical symmetry one (since more than 1 can be chosen)
+            --> contains complete lattice pattern
+        - arrangement of crystals depend on temperature and pressure (most stable config)
+        - patterns = space lattices, defined by unit cells
+        ex: metals, many ceramics (except glass), some polymers (can be all 3 including mixed)
+
+    Atomic hard spheres
+        - atoms are spheres w/ defined diameters
+        - lattice --> 3D array of pts 
+    
+
+    Metal Crystal Structures:
+        Definitions:
+            - Coordination number: # of nearest-neighbor / touching atoms
+            - Atomic Packing Factor = Volume of atoms in unit cell (# of atoms * volume of 1 atom) / volume of unit cell
+                note: hard spheres = 4/3 pi r^3
+                    --> note that 'r' is for the rayon of 1 atom NOT the structure itself
+                note: volume of unit cell usually is cube so --> a^3
+                note: number of atoms depend on the structure
+                for example BCC --> 2 atoms/unit cell since 1 in the middle and 8 corners which form 1
+                        but for SC --> 1 atom/unit cell since only 8 corners
+            
+            For Simple Cubic Structure (SC)
+                - rare (only Po has this structure)
+                - close packed directions --> cube edges
+                - coordination # = 6
+
+        - structures:
+            1. Body Centered Cubic (BCC)
+                - r = a sqrt(3) / 4
+                - # of coordination = 8
+                - 2 atoms/unit cell (1 atom, 8 corners)
+            2. Face Centerered Cubic (FCC)
+                - r = a sqrt(2) / 4
+                - # of coordination = 12
+                - 4 atoms/unit cell (6 1/2 and 8 corners)
+            3. Hexagonal Close Packed
+                - # of coordination = 12
+                - 6 atoms/unit cell (12 corners, 2 * 1/2, 3 centered atoms)
+
+
+Thoretical density for metals   
+    Density = Mass of atoms in unit cell / total volume of unit cell
+            = n * A / Vc Na
+            where n = # of atoms/unit cell
+                    A = atomic weight
+                    Vc = volume of unit cell
+                    Na = avogadro #
+    
+    generally density goes as follows:
+        metals > ceramics > polymers
+
+
+    note: some elements can exist in more than one crystal form (due to temp or pressure)
+          - called allotropy/polymorphism
+
+Crystal system:
+    - on axes x,y,z --> lattice constants (lengthts of a, b and c)
+    - cubic = most symmetry | triclinic least
+    vs crystal structure --> system describes only cell geometry while structure has also atomic arrangement
+    ex: FCC and BCC belong to cubic system
+    as such we have coordinates (111 --> a = 1, b = 1, c = 1)
+
+
+Crystallographic directions
+    - using coordinate system, we can create vectors
+    we get formulas:
+        U = n (x2 - x1) / a
+        V = n (y2 - y1) / b
+        W = n (z2 - z1) / c 
+        note: n = number that can make these values integers
+        format: [111] | brackets with a bar on top of number for negative
+        see ex: C3_directions
+        w/ brackets <> u can change signs of int
+    
+    For Hexagonal:
+        - 4 axis, a1, a2, a3 and z where the a axis are 120 degrees to each other
+        [UVW] --> [uvtw]
+        where U = n (a1'' - a1') / a
+              V = n (a2'' - a2') / a
+              W = n (z'' - z') / c
+              
+              and 
+
+              u = 1/3 (2U - V)
+              v = 1/3 (2V - U)
+              t = -(u + v)
+              w = W
+
+
+Crystal planes
+    - specified by miller indices (hkl)
+    - parallel planes are identical
+    h = na / A
+    k = nb / B
+    l = nc / C 
+
+    - to find indices:
+        1. take the 3 coordinate pts
+        2. take intercepts (without the variables)
+        3. take reciprocal (inverse them ex: 1/2 becomes 2/1) (note 1/inf = 0)
+        4. correct them to remove fractions
+    
+    family of planes: similar planes that have the same atomic arrangement
+    - in cubic system only, directions are perpendicular to planes w/ same indices
+        ex: [111] direction is perpendicular to (111) plane
+
+Recap for Atomic Packing:
+    - packing: arrangement of atoms on different planes and directions
+    - linear densities: how packed atoms are in a direction
+        formula:
+            LD = # of atoms centered on vector / unit length of direction vector
+            ex: for FCC --> LD = 2 / (sqrt(2) * a)
+    - planar densities: how packed atoms are in a given plane
+        formula:
+            PD = # of atoms centered on the plane / area of plane
+            ex: for BCC --> PD = 1 / a^2
+    
+    - FCC and HCP are close packed w/ APF = 0.74 (which is max)
+    - in planes, FCC --> {111} and HCP --> (0001)
+
+
+Crystals:
+    - single: material made of 1 crystal, unit cells aligned in same orientation
+    - polycrystals: many small crystals (grains) w/ diff orientations joined
+        grain boundary --> regions where grains meet
+        - random oriented --> avg values in all direction
+
+Anisotropy
+    - property that varies with direction
+    - textured grains
+
+Isotropic
+    - proprety that does not vary w/ direction
+    - random oriented grains
+
+X-ray Diffraction
+    - wave encounters series of regularly spaced obstacles
+    - cause wave to scatter or increase/decrease in amplitude
+    - diffracted by planes of atoms
+    - x-ray = form of electromagnetic radiation
+            --> high energy
+            --> short wave length
+    formula: n lambda = 2d*sin(incident angle)
+
+        distance between similar planes:
+            d = a / sqrt(h^2 + k^2 + l^2)

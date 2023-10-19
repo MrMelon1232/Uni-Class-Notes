@@ -1,0 +1,120 @@
+Imperfections in solids
+
+    Solidification:
+        - result of casting of molten material
+        - nuclei of solid phase form then crystal grow until they meet (crystals become grains)
+        grains can be:  
+            1. equiaxed (same dimesion in all directions)
+            2. columnar (elongated in 1 direction)
+
+            - boundaries: space between grains
+                -> here exists atomic disorder and low density
+                    1. high atomic mobility
+                    2. high diffusivity
+                    3. high chemical reactivity
+
+        - crystalline imperfections always exists 
+        - defects referes to lattice irregularity
+
+    types:
+        1. Point defects (0-D)
+            - vacancies (missing atom in structure) | usually low
+                Formula of equilibrium concentration (varies w/ temp)
+                    Nv / N = exp(-Qv / kT)
+                        where Nv = # of vacancies
+                              N = # of lattices sites
+                              Qv = activation energy
+                              k = boltzmann's constant (1.38 * 10^-23)
+                              T = temperature
+            - interstitial atoms (forced into space)
+                - put into space but w/out significant lattice distortions
+            - substitutional impurity atoms
+                - must follow Hume-Rother rules
+        2. Linear defects (1-D)
+            - dislocations (makes metals weaker but allows deformation) | (makes atoms misaligned)
+            types:
+                1. Edge
+                    - extra half plane of atoms inserted in crystal structure
+                    - b perpendicular to dislocation line
+                2. Screw
+                    - spiral planner ramp resulting in shear deformation
+                    - b parralel to disclocation line
+
+        3. Interfacial defects (2-D)
+            types:
+                1. Surface (boundary between material and atmosphere)
+                2. Grain boundaries (region where grains/crystals join)
+                    --> caused by grains having different structures and orientations
+                3. twin boundaries (mirror reflections of atom positions of one side of twin plane to other side)
+                4. stacking faults (error in stacking sequence)
+                5. Bulk/Volume defects (large defects like cracks/pores)
+                    --> formed during creation/fabrication
+                
+                How to observe grain boundaries:
+                    1. section/cut
+                    2. polish (removes surface features)
+                    3. etch (changes reflectance) | really susceptible
+                        --> due to atoms at boundary regions being more chemically active
+                        --> appears as dark spots
+                    4. view (microscope)
+
+    
+    Impurity:
+        - pure metals hard to make and not often used
+        - usually just 99.99%
+        - we use alloys, combination of diff metals for increase strength
+            --> simplest alloy: solid solution
+                    where atoms B are dissolved in atoms A
+                        Solvent = major element (host)
+                        Solute = minor element (impurity)
+            
+            - note we can have both substitutional and interstitial
+                - substitutional: host atom replaced by diff atom
+                    conditions (Hume-Rothery rules):
+                        1. delta atomic radius < 15%
+                        2. close in periodic table
+                        3. same crystal structure for pure metals
+                        4. valences (greater tendency to dissolve metal of higher valences)
+                - interstitial: impurity atom go into spaces between host atoms
+
+    Composition
+        - use weight% --> C1 = m1 / (m1 + m2) * 100
+        - use atomic% --> C1' = nm1 / (nm1 + nm2) * 100 | here nm1 --> # of moles
+                where nm1 = m1' / A1  
+                      m1' --> mass
+                      A1 --> atomic weight
+        - For conversions (same for both):
+            C1 = C1' * A1 / (C1' * A1 + C2' * A2) * 100
+
+        note that : C1 + C2 = 100 | C1' + C2' = 100
+
+        Density: 100 / (C1/p1 + C2/p2)
+        Atomic weight: A = 100 / (C1/A1 + C2/A2)
+
+
+    - Catalysts: increase rate of chemical reaction w/out being consumed
+                 -> normally occur at surface defects
+    
+    Optical microscopy
+        - uses light
+
+    Electron microscopy
+        - best res = 0.1 um
+        - better res than optical
+        - tranmission EM: electron beam passes through specimen
+        - scanning EM: surface scanned with electron beam, reflected beam collected
+
+    Scanning probe microscopy
+        - generates topography map
+        - probes raster-scanned accross plane of the surface
+    
+    Grain size determination
+        - intercept method: Avg grain diameter = l / ngM
+        where l = equal length line
+              ng = # of grain intercepted per line (avg)
+              M = scope
+            
+        - ASTM grain sie number: n = 2^(G-1)
+            where G = ASTM grain size #
+                  n = avg # of grain size per square inch @ 100x
+            G = 1 + log(n)/log(2)

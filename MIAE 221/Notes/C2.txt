@@ -15,3 +15,114 @@ Atomic Structure and Interatomic bonding
     isotopes: atoms w/ 2/+ different atomic masses
 
     ex1: calculate avg atomic weight of its isotopes (see C2_ex1)
+
+    Material properties --> determined by electronic config
+
+    Eletronic Structure
+        - when electrons change energy --> quantum jump to higher/lower energy (absorption/emission)
+        - energies quantized --> only specific value of energy
+        - energy levels or states --> Bohr model (has limitations)
+        - wave-mechanical model 
+            --> wave/particle like (not orbital)
+            --> shape, size, orientation determined by quantum numbers (3/4 of them)
+    
+    Quantum numbers
+        - electrons characterized by 4 params (quantum numbers)
+        - since bohr energy levels separated by subshells --> specified by principal quantum number n
+        look at C2_quantum#
+        
+    Energy states:
+        Representations: (see C2_state_summary)
+            shapes --> l
+                s: orbitals centered
+                p: 3 orbitals (dumbells)
+                d: complex (5 orbitals)
+                f: has 7 orbitals
+            # of electron orbitals --> m
+                --> takes values of -l and +l
+            
+        - when magnetic field applied --> subshell split, w/ diff energy | if not same energy
+        - outermost unfilled shell contains valence electrons
+        when orbitals are full (8 electrons) or are noble gases --> stable
+
+
+    Periodic table:
+        - notes: atomic number = # of protons
+        - electropositive (metallic elements) -> give up outer electrons to form cations (cations +) (left of table)
+        - electronegative (non-metallic elements) -> accept electrons (anions -) (right of table)
+        - losses or gains are usually in the outer layer (less stable areas)
+    
+    Atomic bonding:
+        - bond to reduce overall energy (become more stable)
+        - bonding forces (repulsive/attractive)
+        Fn = Fa + Fr | Net force = force of attaction + force of repulsion
+        equilibrium when Fn = 0
+            --> E = integral of F | so F = derivative of E
+            so En = Ea + Er
+        
+        Bonding energy:
+            - Eo --> energy required to break bond
+                 --> higher bonds = higher strength and melting pt
+        
+        Primary bonds in solids:
+            Chemical (strong)
+            
+            Ionic
+                - between electropositive and electronegative
+                - bigger difference = more likely
+                - opposites attract --> electrostatic bonding
+                - non-directional | ions pack to maintain neutrality (balance)
+                - strong bonds = high energy
+                - high melting point, hardness, brittle, electrical and thermally insulative
+                ex: ceramics
+                Formulas:
+                    Ea = - A / r
+                    Er = B / r^n
+
+            Covalent
+                - involves valance electrons
+                - directional (only towards atom and another sharing electron)
+                    --> so less dense (atoms can't pack together)
+                - similar electronegativities (share electrons) (normally s and p)
+                - strong and weak bonds
+
+                bond hybridization:
+                    - combination of 2+ orbitals 
+
+            Metallic
+                - metals and alloys
+                - nondirectional electrostatic force
+                - free electrons (move freely between ions cores)
+                - strong and weak bonds
+
+        
+        Secondary bonds:
+            
+            Van der Waal
+                - low energy, weak bonds (exist between all)
+                - based on dipoles
+                    -> causes boiling and freezing in noble gases
+                    -> asynmetrical distribution of electron cloud
+                    -> permanent of these = polar molecules
+                - hydrogen bonding
+                    - causes water to expand when frozen
+                    - 4 hydrogen bonds = low density
+            
+            Permanent dipole bonds
+                - one of the strongest Secondary
+                ex: surface tension, capillary, vapor rpessure, volatility, viscosity
+            
+        Mixed bonding
+
+             Covalent-Ionic mix
+                % ionic character = (1 - e^(-Xa - Xb)^2 / 4) * 100%    
+                    where Xa and Xb = electronegativities of elements
+
+        
+        Properties related to bonding
+            1. Melting temperature
+                - larger Eo = larget Tm
+            2. Elastic Modulus
+                - larget Eo = larget E (elastic modulus)
+            3. Thermal expansion
+                - smaller Eo = larget al
