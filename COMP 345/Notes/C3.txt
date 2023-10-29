@@ -1,0 +1,52 @@
+Input & Output Streams
+
+    objects that allows programs to interact with external entities controlled by OS:
+        ex: program exec code
+            keyboard
+            files
+    
+    objects in "<iostream>":
+        1. cin (>>)
+            can use C-style functions:
+                getline(istream, string)
+                getc(istream, char)
+                cin.get()
+        2. cout (<<)
+        3. cerr
+        4. endl: newline
+
+    note: any data can be outputted
+    '<<' --> stream insertion operator
+
+    In order to output a user defined type:
+        - overload string insertion operator
+        ex: C3_overloadStream
+
+    Forcing decimal sizes:
+        - fixed: set floating numbers to be represented as fixed-point
+        - showpoint: show trailing zeroes after point, even if not needed (75 --> 75.00)
+        - setprecision(n)
+        ex: cout << fixed << showpoint << setprecision(2)
+
+    
+    Files
+        - input: ifstream (>>) (read)
+        - output: ofstream (<<) (write)
+        - part of library: <fstream>
+
+        more complex than cin/cout
+            --> choice between different modes (binary, text, etc)
+            --> diff operators for diff modes
+            --> check stream states (end of file)
+            see C3_states
+        
+        Process:
+            1. open file 
+                ex: C3_openFile
+                note: you can also use fstream but you must specify the modes
+                for output: fstream filestream;
+                            filestream.open("scores.txt", ios::out);
+                            filestream.close();
+                see C3_modes
+    
+    MFC serialization
