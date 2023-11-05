@@ -32,7 +32,7 @@ Introduction to materials
 
             Mechanical properties: Density| Stiffness | Strength  | Resistance to fracture
             ---------------------------------------------------------------------------------
-                                metals    | ceramics  | mentals   | mentals
+                                metals    | ceramics  | metals   | metals
                                 ceramics  | metals    | composites| composites
                                 polymers  | composites| ceramics  | ceramics
                                 composites| polymers  | polymers  | polymers

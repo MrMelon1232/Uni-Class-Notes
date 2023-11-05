@@ -4,7 +4,7 @@ Imperfections in solids
         - result of casting of molten material
         - nuclei of solid phase form then crystal grow until they meet (crystals become grains)
         grains can be:  
-            1. equiaxed (same dimesion in all directions)
+            1. equiaxed (same dimension in all directions)
             2. columnar (elongated in 1 direction)
 
             - boundaries: space between grains

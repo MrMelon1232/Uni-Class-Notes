@@ -70,7 +70,7 @@ Thoretical density for metals
           - called allotropy/polymorphism
 
 Crystal system:
-    - on axes x,y,z --> lattice constants (lengthts of a, b and c)
+    - on axes x,y,z --> lattice constants (lenghts of a, b and c)
     - cubic = most symmetry | triclinic least
     vs crystal structure --> system describes only cell geometry while structure has also atomic arrangement
     ex: FCC and BCC belong to cubic system

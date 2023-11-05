@@ -1,0 +1,34 @@
+Basic Machine Learning concepts
+
+    Capacity:
+        - how big the hypothesis space
+        - not the # of functions but variability of functions 
+            ex: model w/ multiple function implementation > model w/ only linear
+        
+        Vapnik-Chervonenkis (VC) dimension
+            - measure of capacity
+            - cardinality of largest set of pts that a binary classifer can shatter
+                - set of pts is shattered if for all ways of splitting examples into positive and negative
+                  there exists a perfect classifier
+                  TLDR: our function can split the pts into positive and negative (can't have both on 1 side)
+                  see ex: C2_vc
+            - VC dimension is N for N points if one of the pts can be shattered but no set of N+1 can be shattered
+
+            as such for D-dimensional inputs, VC = D + 1
+
+    Generalization:
+        - ability for ML algorithm to perform well on new data
+        - good generalization if test loss is low
+
+        Training loss = objective function computed w/ training set
+        Test loss = objective function computed w/ test set
+    
+    Underfitting
+        - occurs when model can't get low training loss
+        - learning algorithm is too simple
+        - when capacity is too low
+
+    Overfitting
+        - gap between training data and test losses is too large
+        - algorithm too complex
+        - when capacity is too high

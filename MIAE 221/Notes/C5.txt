@@ -12,7 +12,7 @@ Diffusion
         self-diffusion: atomic migration in a pure metal
 
 
-    Diffusionn mechanisms:
+    Diffusion  mechanisms:
         1. Substitutional
             - atoms exchange place with vacancies
             - depends on # of vacancies and activation energy to exchange

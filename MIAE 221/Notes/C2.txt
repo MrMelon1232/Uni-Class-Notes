@@ -110,11 +110,11 @@ Atomic Structure and Interatomic bonding
             
             Permanent dipole bonds
                 - one of the strongest Secondary
-                ex: surface tension, capillary, vapor rpessure, volatility, viscosity
+                ex: surface tension, capillary, vapor pressure, volatility, viscosity
             
         Mixed bonding
 
-             Covalent-Ionic mix
+            Covalent-Ionic mix
                 % ionic character = (1 - e^(-Xa - Xb)^2 / 4) * 100%    
                     where Xa and Xb = electronegativities of elements
 
@@ -125,4 +125,4 @@ Atomic Structure and Interatomic bonding
             2. Elastic Modulus
                 - larget Eo = larget E (elastic modulus)
             3. Thermal expansion
-                - smaller Eo = larget al
+                - smaller Eo = larger al

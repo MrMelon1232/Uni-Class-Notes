@@ -74,17 +74,40 @@ Introduction to machine learning
         3. Objective func (measures how well solution fits data)
             - how good is function of the ML model
             - also called criterion
-            - want to minimize this (called empirical risk minimization)
+            - want to minimize this (called empirical risk minimization) 
+                R^(N x K) --> R
             - written as avg/sum over training samples where:
                 term L = loss
+            see C1_objective
             
             examples of functions:
                 1. Mean Squared Error (MSE)
                     - for regression problems
+                    - we want a low value
                     see ex:C1_MSE
                 2. Classification accuracy
                     - for classification problems
                     - easy to understand but hard metric
                     see ex: C1_classAccuracy
                 
+                3. Categorical cross entropy                                        
+                    Can also use categorical cross-entropy (CCE):
+                    see ex: C1_cce
+                
         4. Optimization algorithm (algorithm that finds f(x))
+            - find the function f(x) that minimizes it
+            - optimizer minimizes objective function
+            - using naive approach --> try/error
+
+            Parameter Optimization
+                --> algorithm depends on parameters
+                --> for each parameter = diff function
+                    - hypothesis space = parameter space
+                    - training = solving optimization problem
+                
+                in linear function f(x,w) = w0 + w1x
+                    our parameters: [w0, w1]
+
+                since we have inf solutions and possibilities:
+                    - we can start w/ random parameters
+                    - we want to take the gradient descent --> small steps towards solution

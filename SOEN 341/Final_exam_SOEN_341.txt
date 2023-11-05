@@ -1,0 +1,301 @@
+Final exam SOEN 341
+
+Estimation
+- 2 Techniques:
+    1. Experience-based Techniques
+        - based on manager experience (projects, domain)
+        steps: identify deliverables, document in spreadsheet, estimate indiv. + compute total effort
+        - good to ask member explain estimate
+        PROBLEMS:
+         - new softwares, unfamilliar techniques (not relatable)
+    2. algorithmic cost modeling
+        - computed estimated based on attributes (size) or characteristics (experience of staff)
+        - estimated as f(x) of product, project and process attributes
+        Effort = A * SizeB * M
+        where A = organization constant
+              B = disproportionate effort for large projects
+              M = multiplier for product, processes, people attributes
+        Most common: size
+        PROBLEMS:
+         - complex and difficult
+         - many attributes and uncertainty
+
+    COCOMO cost modeling:
+    - based on project experience
+    - COCOMO 2 --> software dev
+        - incoporates range of sub-models:
+            -> Application composition model (composed of existing parts)
+            Formula: PM = (NAP*(1 - %reuse/100)) / PROD
+            where:
+                - PM = effort in person-months
+                - NAP = # of app points
+                - PROD = productivity
+                - NAP = # of screen or pages + # reports +  # modules + #lines of scripts
+            - 100% reuse
+            -> Early design model (b4 design and req available)
+            Formula: A = 2.94
+                     M = PERS * RCPX * RUSE * PDIF * PREX * FCIL * SCED
+                     PERS = personnel capability
+                     RCPX = product reliability and complexity
+                     RUSE = reuse req
+                     PDIF = platform difficulty
+                     PREX = personnel experience
+                     FCIL = team support facilities
+                     SCED = req schedule
+                     Estimate these using 6 pt scale (optimal = 1)
+                     B = 1.1 to 1.24 depending on novelty, dev flexibility, risk management
+            -> Reuse model (reusable components)
+            Black box = reuse code not modified
+            White box = reuse code modified (est. size = # of lines of source code computed)
+            ESLOC = ASLOC * (1-AT/100) * AAM
+            ASLOC = # of lines of reused and generated code
+            AT = percentage of reused code
+            AAM = adaptation adjustment multiplier (sum of effort deciding, understanding, making changes)
+            Use: A * ESLOCb * M
+            -> Post-architecture model (one system arch designed)
+            Formula: Same as early design but w/ 17 multipliers
+            code size estimated as:
+                - # of lines of new code
+                - ESLOC (estimate equivalent number of lines of new code using reuse model)
+                - estimate of # of lines of code to be modified for new req
+        - supports prototype
+
+        Exponent term "B"
+            - depends on 5 scale factors (sum/100 + 1.01)
+            1. Predenteness (previous exp)
+            2. Development flexibility 
+            3. Architecture/risk resolution (risk analysis)
+            4. Team cohesion 
+            5. Process maturity (subtract CMM process from 5)
+        
+        Multipliers (cost drivers)
+        - Product attributes
+        - PC attributes (constraints harware)
+        - Personnel attributes
+        - Project attributes
+
+    Example:
+    Initial estimate = 730
+    5 factors multiplier = 1.39, 1.3, 1.21, 1.12, 1.29
+    Adjusted estimate = 1.39 * 1.3 * 1.21 * 1.12 * 1.29 * 730 = 2306
+
+Architecture
+- Software: Defines system organization, req, breakdown
+- Need architecture for:
+    - stakeholder comms
+    - system analysis
+    - large-scale
+- need to express:
+    - decomposition
+    - process interactions
+    - distribution accross networked devices
+- use several views for diagrams:
+    1. logical -> abstraction view of objects/classes (UML similar)
+    2. Process -> interactions at run time (front-end, back-end, db)
+    3. Development -> decomposed for development
+    4. physical -> system harware and components distribution
+
+- Purpose of models:
+    - aiding discussion/understanding of system-level design
+    - documentation 
+
+Lightweight vs Heavyweight:
+- valuable for discussion aid vs valuable for documentation
+- easy vs expensive
+- lacks rigour info vs hard to understand
+
+Questions to ask when desiging:
+- template ?, distribution ?, patterns/styles ?
+- approach ?, decomposition ?, documentation ?
+
+Maximization non-functional system characteristics:
+- Performance: creating small # of large subsystems
+- Security: layering systems with critical assests protected in innermost layering
+- Safety: safety-related operations in small # of subsystems
+- Availability: through redundant subsystems for hot-swapping updates
+- Maintainability: large or small independant subsystems
+
+Patterns and Style:
+- abstract descriptions of solutions to common application problems
+- should describe if good idea to use or not
+example : MVC (Model: manages data, View: shows user view, Controller: controls interaction)
+    good for multiple ways to view and interact data, allows data to change independant of view
+    bad for code complexity and additional code
+example: multi-layered system
+    used when building new facilities on top of existing systems
+    good for replacement of entire layers with interface maintained
+    bad for difficult seperation between layers and performance
+example: repository
+    used for large volumes of information stored for a long time
+    good for independance
+    bad for problems since it affects entire system, inefficiencies in organizing comms
+example: client server
+    used when data accessed from multiple location
+    good for servers distributed accross a network
+    bad for performance (unpredictable, depends on system/network), each service succeptible to attacks
+example: pipe and filter
+    used in data processing apps, input to output
+    good for reuse, easy understand, similar business processes
+    bad for formatting of data during transfers
+
+Class Diagrams
+ - Software models:
+    1. Static
+        -> Class diagrams
+            - shows classes of a system
+            - granularities = 
+                specific (class extended to show fields and methods at high level | top = name, middle = fields, bottom = methods)
+                or 
+                abstract(boxes are classes, relations with some kind of relationship(vague))
+            - associations (not actions) unidirectional, multiplicity represents # of instances associated, can have names, visibility
+            - look at slides for examples
+            - empty arrows = generalization AKA inheritance (relationship between classes)
+            - aggregation (diamond) -> shows that object is made of other objects (composition) | implies child can exist independantly from parent
+            - weak = white diamond tip (parts that can exist without) | strong = black diamond (aka composition | parts that can't exist without ex:building and room )
+        -> Block diagrams (not part of UML)
+        -> Domain models
+
+    2. Dynamic
+        -> Activity diagrams
+        -> Case diagrams
+        -> Sequence diagrams
+        -> State diagrams
+
+Design Coding:
+    - 4 concepts:
+        1. understandability (we want the least "wtf")
+            - use meaningful name, comments
+            - NASA coding standard: example 
+                1. Compile with checks turned on
+                2. Apply static analysis
+                3. Document public elements
+                4. Write Unit tests
+                5. Use standard naming convention
+                17. No fields public
+        2. testability
+            - stops buggy releases (safety net)
+            - Strict TDD approach:
+                -> only write new code that makes failing test case pass
+                -> tests written before code | same with updates
+        3. reusability
+            - simplifies maintenance
+            - accelerates development
+            - we want high cohesion (module relies on inside module elements) and reduce coupling (module relies on other modules)
+        4. efficiency
+
+Design Patterns:
+    - increases code reusability (uses abstraction techniques)
+    - Examples:
+        1. Observer (Behavioral)
+            - used when multiple presentations of an object state needed
+            - separates presentation of object state from object itself
+    - types:
+        1. Creational
+            - Abstracts object instantiation process
+            example patterns:
+                - Factory method
+                    -> used when class cannot anticipate object it must create
+                    -> defers responsability of creation to subclasses
+        2. Structural
+            - Abstracts how classes and objects composed to build larger structures
+            example patterns:
+                - Composite:
+                    -> use to allow clients to treat individual objects and collections of them identically
+                    -> hide the fact that an object is an aggregate of several objects
+        3. Behavioral
+            - Abstracts algorithms and assignment of responsability among objects
+            example patterns:
+                - template:
+                    -> used to share common parts of implementation with refinement allowed
+                    -> common parts in super, calls -> abstract methods
+                - method:
+    - care: overuse = overbloated | follow YAGNI principle (design today, refactor/revisit a lot)
+    - Poor code design:
+        - duplication can be solved by abstraction
+        - schizophrenic class -> too much into one | soln: divide into multiple parts/classes
+        - blob -> lacks cohesion and makes most decisions | soln: make blob into cohesive classes
+
+Testing:
+    - SQA (software quality assurance)
+        -> provides adequate confidence
+        -> set of processes to evaluate
+        2 concerns:
+            1. software verification (func + non-func req)
+            2. software validation (saltisfation customer)
+                - static (analysis)
+                    - good for inspections dont need execution
+                    - can find inefficiencies, style issues
+                - dynamic (execute) V&V
+                    - examined by running program on pc
+                    - complete testing impractible:
+                        - large input, output, state space, # of exec paths
+                        - subjective reqs
+                        - exhaustive testing = test EVERY possibility
+                        - lack of continuity
+        - v model of dev:
+            1. acceptance
+            2. system (no code visible)
+            3. integration (component | interactions | structures visible)
+            4. unit (module | code visible) 
+            5. implementation
+        - black-box testing:
+            - tests written without considering structure (requirements specif)
+            - example system, implementation, acceptance
+            - good scaling
+            - can't find unexpected functionality
+        - white-box testing:
+            - test wrtten with understanding of structure (current code)
+            - test inner workings of system
+            - example: unit, integration
+            - bad scaling
+            - can't reveal missing functionality
+            - can make a flow graph --> we want to cover all possible statements, branches, paths
+    
+    - Stages:
+        1. Development testing
+            - Unit (maximize coverage, minimize time)
+                1. Setup
+                2. Call
+                3. Assertion (check system state)
+                4. Teardown
+                - show unit does what its supposed + find defects (need 2 tests)
+            - Partition --> select to cover all input/output equivalences (edge and middle)
+            - Equivalence classes = group possible inputs\
+                example: if valid month = [1-12]
+                            then equivalence classes = [-inf, 0] ; [1-12] ; [12, inf]
+        2. Release testing
+        3. User testing
+
+    - Component testing:
+        - test combination of units that make component
+        - applied to interface (private, protected methods not visible)
+        - Types component interfaces:
+            1. Parameter
+            2. Shared memory
+            3. Procedural
+            4. Message passing
+        - Types of interface errors
+            5. Misuse (wrong parameters, # of params, etc)
+            6. Misunderstanding (inefficient usage)
+            7. Timing (sharing message, passing)
+
+        - Guidelines:
+            1. Examine code
+            2. Test null input
+            3. Design tests to cause fail
+            4. Design test to vary order access shared memory
+
+        System:
+            - test component interaction
+            - crosses team boundaries
+            - use cases good 
+            - policies should be outlined
+
+        Release:
+            - written by team that does not report to dev
+            - check system meets reqs
+            - only black box testing
+            - release = more on reqs | system = more on bugs
+        
+        regression:
+            try to cover as much system as possible, re-run tests
