@@ -19,6 +19,7 @@ Basic Machine Learning concepts
     Generalization:
         - ability for ML algorithm to perform well on new data
         - good generalization if test loss is low
+        - better when training examples amount high
 
         Training loss = objective function computed w/ training set
         Test loss = objective function computed w/ test set
@@ -32,3 +33,148 @@ Basic Machine Learning concepts
         - gap between training data and test losses is too large
         - algorithm too complex
         - when capacity is too high
+        - few training examples, hence bad generalization
+        - when model learns training data too well, capturing noise
+    
+    Regularization
+        - counters Overfitting
+        - can be done by expressing preference for some solutions 
+        ex: prior knowledge
+    
+
+    Optimization
+        - the problem we want to solve
+
+        Cases:
+            1. Critical points
+                - used for single parameter
+                - when derivative of parameter = 0
+                - local min: when critical pt is lower than all neighbor pts
+                - local max: when critical pt is higher than all neighbor pts
+                - saddle pt: critical pt not max or min
+                - plateau: wide area where parameter is constant
+                - hard for multi-dimensional spaces, since all these pts increase exponentially 
+                    --> optimization becomes very hard
+            
+            2. Gradient
+                - used for multiple parameters
+                - parital derivative of all parameters (COMPUTE DERIVATIVE IN RESPECT TO THE PARAMETER SELECTED)
+                - vector that points in the direction of greatest increase of objective
+                see ex: C2_gd
+                note that we have to set the learning rate 'n' which is commonly at 0.01
+                too large could diverge into unwanted solutions
+
+                Pros:
+                    - computationally efficient
+                    - works well in practice
+                Cons:
+                    - can get stuck in local optima 
+                    - depends on proper init
+                    - tune learning rate
+                    - difficult to apply non-diff loss functions
+
+        Solving the problem:
+            - analytical solution is hard to find
+            - use numerical optimization
+                - we try to find approximate solution to problem
+                - start from set of candidate solution and progressively improve them
+            
+            gloval optimum: try to find universal solution (computationally demanding)
+            local optimal: works for current solution (faster)
+        
+
+            Stochastic gradient descent (SGD):
+                - use objective function as sum over training samples
+                --> total gradient = avg of gradients for each training sample
+                - noisy versions of gradient
+                    --> escapes from saddle pts and local min
+                    --> introduces regularization
+
+                terms:
+                    - minibatch: set of training samples
+                    - batch size: number of samples in minibatch (bigger = accuracy | lower = speed)
+                        --> if batch size = N: we have standard GD
+                        --> 1< batch size < N: best value
+                        --> batch size = 1: online SGD (fast)
+                    - epoch: number of complete training pass
+                
+
+                example: Linear least squares
+                        - we can use MSE as our objective function
+                        - compute gradient of objective function for all paramters (partial derivative)
+                        see ex: C2_gd_ex1 and C2_gd_ex2
+                        note: we should write the model in vector form
+                        ex: C2_gd_vector
+                        - this can be solved with just a closed-form solution (note that only works for simple models)
+
+        Hyperparameters
+            - parameters to set to control the learning algorithm
+            - external to model (can't compute gradient over this)
+            ex: batch_size, learning rate, # of epochs
+            - to choose, use validation set (10-20% of training data)
+            - expensive to find, use hyperparameter search
+                1. Manual search
+                2. grid search
+                3. random search
+                4. bayesian optimization
+            see C2_ml_summary
+
+        Some variants:
+            1. Early stopping
+                - monitor performance afer each epoch on validation set and stop training if it gets worse
+            2. Learning rate annealing
+                - reduce learning rate while training
+            3. Momentum
+                - if dimensions' surface curves are more steeply than others, we have slow convergence
+                    --> due to having different gradient descent updates/steps
+                - solved by: accumulating moving avg of past gradients
+                    see C2_momentum
+                    - relies on learning rate, gradient descent and previous updates
+                    - if previous update pts diff than GD, then small update, else big
+
+                - Nesterov momentum: anticipates next move and apply a correction factor (helps slow down pace)
+
+            4. Adaptive learning rate
+                - apply element-wise multiplication to vector 
+                - use AdaGrad to assign learning rate automatically to corresponding parameter 
+                
+                Notes:
+                    - when squared magnitude of gradient is small, its safe to take large updates
+                        - usually flat regions
+                    - when squared magnitude of gradient is large, make small updates
+                        - usually steep regions
+                    
+                    issue: updates will get smaller and smaller, due to magnitude getting smaller and smaller
+                    RMSProp solves this:
+                        - changes squared gradient accumulation into exponential moving avg
+                        - use p = 0.9, more weight on recent updates than older ones
+                    
+                    Adam:
+                        - extension of RMSProp
+                        - term 's' is big if gradient pts in same direction, small otherwise
+                        - term 'p' is big if squared magnitude of gradient is big, small otherwise
+                        - direction and step size depends on past gradients (RMSProp direction only depends on current gradient)
+
+                        Pros:
+                            - often works with other optimizers
+                        Cons:
+                            - need to set some values
+                            - storing s and r vectors, since size depends on # of params, could be big
+                
+            
+            5. Second order methods
+                - Hessian, symmetric square matrix of 2nd order derivatives
+                - measures curvature of objective function
+                - when first derivative = 0:
+                    1. 2nd derivative < 0 --> local max
+                    2. 2nd derivative > 0 --> local min
+                    3. 2nd derivative = 0 --> saddle pt (more common, as we only require a positive and negative eigen value (not both neg or pos))
+
+                Newton method:
+                    - approximate using taylor expansion
+                    - find min by puttin J'(0) = 0 where 0 is angle
+
+                    suffers from issues:
+                        1. if 2nd derivative is negative, we reach local maximum
+                        2. sensitive to saddle pts
+                        3. computationl complexity

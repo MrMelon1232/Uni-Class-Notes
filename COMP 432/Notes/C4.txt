@@ -1,0 +1,64 @@
+Linear models to neural networks
+    
+    Pros:
+        - easy to optimize
+        - fast training and predictions
+        - interpretability
+
+    Cons:
+        - regression, only model input/output relationship
+        - classification, only work with linearly separable classes
+
+    
+    Thus we have linear basis function models:
+        - transform input to make linearly separable for classification
+        - transform input to make input/output relationship linear
+        so instead of taking input x, we take input basis function
+        - althought useful, its hard to find a proper transformation by hand
+    
+
+    Polynomial Curve Fitting
+        - employ polynomial transformation 
+
+        for linear models:
+            - we can derive the eigen sum of Wj * x^j
+            - best performance when order between 3 and 6
+            - order is related to capacity
+        
+        Regularization techniques
+            L2 regularization
+
+Neural Networks
+    - applies a linear transformation on top of featured transformation in a non-linear way
+    aims to find parameters that make classes linearly separable (representation learning)
+    - objective function no longer CONVEX 
+
+    example: Multilayer Perceptron
+        - perform lienar transformation and then apply non-linear activation function
+    
+    Process:
+        1. network takes in inputs
+        2. each neuron performs a weighted sum of previous inputs and applies non-linear activation function
+        3. step 2 occurs in hidden layer until we get output
+    
+    we get a computational graph:
+        see C4_graph
+    
+    Universal approximation:
+        - an MLP w/ 1 hidden layer can approximate a continuous function w/ enough neurons
+
+    Deep neural networks
+        - multiple hidden layers
+        - each layer represents an aspect (hierarchical representation AKA deep learning)
+        - exponential advantage:
+            1. compose low-level to find higher level
+            2. reuse learned representations
+    
+    Training
+        - use gradient descent
+        - we use chain rule (see C4_chainRule)
+        - backpropagation computes chain rule efficiently
+            --> saves and reuses computations to compute gd easier
+            --> starts from the back 
+            --> see C4_backpropagation
+            --> see C4_backpropagation_ex

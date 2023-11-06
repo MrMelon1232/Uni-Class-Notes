@@ -1,0 +1,49 @@
+Linear Models
+
+    see C3_linearModel for model definition
+
+    To train model:
+        1. define objective function
+        2. compute gradient for each parameter
+
+        for regssion problem, use MSE usually 
+
+        for multdimensional cases, look at C3_linearMultiD
+
+    
+    Logistic regression
+
+        Binary Classification
+            - model specifies which k categories some input belongs to
+            - use sigmoid function, to make outputs between 0 and 1
+
+            σ(z) = 1 / (1 + e^-z)
+            derivative = σ(z)(1 - σ(z))
+
+            we get objective function:
+                - binary cross entropy see C3_logisticRegression
+                - computing the gradient of the BCE we get: C3_gradientBCE
+    
+        Multiclass logistic regression
+            - model outputs 'K' probabilities
+            - for output, we have k-linear parallel transformations
+            - we can use softmax function as our activation function (like sigmoid for binary)
+            see C3_softmax
+            note: we can also add numerical stability
+
+            Decisions boundaries:
+                - classification of data through multiple dimensions
+                ex: 2D is line and 3D is plane
+            
+            - we plug softmax function in BCE 
+            - see NLL function in C3_nll 
+            - see gradient in C3_multiclassGradient
+        
+    
+    Pros:
+        - easy to optimize
+        - fast training and predictions
+        - interpretability
+    
+    Cons:
+        - suitable for linearly separable classes
