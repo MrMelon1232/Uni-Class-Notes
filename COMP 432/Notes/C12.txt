@@ -1,0 +1,92 @@
+Proability Density function (PDF)
+
+    definition:
+        - function describing all possible probabilities for random variables
+        in machine learning, estimate input features from observations --> density estimation
+
+        use p(y) * p(x|y) 
+            where p(y) = nk / n
+                  nk = # of training samples 'k'
+                  n = total # of training samples
+    
+    Generative models
+        - estimating posterior prob directly (neural network, logistic regression) = discriminative models
+        - estimate joint probability (p(x|y)) = generative models
+        - find how data of each class is generated
+        - can generate new data pts (unlike discriminative)
+
+
+        Curse dimensionality
+            - increase in dimensions = data more sparse
+            - in linear models, L1 regularization reduces this
+            - decisions trees and random forest are less sensitive (since they test 1 feature)
+            - SVM + neural networks are not affected as much --> only a subset of features has a impact on the hyper plane
+            - CNN has local connections
+        
+
+        Parametric Estimation
+            - find parameter 'o' that maximizes p(x|o)
+            - we have to choose our statistical distribution
+
+            Bias
+                - distance between estimated data and real one 
+                - bias of estimator:
+                    for each dataset, compute difference between estimated and true parameters 
+                    bias = avg difference (Ex(O) - O)
+                - estimator unbiased if bias = 0 | asymptotically unbiased if bias = 0 for inf
+                - we want estimator to be unbiased
+                
+                high when wrong assumptions:
+                    ex: we asssume data linear, or gaussian pdf for non gaussian
+                    - underfitting
+
+            Variance
+                - difference between estimate and data accross datasets
+                - we also want low variance, since avg bias could still be low but esimated data is far from real
+                Ex(0 - Ex(O)^2)
+
+                high when wrong assumptions:
+                    - model overfits data
+
+            Multivariate Gaussian
+                - popular because of central limit theorem (CLT)
+                3 main factors:
+                    1. input features
+                    2. mean vector (pt where gaussian is centered)
+                    3. covariance matrix (how large is gaussian in each direction and orientation)
+                        - collects all covariancec accross input features 
+                        - quantifies how much xi andn xj are statistically related
+                        - square matrix, symmetric
+                        - semidefinite (eigen values nonnegative)
+                    
+                    Ultimately, when computing gradients and all, we get the mean function and the variance
+                    reminder: variance = 1/n * sum of (x - u)^2 where u = mean
+
+                    when checking estimator, we find that mean is unbiased by variance is biased (but asymptotically unbiased)
+
+
+Part 2
+
+    Gaussian Mixture Model:
+        - using multiple gaussian distributions, we sum up their height, mean and covariance matrices
+        note: sum of probabilities must be 1 and prob must be nonnegative
+        - the mean we get is weighted --> depends on how far gaussian is from pt 'x'
+        weight yik = responsability
+
+        1. Randomly initialize parameters
+        2. Evaluate each responsability
+        3. Update model parameters
+        4. Repeat steps 2, 3
+
+        Gaussian vs k-means
+            - soft assignment based on yik vs hard assignment
+            - works better for overlapping structures
+            - both sensitive to # of components 'k' and get stuck local minima
+            - used for PDF, clustering, classification, data generation vs only clustering
+
+
+        
+        Maximum Likelihood esimation (MLE) vs Bayesian
+            - no prior knowledge vs prio knowledge
+            - estimate after solving optimization vs estimate posterior probability
+            - easier and less heavy vs heave and expensive

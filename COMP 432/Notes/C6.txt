@@ -1,0 +1,111 @@
+Neural Networks part 3
+
+    Regularization
+        - L1 and L2 used in context of neural networks
+            --> discourages complex solution by penalizing norm of weights
+        - helps avoid overfitting, reduce errors
+        
+        More methods:
+            1. Data augmentation
+                - since more data = better generalization
+                - we transform original data to produce more (make old data new) | can use noise
+                - good with image and audio
+                - good for classification problems
+            
+            2. Label smoothing
+                - replace hard labels w/ soft labels
+                - makes model less overconfident to avoid hard predictions
+            
+            3. Multi-task learning
+                - solve related task to generalization
+                - have different tasks
+            
+            4. Bagging
+                - combine several models to improve generalization
+                - can be expensive
+                - combine if they have similar results and performance
+            
+            5. Dropout
+                - removes temporarily some neurons
+                - ex: can apply binary mask(multiply by 0 or 1) | 0 being neuron deactivated
+                - prob of dropping neuron --> dropout rate 'p'
+                - cheap
+                - its like injecting little noise in model, neurons don't rely on outputs of other neurons as much
+                - dont use in test time (weight of neurons are multiplated by 1-p at test time if neurons are dropped (makes some neurons worth more))
+
+            Dropout vs Bagging
+                - models share the weights
+                - avg exponential # of models & internal features
+                                    vs
+                - models don't share weights
+                - avg few models and final predictions
+    
+    Initialization
+        - proper init helps avoid vanishing and exploding gradients
+        - consider activation function, as we want to work around '0' and have neurons have the same variances
+
+    
+    Recurrent neural networks (RNN)
+        - current output depends on all previous inputs
+        - CNN capture local dependencies only 
+        - for RNN, we share the full neural network
+        - we can find long patterns (since we have full history)
+        - solves many-to-many, many-to-one, seq-seq
+
+        Many-to-many:
+            - we need prediction at each time step
+            Steps:
+                1. apply final transformation to each hidedn state
+                2. apply loss func at each time step
+                3. total loss = sum/avg of losses at each step
+        
+        Many-to-one:
+            - single prediction at the end
+            Steps:
+                1. apply final transformation to last hidden state
+                2. apply loss function to it
+        
+        Sequence-sequence:
+            - employ encoder for all inputs and decoder for encoded states
+            - loss computed on top of each prediction
+
+    
+        Training:
+            - becomes standard computational graph
+            - so can use backpropagation algorithm
+
+            add shortcuts to fight vanishing gradient:
+                Methods for dynamic shortcuts:
+                    1. gated RNNs (LSTM, GRU, Li-GRU)
+                    
+                    LSTM:
+                        - 3 multiplicative gates (input, output, forget)
+                            1. input: decides info stored in cell state
+                                - contains vector w/ 0/1 | 0 = do not store content | 1 = store content
+                            2. Forget gate: decides how much info keep from prev cell 
+                                - 0 = forget past | 1 = keep past info unchanged
+                            3. Output gate: decides how much info from cell we expose
+                                - 0 = dont | 1 = expose
+
+                        - cell state = memory vector
+                        - to check past, set forgot to 1 and input gate to 0
+                    
+
+                    Li-GRU
+                        - 1 multiplicative (update)
+                            1. update: decides how much info from past to use for current pred
+                        - faster and better than GRU 
+        
+        Bidirectional RNN
+            - employ 2 RNN's in opposite directions to include all input elements and not just past previous ones
+            - combine foward and backward state        
+
+
+    Notes:
+        - possible to combine multiple layers of RNN and mix with CNN and MLPS        
+        - for variable lengths of sequences, use zero padding (fill gaps with 0)
+        - can split into buckets to have mini batches of similar lengths
+
+
+    Reduce dimensionality
+        - feature selection

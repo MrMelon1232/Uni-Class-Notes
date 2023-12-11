@@ -1,0 +1,49 @@
+Clustering
+
+    Unsupervised learning
+        - learn from data w/out labels
+        - learning by observation
+
+    
+    definition clustering:
+        - input: unlabeled data set
+        - goal: group data into clusters based on measure of distance
+            Methods:
+                1. Euclidean distance: sqrt(sum of (x-y)^2 at i)
+                2. square euclidean distance
+            
+
+    K-means clustering
+        - partition N observations into K clusters
+        - note: 'K' hyperparameter is the # of clusters
+        - pts called centroids
+
+        Steps:
+            1. Compute avg of all pts within cluster 
+            2. New centroid assigned to avg pts
+            3. Assign data pts near to cluster of nearest centroid and repeat until centroid doesnt change
+        
+        - we have set of K centroids 'u' and 'r' cluster assignment variable | (solving w/out class assignment = dummy solution)
+        - compact cluster = low objective | spread clusters = high objective
+
+        Issues:
+            - function not convex (can't convert)
+            - can't perform gradient descent
+
+            therefore:
+                1. Hard assignment step: Expectation-Maximization algorithm (improves cost function at each iteration)
+                                        - a coordinate descent algorithm
+                2. Mean update step: sum of rik * xi / rik for k = {1,..,k}
+                3. Stop when nothing changes
+        
+        Pros and Cons:
+            - Simple and easy
+            - scalable to large datasets
+                        vs
+            - # of clusters must be predefined
+            - sensitive to local minima
+            - assume clusters of equal size
+            - assume distance is useful
+
+        
+        DBSCAN is an alternative to this (combats non-spherical clusters)

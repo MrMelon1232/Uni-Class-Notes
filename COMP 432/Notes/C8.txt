@@ -1,0 +1,40 @@
+Kernels
+
+    definition:
+        - function that combines 2 inputs w/ scalar output
+
+        y(x) = b + sum of (ai * ti * k(xi, x))
+
+        valid kernels:
+            1. must correspond to dot products for transformed features
+            2. positive semi-definite (all eigen values are non-negative)
+            
+            - can find other kernels by combining other valid ones
+
+    Linear Kernel
+        k(x, x') = x T x'
+        - reduces problem to linear SVM
+        - high kernel value when data pt and supp vectors aligned | 0 when orthogonal
+
+    Polynomial Kernel
+        k(x, x') =(x T x' + c)^d
+        - scales w/ degree of polynomial
+
+    Gaussian Kernel
+        k(x, x') = exp(-y ||x - x'||^2) where y > 0
+        - pt close to supp vector --> kernel high | else low
+        - small gamma = large gaussian --> underfitting
+        - large gamma = sharp gaussian --> overfitting
+    
+    Multi-Class SVM
+        - we construct 'k' different SVMs
+        2 methods: 
+            1. one versus all
+            2. one versus one (very long with increase data)
+        issues:
+            1. multiple classes may be active
+            2. unbalanced training data
+        
+    SVM for regression
+        - using error function, we can get loss function:
+            1/2 ||w||^2 + C sum of E(y(x) - t)

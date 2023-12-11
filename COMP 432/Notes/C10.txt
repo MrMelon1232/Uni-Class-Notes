@@ -1,0 +1,59 @@
+Bagging and Boosting
+
+    definition:
+        - ensemble technique: combines multiple models to make a new one
+        - train independently and combine at test/inference
+        - regularization technique
+        - we want uncorrelated errors between models (not related)
+            - use diff hyperparameters, dataset, boostrapping
+
+        For diff methods:
+            1. clssification problems: choose class w/ majority votes
+            2. regression problems: avg pred
+            3. used in random forest
+    
+    Boosting
+        - train models sequentially
+        - each model tries to fix errors from the previous models
+        ex: AdaBoost
+
+
+        AdaBoost
+            - introduces weight for each training sample
+            - large if last model bad, small if last model good
+            Steps: see C10_adaSteps
+            note: error is found when there are missclassifications from data on the model
+                  - so, find # of errors, then multiply by weight
+                  - pick lowest error to find ar
+                  - only compute new weight of point that was missclassified
+                  - repeat and recalculate errors with new weights for 'x' iterations
+                
+    
+    Supervised Machine Learning
+        - reminder:
+            1. linear models
+            2. neural networks
+            3. SVM
+        
+        K-nearest Neighbor
+            - consider K training samples closer to current input 'x'
+            classification: new sample assigned to class w/ most common k nearest neighbors
+            regression: new pred = avg of values of k nearest neighbors 
+            - K = hyperparameter
+            - use weighted nearest neighbor for distance calculation (weight influenced by distance)
+
+            Pros & Cons
+                - simple and easy
+                - no training phase
+                - classifier immediately adapts
+                - only 1 hyperparameter
+                            vs
+                - poor generalization (overfitting)
+                - not efficient
+                - store all training data
+    
+        Naive Bayes
+            - probability given another probability
+
+            example:
+                see C10_naiveBayes

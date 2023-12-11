@@ -1,0 +1,76 @@
+Support Vector Machines (SVM)
+
+    definition:
+        - model for classification tasks then extended to regression + multi-class classification
+        - linear models for binary classification
+        - margin = distance between nearest pts and hyperplane
+            - small = less likely to generalize | big = more likely to generalize
+        - find objective func that maximizes margin
+
+        Methods:
+            
+            1. Maximum Margin classifier
+                - aims to find hyperplane (boundary) that has max margin from training samples
+                - when boundary = halfway of training samples | determined by support vectors (training pt w/ small distance to boundary)
+                - apply linear transformation and a decision rule to classify points | pt on boundary if linear transformation w/ pt 'x' = 0
+                - weight is perpendicular to boundary (dot product = 0) | if we take 2 pts on boundary, subtracting will prove that 'w' is orthogonal to Xc (Xa - Xb)
+
+                formula:
+                    x = x0 + r * w/||w||
+
+                    where x0 = projection of x onto boundary
+                           r = distance of pt to boundary
+                           ||w|| = sqrt(W T W)
+
+                    substituting we get:
+                        r = function / ||w|| 
+                            where r < 0 for class -1                                                            
+                                r > 1 for class 1
+
+                        margin = min ti * ri
+                            where ti = label 
+                                  ri = distance
+                
+                - 1 pt missclassified = margin negative | positive margin if classsified correctly
+
+                - As such, we get 1/2 w^2 as our optimization problem (convex, wasnt before)
+                    w/ constraints created from the dataset
+                    see C7_mmc
+
+
+    Constraint Optimization
+        - use lagrangian function to maximize function
+        see C7_constraintMax
+            Steps:
+                1. Add constraint function to current one | f(x) + λg(x)
+                2. find stationary pts (derivatives of each variable including λ)
+                3. Find function value at stationary pts 
+            
+            for constraint >= 0, when the constraint holds, λ = 0, else λ = +inf
+                look for max of f(x) if holds, else min possible value (-inf)
+        
+        
+        To minimize function
+            - Karush-kuhn tucker constraints (KKT)
+            - f(x) - λg(x)
+            for many constraints we have the sum of λg(x)
+
+            KKT conditions at i
+                1. derivative of all stationary pts
+                2. λg(x) = 0
+                3. g(x) >= 0
+                4. λ >= 0
+
+
+Soft Margin SVM
+    - when we can't perfectly split data 
+    - support vectors lie on the margin or on the wrong side of the margin (between boundary and margin)
+    - # of support vectors depend on C (small C = more supp vectors)
+    - to do so, introduce slack variable (e)
+    values:
+        for data on/inside correct margin: ei = 0
+        for all other values ei = |ti - y(xi)|
+        so inside margin and correct --> 0 < ei <= 1 | missclassified ei >= 1
+
+    new function: 1/2 ||w||^2 + c sum of ei where c is a hyperparameter
+    see C7_softMargin

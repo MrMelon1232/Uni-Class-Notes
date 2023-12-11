@@ -1,0 +1,47 @@
+Decision Trees
+
+    definition:
+        - poses question about specific feature
+        binary form usually in x <= t 
+            where x = one of the features
+                  t = threshold
+        - last node = particular class
+        - becomes cuboid regions
+
+    Training:
+        - impurity: notion of still having pts in the wrong region, so we continue splitting
+        - we want to find pure leaves | lowest impurity
+
+        Method:
+            Gini Impurity (we want a low impurity)
+                see C9_gini
+                
+            - we can get total impurity:
+                sum of total probability of i * impurity of i
+                tells us how good a split is (lower = better)
+            
+            Steps:
+                1. Get features in ascending order and remove last
+                2. compute impurity
+                3. choose lowest impurity
+                4. choose halfway of chosen threshold and the next one
+                    ex: if chosen is 3 and next is 3.5, take halfway of that (3.25)
+                5. repeat steps to split for other features with the new threshold as the first splitter
+                
+        - Add regularization to remove overfitting data
+            1. adding max depth
+            2. adding min samples
+
+
+    Random Forest
+        - training multiple trees and combining them
+        - regularization
+        - randomize training algorithm and samples randomly N 
+        - does boostrapping: resamples original dataset w/ replacement many times to "create" new data
+        
+    Regression trees
+        - split data and find average
+        - then perform MSE (1/n * sum of (x - avg)^2)
+        - then find total MSE: sum of MSE of i * total probability of i
+        - we pick lowest MSE and find halfway
+        - repeat steps for other splitting
