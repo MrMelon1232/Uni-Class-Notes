@@ -1,0 +1,51 @@
+Polymer Application and Processing
+
+    reminder for plastic:
+        - really good material
+        - low cost
+        - noise reduction
+        - low friction
+
+    3 types of behaviour:
+        1. elastic-fracture (like ceramics)
+        2. elastric then plastic (like most metals) | high temp, not recoverable (viscous)
+        3. totally elastic | low temp
+
+        Stress-strain behaviour:
+            - elastic modulus lower than metals
+            - tensile strength is about 10% of metals
+        
+    Drawing
+        - stretches polymer prior to use
+        - aligns chains in the stretching direction
+        - increases E and TS but decreases %EL
+    
+    Longer chains = more entanglement so increase in TS (also brittleness)
+                                    --> also degree of crystallinity since closer bonds
+
+    Elastomers:
+        - low E 
+        - entropy decrases w/ straightening | increase when returned to more disordered state
+        - increase in temp when stretched
+
+    Vicoelastic: in between, polymers behave like rubbery solids, non-linear elastic
+
+    Craze:
+        - formation prior to cracking
+    
+    - Ductile above Tg, brittle below Tg
+    - Strain rate slow = ductile | strain rate fast = more brittle
+
+    2 types of polymerization
+        1. Addition/chain
+        2. Condensation: 2 diff molecules come together
+    
+    Applications:
+        - Elastomers
+        - fibers
+        - adhesives
+        - coatings
+        - films
+
+    Polymer processing:
+        - compression, injection molding, extrusion

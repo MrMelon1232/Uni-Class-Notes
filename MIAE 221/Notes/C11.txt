@@ -1,0 +1,74 @@
+Polymer structures
+
+    definition:
+        - many repeated units | called 'mer'
+        - joining process = polymerization
+        types:
+            1. commercial: used in large quantities (low strength and stiffness) | lightweight
+            2. engineering: improved strength and higher temp properties
+        - generally plastics are good
+        - most polymers are hydrocarbons
+            saturated hydrocarbons = each carbon bonded to 4 other atoms
+            if double/triple bonds form = unsaturated molecules
+        
+        Isomerism
+            - 2 compounds w/ same chemical formula but diff structures
+
+    Number and weight average molecular weight
+        - see C11_molecular
+        steps:
+            1. sort items in ranges
+            2. Find mean weight and # of occurances in each range
+            3. compute number and weight fraction
+                number = current # of occurence / total # of occurence
+                weight = mean weight x # of occurence / sum of all mean weight x # of occurence
+            4. compute total molecular weight for number and weight
+    
+    Degree of polymerization (DP)
+        - see C11_dp
+
+    More information:
+        Tensile strength increase w/ Mw --> longer chains are entangled better
+        % crystallinity: % of material that is crystalline
+            --> TS and E often increase with % crystallinity
+            --> annealing causes crystalline regions to grow
+            --> higher = higher strength
+            --> depends on rate of cooling (faster = less crystallinity)
+            --> simple structures = more crystallinity
+        see C11_crystallinity
+
+        - Structure not strictly straight
+        - different chain configs: linear, branched, crosslinked, network
+        - changing configs means breaking bonds
+
+        Tacticity:
+            - spatial arrangement of R units along polymerchain
+            isotactic: R groups on same side
+            syndiotactic: R groups alternates
+            atactic: R groups random
+
+        Different polymers:
+            1. Thermoplastic: soften on heating, long carbon chains, covalently bonded along chain, ductile
+            2. Thermo-sets: formed/shaped then cure/set by chemical reaction permanently, hard and brittle
+                --> can't be remelted | rigid network of covalent bonds
+            3. Eslatomers (rubbers)
+            4. Copolymers: 2+ monomers polymerized toegether
+    
+    Crystallinity in polymers
+        - rarely fully crystalline
+        - hard for all regions of all chains to become aligned
+        - increases with heat treating
+
+        Amorphous polymers: no sudden change on cooling + viscosity increases as temp does down
+        Partially crystalline: cooling decreases volume, some parts might form crystalline
+        - spherulite structures are formed in semicrystalline polymers
+    
+
+    Defects:
+        - chain ends
+        - vacancies and interstitial
+        - screw dislocations
+    
+    Diffusion
+        - gases or organic liquids
+        - higher through amorphous regions (less dense)

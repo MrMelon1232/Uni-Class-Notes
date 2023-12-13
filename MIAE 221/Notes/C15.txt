@@ -1,0 +1,68 @@
+Optical Properties
+
+    definition
+        - light = electromagnetic wave
+
+    properties:
+        - wavelike characteristics
+        E = hc / λ or hv
+
+        light interaction w/ solids
+            - incident light is:
+                1. reflected
+                2. absorbed
+                3. scattered
+                4. transmitted
+            Io = It + Ia + Ir + Is
+        
+        when emitted light same energy and phase as inciden light - coherent
+        
+        Classifications:
+            1. transparent
+            2. translucent
+            3. opaque
+        
+        - metals can absorb almost any frequency of light 
+            --> since many electron states
+            --> transmitted if thinner than 0.1 um
+        - also reflects light well (opaque and reflective)
+            --> electron transition from excited state produces photon
+            --> reflected at same weavelength
+
+        For non metals:
+            - reflection distorts electron clouds
+            n = c/v 
+                where n = infex of refraction
+                      c = veclocity of light in vacuum
+                      v = velocity of light in medium
+            - large ions decreases speed
+            internal reflectance: n1/n2 = sin(o1)/sin(o2)
+        
+        Scattering in polymers:
+            - amorphous + pore free = no Scattering
+            - semicrystalline = scatters
+        
+        Absorption in semiconductions 
+            - same with insulators
+            - light absorbed if gap < 1.8eV (opaque) | gap > 3.1eV no absorption (transparent)
+            - between --> partial absorption and material is colored
+        
+        Translucency:
+            - light may be reflected again since scattering can occur inside
+            - scattering causes:
+                1. grain boundaries
+                2. fine pores
+                3. diff phases
+        
+        Luminescense
+            - reemission of light by material
+            - light reemitted is at lower frequency
+        
+        Photoconductivity:
+            - can increase # of charge carriers by absorption light
+            - so more electrical conductivity
+
+    Other Applications
+        - optical fibres
+        - laser (stimulated) | continuous wave lasers
+        - solar cells

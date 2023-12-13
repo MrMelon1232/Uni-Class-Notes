@@ -1,0 +1,47 @@
+Phase Diagrams
+
+    provides information on:
+        - melting temps
+        - casting
+        - alloys + mixtures
+        - composition
+    
+    Solubility limit:
+        - max amount of solute that can go in solvent
+        - on phase diagram, its the line that separates the other phases from the mixtures
+    
+    Equilibrium: state of lowest free energy
+    Lines in phase diagrams:
+        - liquidus: line above only liquid present
+        - solidus: same but for solid
+        - tie-line: horizontal line going across 2-phase region
+    see ex: C8_phases
+
+    Weight factors:
+        Wa = Co - Cl / Ca - Cl | Wl = Ca - Co / Ca - Cl
+        essentially right to left for substractions (in phase diagram)
+
+    Continually changing composition during slow cooling --> requires solid state diffusion
+        --> requires energy and time | if fast, cored microstructure and segragation (only part of it changes)
+    
+    Mass/weight fraction
+        - take volume fraction: Va = va / va + vb
+        - Wa = Va*pa / (Va * pa) + (Vb * pb)
+            where p = density of phases
+        
+    see C8_eutectic for example w/ multiple phases (usually 2 phases)
+
+    - Solid solutions at sides of phase diagrams: terminal phases
+    - Intermetallic compounds appear as vertical Lines (because of stoichiometry)
+
+    Tranformations:
+        1. Eutectic: liquid to 2 solid
+        2. Eutectoid: solid to 2 solid
+        3. Peritectic: liquid and solid to second solid
+    
+    Hypoeutectoid: <0.78 wt% C steel | otherwise hypereutectoid | 0.78 wt%C is eutectoid
+    pearlite: phase a + Fe3C
+
+    If at non-equilibrium: 
+        - might get phases that are not on diagram 
+        - phase change might change at diff temps

@@ -1,0 +1,31 @@
+Thermal Properties
+
+    heat capacity: ability to absorb heat
+        - 2 types:
+            1. at constant pressure
+            2. at constant volume
+                generally Cp > Cv
+                Cv reaches R constant 
+        - Atomic vibrations --> form of phonons (lattice waves)
+            --> thermal waves - vibrational modes
+    
+    Thermal expansion: formula has linear coefficient 1/K or 1/degrees
+        --> asymmetric curve: increase in interatomic separation + thermal expansion
+            symmetric curve: none of that
+        
+        Polymers: weaker bonds so = higher coefficient of thermal expansion
+        ceramics: low coefficient of thermal expansion
+
+    
+    Fourrier's: ability to transport heat (look at equation sheet)
+        --> higher in metals
+    
+    Thermal stress: 
+        - caused by:
+            1. restrained thermal expansion
+            2. temp gradients lead to diff dimensional changes
+        (look at equation sheet)
+        
+    Thermal shock resistance (TSR)
+        - occurs from nonuniform heating/cooling
+        (look at equation sheet)

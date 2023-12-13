@@ -1,0 +1,55 @@
+Dislocations & Strengthening Mechanisms
+
+    Plastic deformations
+        - occurs by motion of dislocations (edge, screw, mixed) called slip
+        - caused by many dislocations under shear stress
+        - causes perpendicular dislocation line
+    
+    Dislocations    
+        - make metals weaker
+        - but allows for deformations
+        - movement is done not in 1 instant (like caterpillar mvt) so atoms dont break apart
+        - mvt of dislocation = slip
+        - Plane swept out by burgers vector and dislocation = slip plane
+
+        In metals: easy, close-packed planes and directions
+            - energy dissipated as heat
+        In ceramics: hard, directional | stronger bonds
+
+    Slip systems
+        - slip plane + direction
+        in FCC: {111} plane and {110} directions
+        - FCC and BCC have high # of slips (>12) | ductile and deformable
+        - HCP very few slips: brittle 
+
+        In polycrystalline materials
+            - many grains, often random
+            - slip on grain w/ largest Tr and Tr > Tcrss (crss = critical resolvd shear stress)
+    
+    Strenghtening mechanisms for metals
+        - Dislocation mobility reduced when metal strenghtens/hardens
+        - strenghtens by: 
+            1. grain size reduction
+                - can increase grain boundary
+                - increase yield strength, tensile strength + hardness
+                - grain boundary acts as barrier 
+            2. solid solution strengthening
+            3. strain hardening
+                - deforming metals at room temp, hardens them
+                - percent coldwork CW, as it increases:
+                    - yield strength σy increases
+                    - tensile strength TS increases
+                    - Ductility decreases
+                - same sign dislocatons repulse, opposite attracts
+            
+                Density = total dislocation length / unit volume
+    
+    Recovery, Recrystallization and Grain growth
+        - heat treating: decreases tensile strength
+        3 stages:
+            1. Recovery: removal of dislocation
+            2. Recrystallization: new grains form w/ low dislocation densities, small, replace parent grains
+                - Tr = Recrystallization temp | decreases with CW increasing
+                - small grains = strong and tough at low temp | large grains = good resistance at high temp
+            3. Grain growth: size increase, small grains dissapear
+         

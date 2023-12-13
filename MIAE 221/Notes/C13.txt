@@ -1,0 +1,32 @@
+Electrical Properties
+
+    ohm's law: V = IR 
+    see C13_equations
+
+    Electrical properties are a consequence of electronic band structure
+    --> conductivity depends on # of free electrons and holes
+    --> insulators: wide band gap, few electrons excited across band gap 
+    --> semi-conductors: smaller gap but more electrons excited
+
+    Imperfections --> increases resistivity (scatters electrons so they dont take direct path)
+    resistivity increases with:
+        - temp
+        - impurity concentration (wt%C)
+        - % cold work
+
+    Only electrons that have energy > Fermi (Ef) can be acted on + accelerated when electric field
+        --> electrons that participate in conduction process | free electrons
+        --> negative charge in conduction band
+        hole: charged entity in semiconductors and insulators | energy lower than Ef
+            --> positive charge in valence band
+        see C13_eh
+        intrinsic semiconductions: same # of free electrons and holes
+        extrinsic, not the same (occurs when impurities added w/ diff # of valence electrons)
+
+        types:
+            1. n-type (n>>p) | donor impurities
+            2. p-type (p>>n) | acceptor impurities
+        
+        - doping increases conductivity
+        - forward bias: allows current flow where electrons recombine at junction p-n
+        - reverse bias: no flow

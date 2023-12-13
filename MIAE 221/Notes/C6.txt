@@ -1,0 +1,76 @@
+Mechanical Properties of metal
+
+    Stress
+        - tensile strength = σ | when item is stretched
+        - shear stress | when opposite force is applied on the item
+        - formula: load/area
+        - applied force
+        types:
+            1. simple tension | another form: bi-axial (pressurized tank)
+            2. torsion
+            3. compression | another form hydrostatic (pressure under-water)
+
+    Strain:
+        - degree of formation, occurs at low levels of stress
+        - measure as changed in length / original length
+        - ex: elongation
+        
+
+    Stress vs Strain diagram
+
+        Modulus of elasticity (E)
+            - reversible
+            - how much something will stretch when loaded
+            - stiffness of material (high = more stiff) | (stronger bond = stiffer)
+            - depends directly on bonding
+            Hook's law: 
+                σ = E * e
+                where e is the strain
+            
+            - find tangent if not linear
+
+        Poisson's ratio
+            - defines how much strain occurs in lateral (x,y) directions when strained in z
+            v = - lateral strain / longitudinal strain
+            if v > 50, density increases w/ strain | else decreases
+
+            Elastic shear stress
+                t = Gy 
+                where G = shear modulus
+                
+                E = 2G(1 + v)
+
+    Plastic Deformation
+        - usually after 0.005 strain
+        - bonds are broken and stress/strain no longer proportional
+        - permanent
+    
+    Yield Strength
+        - stress when noticeable plastic deformation occurs (0.002)
+        - change from elastic to plastic
+        see C6_yield
+    
+    Tensile Strength
+        - max stress on engineering stress-strain curve (highest pt of stress on graph)
+        - max before fracture
+    
+    Ductility (%EL)
+        - amount of plastic deformation at failure
+        - amount of deformation possible for material without breaking
+            Percent elongation
+            Percent reduction in area
+    
+    Resilience (Ur)
+        - ability of material to absorb energy during elastic deformation
+        - area under stress curve
+    
+    Toughness
+        - for this chapter, amount of energy absorbed before fracture
+    
+    True stress
+    
+    Hardness
+        - resistance to surface plastic deformation or scratch 
+
+    RESUME:
+        see C6_materialProperties

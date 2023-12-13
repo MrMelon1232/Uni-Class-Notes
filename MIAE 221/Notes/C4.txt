@@ -114,7 +114,7 @@ Imperfections in solids
               ng = # of grain intercepted per line (avg)
               M = scope
             
-        - ASTM grain sie number: n = 2^(G-1)
+        - ASTM grain size number: n = 2^(G-1)
             where G = ASTM grain size #
                   n = avg # of grain size per square inch @ 100x
             G = 1 + log(n)/log(2)

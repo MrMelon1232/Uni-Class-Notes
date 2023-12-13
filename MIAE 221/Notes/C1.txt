@@ -9,7 +9,7 @@ Introduction to materials
         - develop and design new materials
         - relationship between processing and structures
     
-    engineering: dev processing techniques ad create products
+    engineering: dev processing techniques and create products
 
     types:
         1. metals
@@ -32,7 +32,7 @@ Introduction to materials
 
             Mechanical properties: Density| Stiffness | Strength  | Resistance to fracture
             ---------------------------------------------------------------------------------
-                                metals    | ceramics  | metals   | metals
+                                metals    | ceramics  | metals    | metals
                                 ceramics  | metals    | composites| composites
                                 polymers  | composites| ceramics  | ceramics
                                 composites| polymers  | polymers  | polymers

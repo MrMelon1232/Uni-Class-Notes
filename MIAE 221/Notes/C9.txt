@@ -1,0 +1,124 @@
+Structures and Properties of ceramics
+
+    definition:
+        - inorganic, non-metallic materials
+        - bonding: ionic or covalent or both
+        - generally hard and brittle
+        - good electrical and thermal insulators
+        - high melting pts and good chemical stability
+
+        reminder: % ionic increases w/ diff in electronegativity
+    
+    Types:
+        1. Refractories: withstand high temp + reactive env
+        2. Glasses
+            properties (amorphous):
+                - note: amorphous = no clearly defined shape/form
+                - optical transparency
+                - relatively easy manufacturing/shaping
+                - hard
+                - vacuum tight
+                - chemically resistant
+            - increase in viscosity w/ temp change and dont show sudden change (like solidfy at spec temp)
+            - non crystalline
+
+            Glass are stable at high temp but not room temp
+                --> they want to rearrange into crystalline structures but can't
+                --> can be done by introducing a nucleating agent and heating treating, we get glass ceramics
+            
+            Multiple points for viscosity
+                - melting pt
+                - working pt: glass easily deformed
+                - softening pt: max temp that glass can handle w/out alterations
+                - annealing pt: residual stress can be removed
+                - strain pt: pt at which if under, glass fracture
+                - viscosity decreases w/ temp
+            
+            Heat treating glass
+                - annealing: removes internal stresses caused by uneven cooling
+                - tempering: compress hot surface to supress growth of cracks from surface scratches
+            
+        3. Clay Products
+            - inexepensive
+            - found naturally
+            - easy prod
+            - often used as mined
+
+            Drying and Frying
+                - water removed, inteparticle spacings decreases
+                - frying: heat treatment, vitrification: liquid glass forms from clay and flux 
+
+        4. Silicate ceramics
+            - quartz
+            - combination of Si and O
+            - layered silicate: negative charges are balanced by adjacent plane rich in positively
+                adjacent sheets bound together by van der waals forces
+        
+    Fabrication
+        - form compacts from powders
+        - formed into "green" compact
+        - compact then fired/sintered
+    
+    Ceramic Crystal Structures
+        - must satisfy charge neutrality plus size and coordination #
+        - cordination # increases with r cations/r anions
+
+        Factors determining structure:
+            1. Relative sizes of ions: max # of opposite charged ions
+            2. Maintenance charge neutrality (net charge should be zero)
+
+    Bond hybridiztion:
+        - when there is significant covalent bonding
+
+    Polymorphic forms of Carbon
+        types:
+            1. diamond: hardest material, high thermal conductivity
+            2. Graphite
+                - layered structure
+                - in-plane covalent bonds (strong)
+                - between sheets (v.d.waals) (weak) 
+                Pros:
+                    1. good strength
+                    2. chemical stability
+                    3. low thermal expansion, good thermal shock
+                    4. easily machined
+                uses:
+                    - heating elements
+                    - insulators
+                    - air purifiers
+    
+    Defects:
+        - vacancies for both cations and anions
+        - interstitials for cations (anions are usually big so no interstitials)
+            --> this means occupying already occupied space
+        - frenkel defect: cation vacancy + interstitial
+        - shottky: cation + anion vacancy
+        
+        - can be solved with substitional cations or anions that represent more than 1 charge
+            ex: if we're missing 1 cation, than have a cation that represents 2+
+            - we want to maintain electroneutrality
+
+    
+    Mechanical Properties
+        - brittle  
+            --> because compressive strength high
+            --> dislocation motion hard
+
+            Fracture toughness: see C9_fracture
+            --> improve strength: increase K1c or decrease crack size 'a'
+            --> ceramics low fracture toughness
+
+        - Dislocations rare in ceramics:
+            - ionic crystals very few slip systems and charge neutrality issues
+            - covalent crystals: strong bonding, limited slip systems, complex dislocations
+            - TLDR: really need high temp
+        
+        - use Modulus of rupture to test tensile
+            Flexural strength: check C9_flexural
+            Porosity Effects and more Flexural strength under pores: see C9_flexural2
+        
+        - Hardness: hard to measure since ceramics are brittle and easy to crack
+        
+        - Creep: deformation as a result to exposure to stress at high temps
+
+        - good electrical insulators are good thermal insulators since no conduction electrons

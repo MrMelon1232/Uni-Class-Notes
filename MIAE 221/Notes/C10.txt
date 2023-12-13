@@ -1,0 +1,30 @@
+Applications & Processing of Ceramics
+
+    metals are made by:
+        - directly casting them into final shape (poured in mold to make)
+        - deforming
+    
+    Ceramics:
+        - can't be easily melted
+        - can't be plastically deformed into shape
+        - different processes possible
+    
+    Applications
+        1. Die blanks:
+            - need wear resistant properties
+        2. Cutting tools
+        3. Sensors
+        4. Refractories: mats to be used at high temp
+        5. Automobile engines (pros & cons | high temp, low friction loss but brittle, etc)
+        6. Nanocarbons
+    
+    Formations:
+        general: formed into compacts from powders and heated to high temp, particles join by atomic diffusion
+        - glass forming, sheet forming --> continous casting
+        Particulate forming:
+            - hydroplastic forming: grind and screen constituents
+            - slip casting
+            - powder pressing
+            - sintering
+            - tape casting
+        cementation
